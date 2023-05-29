@@ -1,0 +1,44 @@
+﻿<Window x:Class="Mail_Man.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mail_Man"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="472,10,0,0" TextWrapping="Wrap" Text="Welcome" VerticalAlignment="Top" Foreground="#FFF12814" FontSize="36"/>
+        <Image HorizontalAlignment="Left" Height="431" VerticalAlignment="Top" Width="399"/>
+        <Button x:Name="btn_login" Content="Log in" Margin="625,322,24,75" Background="White" BorderBrush="#FFF50D0D"/>
+        <TextBox x:Name="FIELD_username" HorizontalAlignment="Left" Margin="456,115,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="287" BorderBrush="#FFBDDA0F" FontSize="20" RenderTransformOrigin="0.5,0.5" Height="32" TextChanged="FILD_username_TextChanged">
+
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <TextBox x:Name="FIELD_password" HorizontalAlignment="Left" Margin="456,0,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Center" Width="287" BorderBrush="#FFBDDA0F" FontSize="20" RenderTransformOrigin="0.5,0.5" Height="32">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Button x:Name="btn_join" Content="Join It Now" Margin="438,322,197,75">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Red" Offset="0"/>
+                    <GradientStop Color="#FFDAFD09" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Window>
