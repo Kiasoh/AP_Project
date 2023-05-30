@@ -8,4 +8,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Post_icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Post_icon.png" />
+  </ItemGroup>
+
 </Project>

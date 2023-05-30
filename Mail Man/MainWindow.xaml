@@ -3,42 +3,69 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Mail_Man"
+        xmlns:local="clr-namespace:Mail_Man" 
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Mail Man" Height="600" Width="1100" ResizeMode="NoResize" Icon="/Post_icon.png">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="472,10,0,0" TextWrapping="Wrap" Text="Welcome" VerticalAlignment="Top" Foreground="#FFF12814" FontSize="36"/>
-        <Image HorizontalAlignment="Left" Height="431" VerticalAlignment="Top" Width="399"/>
-        <Button x:Name="btn_login" Content="Log in" Margin="625,322,24,75" Background="White" BorderBrush="#FFF50D0D"/>
-        <TextBox x:Name="FIELD_username" HorizontalAlignment="Left" Margin="456,115,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="287" BorderBrush="#FFBDDA0F" FontSize="20" RenderTransformOrigin="0.5,0.5" Height="32" TextChanged="FILD_username_TextChanged">
+        <Image HorizontalAlignment="Left" Height="581" VerticalAlignment="Top" Width="596"/>
+        <Button Content="Log in" HorizontalAlignment="Left" Margin="869,490,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="36" Width="193" Background="White" BorderBrush="Red">
+            <Button.RenderTransform>
 
-            <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform X="0"/>
+
+                    <RotateTransform Angle="-0.64"/>
+                    <TranslateTransform/>
                 </TransformGroup>
-            </TextBox.RenderTransform>
-        </TextBox>
-        <TextBox x:Name="FIELD_password" HorizontalAlignment="Left" Margin="456,0,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Center" Width="287" BorderBrush="#FFBDDA0F" FontSize="20" RenderTransformOrigin="0.5,0.5" Height="32">
-            <TextBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform X="0"/>
-                </TransformGroup>
-            </TextBox.RenderTransform>
-        </TextBox>
-        <Button x:Name="btn_join" Content="Join It Now" Margin="438,322,197,75">
+            </Button.RenderTransform>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+                
+            </Button.Resources>
+        </Button>
+        <Button Content="Join it Now" HorizontalAlignment="Left" Margin="647,491,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="40" Width="190">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Red" Offset="0"/>
-                    <GradientStop Color="#FFDAFD09" Offset="1"/>
+                    <GradientStop Color="#FFF9E507" Offset="1"/>
                 </LinearGradientBrush>
             </Button.Background>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.64"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </Button.Resources>
         </Button>
+        <TextBlock HorizontalAlignment="Left" Margin="740,35,0,0" TextWrapping="Wrap" Text="Welcome" VerticalAlignment="Top" Height="50" Width="164" RenderTransformOrigin="0.5,0.5" FontSize="36" Foreground="#FFE40606">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.521"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBox HorizontalAlignment="Left" Margin="738,140,0,0" TextWrapping="Wrap" Text="User Name" VerticalAlignment="Top" Width="287" Height="44" BorderBrush="Red" SelectionBrush="#FFBDD010" Background="White">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="15"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <PasswordBox HorizontalAlignment="Left" Margin="738,244,0,0" VerticalAlignment="Top" Width="287" Height="47" BorderBrush="#FFE61010" />
+
 
     </Grid>
 </Window>
