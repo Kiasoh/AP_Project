@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+//sql pack
+using System.Data;
+using System.Data.SqlClient;
+
 
 namespace Mail_Man
 {
@@ -25,5 +29,9 @@ namespace Mail_Man
             InitializeComponent ();
         }
 
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
