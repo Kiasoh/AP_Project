@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Mail_Man
+namespace POST_MAIL
 {
     /// <summary>
-    /// Interaction logic for Creataccount.xaml
+    /// Interaction logic for Signup.xaml
     /// </summary>
-    public partial class Creataccount : Window
+    public partial class Signup : Window
     {
-        public Creataccount()
+        public Signup()
         {
             InitializeComponent();
         }
