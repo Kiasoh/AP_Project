@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.0.31903.59
+VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mail Man", "Mail Man.csproj", "{C9AEC373-FA47-4E47-A63B-A15BA052F93A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mail Man", "Mail Man\Mail Man.csproj", "{F78BF814-CB6C-4F30-BA96-D90180365593}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C9AEC373-FA47-4E47-A63B-A15BA052F93A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C9AEC373-FA47-4E47-A63B-A15BA052F93A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C9AEC373-FA47-4E47-A63B-A15BA052F93A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C9AEC373-FA47-4E47-A63B-A15BA052F93A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F78BF814-CB6C-4F30-BA96-D90180365593}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F78BF814-CB6C-4F30-BA96-D90180365593}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F78BF814-CB6C-4F30-BA96-D90180365593}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F78BF814-CB6C-4F30-BA96-D90180365593}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {896B1D53-5A83-486A-BE11-1E89D7C24990}
+		SolutionGuid = {EE427794-382C-4D1C-BD20-4BBE7768A510}
 	EndGlobalSection
 EndGlobal
