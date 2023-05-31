@@ -5,8 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mail_Man"
         mc:Ignorable="d"
-        Title="Menu" Height="450" Width="800">
-    <Grid>
-        
+        Title="Mail Man" Height="600" Width="1100" ResizeMode="NoResize" Icon="/Post_icon.png">
+    <Grid Background="#FF1A1A1A">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="900*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Home" HorizontalAlignment="Center" Margin="0,42,0,0" VerticalAlignment="Top" Height="72" Width="180" Background="#FF1A1A1A" Foreground="#FFFF7B00" BorderBrush="#FF1A1A1A" FontSize="20" FontFamily="Arial Black"/>
+        <Button Content="registration" HorizontalAlignment="Center" Margin="0,148,0,0" VerticalAlignment="Top" Height="62" Width="180" Click="Button_Click_1" Foreground="#FFFF7B00" Background="#FF1A1A1A" FontSize="20" FontFamily="Arial Black" BorderBrush="#FF1A1A1A"/>
+        <Button Content="Order" HorizontalAlignment="Center" Margin="0,258,0,0" VerticalAlignment="Top" Height="54" Width="180" Click="Button_Click_1" Background="#FF1A1A1A" Foreground="#FFFF7B00" BorderBrush="#FF1A1A1A" FontSize="20" FontFamily="Arial Black"/>
+        <Button Content="Report of orders" HorizontalAlignment="Center" Margin="0,352,0,0" VerticalAlignment="Top" Height="69" Width="180" Click="Button_Click_1" Foreground="#FFFF7B00" Background="#FF1A1A1A" BorderBrush="#FF1A1A1A" FontSize="14" FontFamily="Arial Black"/>
+        <Button Content="Show information" HorizontalAlignment="Center" Margin="0,440,0,0" VerticalAlignment="Top" Height="68" Width="180" Click="Button_Click_1" Background="#FF1A1A1A" Foreground="#FFFF7B00" BorderBrush="#FF1A1A1A" FontSize="14" FontFamily="Arial Black"/>
+        <TextBlock TextWrapping="Wrap" Margin="36,552,36,0" Foreground="White" FontFamily="Arial Black"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/><Run/></TextBlock>
+
     </Grid>
 </Window>
