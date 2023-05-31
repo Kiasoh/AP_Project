@@ -1,11 +1,11 @@
-﻿<Window x:Class="POST_MAIL.Signup"
+﻿<Window x:Class="Mail_Man.SignUp"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:POST_MAIL"
+        xmlns:local="clr-namespace:Mail_Man"
         mc:Ignorable="d"
-        Title="Signup" Height="450" Width="800">
+        Title="SignUp" Height="450" Width="800">
     <Grid>
         
     </Grid>

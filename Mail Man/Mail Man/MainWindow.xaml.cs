@@ -10,18 +10,29 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace POST_MAIL
+namespace Mail_Man
 {
     /// <summary>
-    /// Interaction logic for Signup.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class Signup : Window
+    public partial class MainWindow : Window
     {
-        public Signup()
+        public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
