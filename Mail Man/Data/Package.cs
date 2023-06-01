@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    internal class Package
+    public class Package
     {
+
     }
 }
