@@ -11,7 +11,7 @@ namespace Data.Models
         string FirstName { get; set; }
         string LastName { get; set; }
         string email { get; set; }
-        int id { get; set; }
+        //string id { get; set; }
 
  //       T GetPerson(int id);
 

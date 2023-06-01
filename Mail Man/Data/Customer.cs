@@ -12,44 +12,47 @@ namespace Data
     {
         public static List <Customer> customers = new List<Customer>();
         string _firstName, _lastName, _email, username, password;
-        static int counter = 0;
-        int _id;
-        public Customer()
-        {
-            counter++;
-        }
+        string _ssn;
         public string FirstName
         {
             get { return _firstName; }
-            set { Regex regex = new Regex ( "^[A-Za-z]{3,32}$" ); if ( !regex.IsMatch ( value ) ) throw new Exception ( "Firstname Error" ); _firstName = value; }
+            set { if ( !value.IsThisNameValid() ) throw new Exception ( "Firstname Error" ); _firstName = value; }
         }
         public string LastName
         {
             get { return _lastName; }
-            set { Regex regex = new Regex ( "^[A-Za-z]{3,32}$" ); if ( !regex.IsMatch ( value ) ) throw new Exception ( "Lastname Error" ); _lastName = value; }
+            set { if ( !value.IsThisNameValid () ) throw new Exception ( "Lastname Error" ); _lastName = value; }
         }
         public string email
         {
             get { return _email; }
-            set { Regex regex = new Regex ( "^[A-Za-z0-9]{3,32}@[A-Za-z]{3,32}\\.[A-Za-z]{2,3}$" ); if ( !regex.IsMatch ( value ) ) throw new Exception ( "Email Error" ); _lastName = value; }
+            set { if ( !value.IsThisEmailValid () ) throw new Exception ( "Email Error" ); _lastName = value; }
         }
-        public int id
+        public string ssn
         {
-            get { return _id;}
-            set { foreach ( var customer in customers ) if ( customer.id == value ) throw new Exception ( "SSN ALready in use" ); _id = value; }
+            get { return _ssn;}
+            set { value.IsThisSSNValid (); _ssn = value; }
         }
         public void Generate_UsernamePassword()
         {
-            username = $"customer#{counter}";
-            Random rand = new Random(); int size = rand.Next ( 8, 32 );
+            Random rand = new Random (); int size = 8;
+            int randomInt = 0;
+            bool flag = true;
+            while (flag)
+            {
+                randomInt = rand.Next ( 0, 10000 );
+                flag = false;
+                foreach ( Customer customer in customers ) if ( customer.username.Substring(4) == ( randomInt.ToString () )) flag = true;
+            }
+            username = $"user{randomInt}";
             string validChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             char[] chars = new char[size]; for ( int i = 0; i < size; i++ ) chars[i] = '-';
-            chars[rand.Next ( 0, validChars.Length - 1 )] = validChars[rand.Next ( 0, 25 )];
-            chars[rand.Next ( 0, validChars.Length - 1 )] = validChars[rand.Next ( 26, 51 )];
-            chars[rand.Next ( 0, validChars.Length - 1 )] = validChars[rand.Next ( 51, validChars.Length - 1 )];
+            chars[rand.Next ( 0, validChars.Length  )] = validChars[rand.Next ( 0, 26 )];
+            chars[rand.Next ( 0, validChars.Length  )] = validChars[rand.Next ( 26, 52 )];
+            chars[rand.Next ( 0, validChars.Length  )] = validChars[rand.Next ( 52, validChars.Length )];
             for ( int i = 0; i < chars.Length; i++ )
             {
-                if ( chars[i] =='-') chars[i] = validChars[rand.Next ( 0, validChars.Length - 1 )];
+                if ( chars[i] =='-') chars[i] = validChars[rand.Next ( 0, validChars.Length )];
             }
             password = new string( chars );
             
@@ -65,9 +68,9 @@ namespace Data
 
             smtpClient.Send ( mailMessage );
         }
-        public static Customer GetCustomer(int id)
+        public static Customer GetCustomer(string id)
         {
-            return customers.First ( x => x.id == id ); // Exception if not found : InvalidOperationException
+            return customers.First ( x => x.ssn == id ); // Exception if not found : InvalidOperationException
         }
         public static Customer GetCustomer ( string username, string password )
         {
