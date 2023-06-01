@@ -23,5 +23,20 @@ namespace Mail_Man
         {
             InitializeComponent();
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void btnLog_In(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnSignUp_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
