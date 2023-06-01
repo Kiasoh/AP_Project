@@ -9,9 +9,10 @@
     <Grid>
         <TextBlock HorizontalAlignment="Center" Margin="0,417,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="MV Boli"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/><Run/></TextBlock>
         <Grid Margin="252,101,252,101" Background="#FF1A1A1A">
-            <PasswordBox Margin="68,135,68,88" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White"/>
+            <PasswordBox Margin="68,135,68,88" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White" Name="tbPassword"/>
             <TextBlock HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap" Text="Welcome" VerticalAlignment="Top" Foreground="White" Height="27" Width="132" FontWeight="Bold" FontFamily="Arial Black" FontSize="24"/>
-            <Button Content="Log In" HorizontalAlignment="Center" Margin="0,184,0,0" VerticalAlignment="Top" Height="30" Width="160" FontFamily="Microsoft YaHei UI" FontSize="14" BorderBrush="#FFFF7B00" Foreground="White" Click="Button_Click">
+            <Label FontSize="10" Visibility="Collapsed" Foreground="Red" HorizontalContentAlignment="Center" VerticalAlignment="Bottom" Height="30" Margin="56" RenderTransformOrigin="0.499,0.553" Name="lblError" >*Username or Password is incorrect!*</Label>
+            <Button Content="Log In" HorizontalAlignment="Center" Margin="0,184,0,0" VerticalAlignment="Top" Height="30" Width="160" FontFamily="Microsoft YaHei UI" FontSize="14" BorderBrush="#FFFF7B00" Foreground="White" Click="btnLog_In">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFB52121"/>
@@ -25,7 +26,7 @@
                 </Button.Resources>
             </Button>
         </Grid>
-        <TextBox HorizontalAlignment="Center" Margin="0,182,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="161" Height="25" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White"/>
+        <TextBox HorizontalAlignment="Center" Margin="0,182,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="161" Height="25" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White" Name ="tbUsername"/>
 
     </Grid>
 </Window>
