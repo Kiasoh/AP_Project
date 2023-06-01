@@ -1,0 +1,31 @@
+Customers:
+    show all orders
+    detail of one order
+    money in account
+    change username and password
+
+
+Employees:
+    add customer:
+        email password and username!
+    
+    register an order : must enter meli code
+
+    search orders by advanced search parameters:
+        save the results in .csv (sorted by date)
+    detail of one order
+
+    send confirmation email for recieving Package
+
+    see customer input 
+
+
+Packages:
+    recieving address
+    sender address
+    kind of Package (enum)
+    is expensive
+    weight
+    kind of post (enum)
+    phone number (nullable)
+    uniq id

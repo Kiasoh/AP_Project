@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Data;
 
 namespace Mail_Man
 {
@@ -24,9 +25,26 @@ namespace Mail_Man
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnLog_In(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                Employee employee = Employee.GetEmployee ( tbUsername.Text, tbPassword.Password );
+                lblError.Visibility = Visibility.Collapsed;
+                // go to Employee Page
+                this.Close();
+            }
+            catch (InvalidOperationException ex)
+            {
+                Customer customer = Customer.GetCustomer ( tbUsername.Text, tbPassword.Password );
+                lblError.Visibility = Visibility.Collapsed;
+                // go to Customer Page
+                this.Close ();
+            }
+            catch 
+            {
+                lblError.Visibility = Visibility.Visible;
+            }
         }
     }
 }
