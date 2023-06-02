@@ -11,7 +11,7 @@ namespace Data
     public class Customer : IPerson<Customer>
     {
         public static List <Customer> customers = new List<Customer>();
-        string _firstName, _lastName, _email, username, password;
+        string _firstName, _lastName, _email, username, password , _phoneNumber;
         string _ssn;
         public string FirstName
         {
@@ -32,6 +32,11 @@ namespace Data
         {
             get { return _ssn;}
             set { value.IsThisSSNValid (); _ssn = value; }
+        }
+        public string phoneNumber
+        {
+            get { return _phoneNumber; }
+            set { if ( !value.IsThisPhoneNumberValid () ) throw new Exception ( "Invalid PhoneNumber" );  _phoneNumber = value; }
         }
         public void Generate_UsernamePassword()
         {

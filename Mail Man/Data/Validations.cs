@@ -39,6 +39,11 @@ namespace Data
             foreach ( var emp in Employee.employees ) if ( emp.id == id ) throw new Exception ( "This ID is already in use!" );
             
         }
+        public static void IsThisUsernameValid ( this string id )
+        {
+            foreach ( var emp in Employee.employees ) if ( emp.username == id ) throw new Exception ( "This Username is already in use!" );
+
+        }
         public static bool IsThisPhoneNumberValid(this string s)
         {
             Regex regex = new Regex ( "^09[0-9]{9}$" );

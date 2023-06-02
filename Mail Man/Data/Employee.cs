@@ -43,9 +43,23 @@ namespace Data
             get { return _id; }
             set { value.IsThisIDValid (); _id = value; }
         }
+        public static void ReadData()
+        {
+
+        }
         public static Employee GetEmployee ( string username , string password )
         {
             return employees.First ( x => x.username == username && x.password == password); // Exception if not found : InvalidOperationException
+        }
+        public Employee(string FirstName , string LastName , string email , string username , string password , string id)
+        {
+            this.id = id;
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            this.email = email;
+            this.username = username;
+            this.password = password;
+            employees.Add ( this );
         }
 
     }
