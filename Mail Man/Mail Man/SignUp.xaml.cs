@@ -37,27 +37,31 @@ namespace Mail_Man
             }
             if (!flag)
             {
-                lblNameError.Content = "*Name is Invalid!*";
+                lblName.Content = "*Name is Invalid!*";
+                lblName.Visibility = Visibility.Visible;
             }
             else
             {
-                lblNameError.Content = ""; 
+                lblName.Content = "";
             }
         }
         private void btnSignUp_Click(object sender, RoutedEventArgs e)
         {
             bool flag = true;
-            if (Passbox.Password.IsThisPasswordValid())
+            if (!Passbox.Password.IsThisPasswordValid())
             {
                 lblPassword.Content = "*Invalid Password!*";
                 flag = false;
             }
+            else lblPassword.Content = flag.ToString();
             if (Passbox.Password != AgainPassbox.Password)
             {
                 lblPasswordRe.Content = "*Password doesn't match!*";
                 flag = false;
             }
-            if (flag && lblID.Content == lblUsername.Content && lblUsername.Content == lblNameError.Content && lblUsername.Content == lblEmail.Content )
+            else lblPasswordRe.Content = "";
+            //lblPasswordRe.Content =  ( flag && lblID.Content == lblUsername.Content && lblUsername.Content == lblName.Content && lblUsername.Content == lblEmail.Content).ToString();
+            if (flag && lblID.Content == lblUsername.Content && lblUsername.Content == lblName.Content && lblUsername.Content == lblEmail.Content )
             {
                 string[] s = tbName.Text.Split ( ' ' );
                 new Employee ( s[0], s[1], tbEmail.Text, tbUsername.Text, Passbox.Password, tbID.Text );
@@ -71,24 +75,25 @@ namespace Mail_Man
         private void tbID_TextChanged ( object sender, TextChangedEventArgs e )
         {
             try { tbID.Text.IsThisIDValid (); lblID.Content = ""; }
-            catch (Exception ex) { lblID.Content = $"*{ex.Message}*"; }
+            catch (Exception ex) { lblID.Visibility = Visibility.Visible; lblID.Content = $"*{ex.Message}*"; }
         }
 
         private void tbusername_TextChanged ( object sender, TextChangedEventArgs e )
         {
-            try { tbUsername.Text.IsThisUsernameValid (); lblUsername.Content = ""; }
-            catch (Exception ex) { lblUsername.Content = $"*{ex.Message}*"; }
+            try { tbUsername.Text.IsThisUsernameValid (); lblUsername.Content = $""; }
+            catch (Exception ex) { lblUsername.Visibility = Visibility.Visible; lblUsername.Content = $"*{ex.Message}*"; }
         }
 
         private void tbEmail_TextChanged ( object sender, TextChangedEventArgs e )
         {
-            if ( tbEmail.Text.IsThisEmailValid() )
+            if ( !tbEmail.Text.IsThisEmailValid() )
             {
-                lblNameError.Content = "*Email is Invalid!*";
+                lblEmail.Visibility = Visibility.Visible;
+                lblEmail.Content = "*Email is Invalid!*";
             }
             else
             {
-                lblNameError.Content = "";
+                lblEmail.Content = "";
             }
         }
     }

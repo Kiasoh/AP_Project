@@ -31,9 +31,16 @@ namespace Mail_Man
             Close();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void btnRegistration(object sender, RoutedEventArgs e)
         {
-
+            var SignupFrm = new SignUp();
+            SignupFrm.Show();
+            this.Close();
+        }
+        
+        private void Button_Click_1 ( object sender, RoutedEventArgs e )
+        {
+            Close ();
         }
     }
 }

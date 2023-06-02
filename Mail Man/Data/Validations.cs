@@ -22,7 +22,7 @@ namespace Data
         }
         public static bool IsThisPasswordValid ( this string name )
         {
-            Regex regex = new Regex ( " ^(?=.*[a - z])(?=.*[A - Z] )(?=.*\\d )[a - zA - Z\\d]{ 8, 32}$" );
+            Regex regex = new Regex ( "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,32}$" );
             if ( regex.IsMatch ( name ) ) return true;
             return false;
         }

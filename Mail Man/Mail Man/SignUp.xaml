@@ -8,8 +8,8 @@
         Title="SignUp" Height="450" Width="800" Background="#FF181615" WindowStyle="None">
     <Grid>
         <Grid Margin="232,10,232,10" Background="#FF1A1A1A">
-            <TextBox x:Name="tbName" HorizontalAlignment="Center" Margin="0,31,0,0" TextWrapping="Wrap" Text="Name and Family name" VerticalAlignment="Top" Width="172" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White" Height="27" TextChanged="tbName_TextChanged"/>
-            <Label x:Name="lblNameError" HorizontalAlignment="Center" Margin="0,53,0,0" FontSize="10" VerticalAlignment="Top" Width="172" Foreground="Red" Height="30" HorizontalContentAlignment="Center"></Label>
+            <TextBox x:Name="tbName" HorizontalAlignment="Center" Margin="0,31,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="172" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White" Height="27" TextChanged="tbName_TextChanged"/>
+            <Label x:Name="lblName" Content="" Visibility="Collapsed" HorizontalAlignment="Center" Margin="0,53,0,0" FontSize="10" VerticalAlignment="Top" Width="172" Foreground="Red" Height="30" HorizontalContentAlignment="Center"></Label>
             <Label x:Name="lblID" HorizontalAlignment="Center" Margin="0,102,0,0" FontSize="10" VerticalAlignment="Top" Width="172" Foreground="Red" Height="30" HorizontalContentAlignment="Center"></Label>
             <Label x:Name="lblUsername" HorizontalAlignment="Center" Margin="0,158,0,0" FontSize="10" VerticalAlignment="Top" Width="172" Foreground="Red" Height="30" HorizontalContentAlignment="Center"></Label>
             <Label x:Name="lblEmail" HorizontalAlignment="Center" Margin="0,210,0,0" FontSize="10" VerticalAlignment="Top" Width="172" Foreground="Red" Height="30" HorizontalContentAlignment="Center"></Label>

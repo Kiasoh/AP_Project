@@ -12,4 +12,14 @@
     <None Remove="NewFolder\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MilestoneTG.TransientFaultHandling.Data.SqlServer" Version="2.2.0" />
+    <PackageReference Include="SqlAppLockHelper.SystemData" Version="1.0.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Database\Database.sqlproj" />
+  </ItemGroup>
+
 </Project>

@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mail Man", "Mail Man\Mail M
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{B898F394-7727-419D-82A9-51C07F894DA8}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database", "Database\Database.sqlproj", "{D0F8C2A0-EB0D-4591-AE93-2925AE787201}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,12 @@ Global
 		{B898F394-7727-419D-82A9-51C07F894DA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B898F394-7727-419D-82A9-51C07F894DA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B898F394-7727-419D-82A9-51C07F894DA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0F8C2A0-EB0D-4591-AE93-2925AE787201}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0F8C2A0-EB0D-4591-AE93-2925AE787201}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0F8C2A0-EB0D-4591-AE93-2925AE787201}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D0F8C2A0-EB0D-4591-AE93-2925AE787201}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0F8C2A0-EB0D-4591-AE93-2925AE787201}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0F8C2A0-EB0D-4591-AE93-2925AE787201}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
