@@ -17,7 +17,7 @@
         <Button x:Name="btn_report" Content="Report of orders" HorizontalAlignment="Center" VerticalAlignment="Center" Height="69" Width="180" Click="Button_Click_1" Foreground="#FFFF7B00" Background="#FF181615" BorderBrush="#FF181615" FontSize="14" FontFamily="Arial Rounded MT Bold" FontWeight="Bold"/>
         <Button x:Name="btn_show_information" Content="Show information" HorizontalAlignment="Center" Margin="0,344,0,0" VerticalAlignment="Top" Height="68" Width="180" Click="Button_Click_1" Background="#FF181615" Foreground="#FFFF7B00" BorderBrush="#FF181615" FontSize="14" FontFamily="Arial Rounded MT Bold" FontWeight="Bold"/>
         <Border BorderBrush="#FF1B1818" BorderThickness="1" Background="#FF181615" Panel.ZIndex="-10"/>
-        <TextBlock HorizontalAlignment="Center" Margin="0,542,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="MV Boli"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/></TextBlock>
+        <TextBlock HorizontalAlignment="Center" Margin="0,551,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="MV Boli"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/></TextBlock>
         <Button Grid.Column="1" Content="X" HorizontalAlignment="Left" Margin="864,10,0,0" VerticalAlignment="Top" Click="Button_Click" Height="26" Width="26" Background="#FF181615" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00">
             <Button.Resources>
                 <Style TargetType="Border">
@@ -25,6 +25,28 @@
                 </Style>
             </Button.Resources>
         </Button>
+        <Grid x:Name="grid_checkuser" Grid.Column="1" Visibility="Collapsed">
+            <TextBox HorizontalAlignment="Center" Margin="0,166,0,0" TextWrapping="Wrap" Text="National ID Code" VerticalAlignment="Top" Width="320" Height="41" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White" Name ="tbUsername"/>
+            <Button Content="Search" HorizontalAlignment="Center" Margin="0,257,0,0" VerticalAlignment="Top" Height="43" Width="200">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFB52121"/>
+                        <GradientStop Color="#FFFF7B00" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <TextBlock HorizontalAlignment="Left" Margin="27,33,0,0" TextWrapping="Wrap" Text="Welcome to oredering page" VerticalAlignment="Top" Height="51" Width="350" Foreground="White" FontSize="24" FontWeight="Bold"/>
+        </Grid>
+        <Grid x:Name="grid_ordering" Grid.Column="1">
+            <TextBox HorizontalAlignment="Left" Margin="41,150,0,0" TextWrapping="Wrap" Text="Receiver address" VerticalAlignment="Top" Width="218" Height="31"/>
+            <TextBox HorizontalAlignment="Left" Margin="41,28,0,0" TextWrapping="Wrap" Text="Self address" VerticalAlignment="Top" Width="218" Height="31"/>
+
+        </Grid>
 
     </Grid>
 </Window>
