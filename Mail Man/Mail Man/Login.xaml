@@ -8,11 +8,11 @@
         Title="Login" Height="450" Width="800" Background="#FF181615" WindowStyle="None">
     <Grid>
         <TextBlock HorizontalAlignment="Center" Margin="0,417,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="MV Boli"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/><Run/></TextBlock>
-        <Grid Margin="252,101,252,101" Background="#FF1A1A1A">
-            <PasswordBox Margin="68,135,68,88" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White" Name="tbPassword"/>
+        <Grid Margin="252,101,250,78" Background="#FF1A1A1A">
+            <PasswordBox Margin="68,136,69,111" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White" Name="tbPassword"/>
             <TextBlock HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap" Text="Welcome" VerticalAlignment="Top" Foreground="White" Height="27" Width="132" FontWeight="Bold" FontFamily="Arial Black" FontSize="24"/>
             <Label FontSize="10" Visibility="Collapsed" Foreground="Red" HorizontalContentAlignment="Center" VerticalAlignment="Bottom" Height="30" Margin="56" RenderTransformOrigin="0.499,0.553" Name="lblError" >*Username or Password is incorrect!*</Label>
-            <Button Content="Log In" HorizontalAlignment="Center" Margin="0,184,0,0" VerticalAlignment="Top" Height="30" Width="160" FontFamily="Microsoft YaHei UI" FontSize="14" BorderBrush="#FFFF7B00" Foreground="White" Click="btnLog_In">
+            <Button Content="Log In" HorizontalAlignment="Center" Margin="0,189,0,0" VerticalAlignment="Top" Height="31" Width="160" FontFamily="Microsoft YaHei UI" FontSize="14" BorderBrush="#FFFF7B00" Foreground="White" Click="btnLog_In">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFB52121"/>
@@ -25,8 +25,9 @@
                     </Style>
                 </Button.Resources>
             </Button>
+            <Button x:Name="btn_signup" Content="Join it now" HorizontalAlignment="Center" Margin="0,238,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FF1A1A1A" Background="#FF1A1A1A" FontWeight="Bold" Height="23" Width="89"/>
         </Grid>
-        <TextBox HorizontalAlignment="Center" Margin="0,182,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="161" Height="25" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White" Name ="tbUsername"/>
+        <TextBox HorizontalAlignment="Center" Margin="0,181,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="162" Height="25" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White" Name ="tbUsername"/>
 
     </Grid>
 </Window>
