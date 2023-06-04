@@ -25,7 +25,7 @@
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button x:Name="btn_signup" Content="Join it now" HorizontalAlignment="Center" Margin="0,238,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FF1A1A1A" Background="#FF1A1A1A" FontWeight="Bold" Height="23" Width="89"/>
+            <Button x:Name="btn_signup" Click="btn_Signup" Content="Join now" HorizontalAlignment="Center" Margin="0,238,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FF1A1A1A" Background="#FF1A1A1A" FontWeight="Bold" Height="23" Width="89"/>
         </Grid>
         <TextBox HorizontalAlignment="Center" Margin="0,181,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="162" Height="25" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White" Name ="tbUsername"/>
 

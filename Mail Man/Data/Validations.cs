@@ -28,7 +28,8 @@ namespace Data
         }
         public static void IsThisSSNValid ( this string id )
         {
-            if ( id[0]!=0 || id[1]!=0 || id.Length !=10 ) throw new Exception ( "Invalid SSN!" );
+            Regex regex = new Regex ( "^00[0-9]{8}$" );
+            if ( !regex.IsMatch ( id ) ) throw new Exception ( "Invalid SSN!" );
             foreach (var cust in Customer.customers) if (cust.ssn == id) throw new Exception ( "This SSN is already in use!" );
             
         }

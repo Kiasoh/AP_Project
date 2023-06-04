@@ -6,6 +6,8 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Data.Models;
 using System.Net.Mail;
+using System.Net;
+
 namespace Data
 {
     public class Customer : IPerson<Customer>
@@ -38,6 +40,15 @@ namespace Data
             get { return _phoneNumber; }
             set { if ( !value.IsThisPhoneNumberValid () ) throw new Exception ( "Invalid PhoneNumber" );  _phoneNumber = value; }
         }
+        public Customer (string FirstName, string LastName , string email , string phoneNumber)
+        {
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            this.email= email;
+            this.phoneNumber = phoneNumber;
+            Generate_UsernamePassword();
+            customers.Add ( this );
+        }
         public void Generate_UsernamePassword()
         {
             Random rand = new Random (); int size = 8;
@@ -52,26 +63,33 @@ namespace Data
             username = $"user{randomInt}";
             string validChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             char[] chars = new char[size]; for ( int i = 0; i < size; i++ ) chars[i] = '-';
-            chars[rand.Next ( 0, validChars.Length  )] = validChars[rand.Next ( 0, 26 )];
-            chars[rand.Next ( 0, validChars.Length  )] = validChars[rand.Next ( 26, 52 )];
-            chars[rand.Next ( 0, validChars.Length  )] = validChars[rand.Next ( 52, validChars.Length )];
+            chars[rand.Next ( 0, size  )] = validChars[rand.Next ( 0, 26 )];
+            chars[rand.Next ( 0, size  )] = validChars[rand.Next ( 26, 52 )];
+            chars[rand.Next ( 0, size  )] = validChars[rand.Next ( 52, validChars.Length )];
             for ( int i = 0; i < chars.Length; i++ )
             {
-                if ( chars[i] =='-') chars[i] = validChars[rand.Next ( 0, validChars.Length )];
+                if ( chars[i] =='-') chars[i] = validChars[rand.Next ( 0, validChars.Length - 1 )];
             }
             password = new string( chars );
-            
-            SmtpClient smtpClient = new SmtpClient();
-            var mailMessage = new MailMessage
-            {
-                From = new MailAddress ( "kiarashs37@gmail.com" ),
-                Subject = "Your MAIL MAN Username and Password",
-                Body = $"<h1>Hello</h1><h2>Username :{username}</h2><h3>Password :{password}</h3>",
-                IsBodyHtml = true,
-            };
-            mailMessage.To.Add ( email );
 
-            smtpClient.Send ( mailMessage );
+            string fromMail = "KSPostmailProject@gmail.com";
+            string fromPassword = "App password";
+
+            MailMessage message = new MailMessage ();
+            message.From = new MailAddress ( fromMail );
+            message.Subject = "Your MAIL MAN Username and Password";
+            message.To.Add ( new MailAddress ( email ) );
+            message.Body = "<html><body> Username :{username} Password :{password} </body></html>";
+            message.IsBodyHtml = true;
+
+            var smtpClient = new SmtpClient ( "smtp.gmail.com" )
+            {
+                Port = 587,
+                Credentials = new NetworkCredential ( fromMail, fromPassword ),
+                EnableSsl = true,
+            };
+
+            smtpClient.Send ( message );
         }
         public static Customer GetCustomer(string id)
         {

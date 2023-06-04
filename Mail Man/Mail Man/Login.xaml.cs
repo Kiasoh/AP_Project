@@ -46,5 +46,11 @@ namespace Mail_Man
                 lblError.Visibility = Visibility.Visible;
             }
         }
+        private void btn_Signup ( object sender , RoutedEventArgs e)
+        {
+            var SignupFrm = new SignUp ();
+            SignupFrm.Show ();
+            this.Close ();
+        }
     }
 }
