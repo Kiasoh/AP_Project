@@ -32,6 +32,8 @@ namespace Mail_Man
                 Employee employee = Employee.GetEmployee ( tbUsername.Text, tbPassword.Password );
                 lblError.Visibility = Visibility.Collapsed;
                 // go to Employee Page
+                var clientMenu = new MainWindow ();
+                clientMenu.Show ();
                 this.Close();
             }
             catch (InvalidOperationException ex)
@@ -39,6 +41,8 @@ namespace Mail_Man
                 Customer customer = Customer.GetCustomer ( tbUsername.Text, tbPassword.Password );
                 lblError.Visibility = Visibility.Collapsed;
                 // go to Customer Page
+                var clientMenu = new ClientMenu (customer);
+                clientMenu.Show ();
                 this.Close ();
             }
             catch 
