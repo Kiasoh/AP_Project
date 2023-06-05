@@ -28,7 +28,7 @@ namespace Data
         public string email
         {
             get { return _email; }
-            set { if ( !value.IsThisEmailValid () ) throw new Exception ( "Email Error" ); _lastName = value; }
+            set { if ( !value.IsThisEmailValid () ) throw new Exception ( "Email Error" ); _email = value; }
         }
         public string ssn
         {
@@ -73,13 +73,13 @@ namespace Data
             password = new string( chars );
 
             string fromMail = "KSPostmailProject@gmail.com";
-            string fromPassword = "App password";
+            string fromPassword = "yqgexaoctofxhorv";
 
             MailMessage message = new MailMessage ();
             message.From = new MailAddress ( fromMail );
             message.Subject = "Your MAIL MAN Username and Password";
             message.To.Add ( new MailAddress ( email ) );
-            message.Body = "<html><body> Username :{username} Password :{password} </body></html>";
+            message.Body = $"<html><body>Welcome to our service {FirstName} {LastName}!\n Username :{username} Password :{password} </body></html>";
             message.IsBodyHtml = true;
 
             var smtpClient = new SmtpClient ( "smtp.gmail.com" )
