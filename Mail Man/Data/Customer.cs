@@ -40,13 +40,20 @@ namespace Data
             get { return _phoneNumber; }
             set { if ( !value.IsThisPhoneNumberValid () ) throw new Exception ( "Invalid PhoneNumber" );  _phoneNumber = value; }
         }
-        public Customer (string FirstName, string LastName , string email , string phoneNumber)
+        public Customer (string FirstName, string LastName , string email , string ssn , string phoneNumber , string? username = null , string? password = null)
         {
             this.FirstName = FirstName;
             this.LastName = LastName;
             this.email= email;
             this.phoneNumber = phoneNumber;
-            Generate_UsernamePassword();
+            this.ssn = ssn;
+            if (password == null && username == null)
+                Generate_UsernamePassword();
+            else
+            {
+                this.password = password;
+                this.username = username;
+            }
             customers.Add ( this );
         }
         public void Generate_UsernamePassword()
@@ -90,6 +97,10 @@ namespace Data
             };
 
             smtpClient.Send ( message );
+        }
+        public override string ToString ()
+        {
+            return $"{FirstName} ; {LastName} ; {email} ; {ssn} ; {phoneNumber} ; {username} ; {password}";
         }
         public static Customer GetCustomer(string id)
         {

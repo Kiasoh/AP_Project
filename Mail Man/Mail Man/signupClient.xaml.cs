@@ -29,7 +29,7 @@ namespace Mail_Man
             if ( lblID.Content == lblName.Content && lblName.Content == lblEmail.Content )
             {
                 string[] s = tbName.Text.Split ( ' ' );
-                new Customer ( s[0], s[1], tbEmail.Text, tb_phonenumber.Text );
+                new Customer ( s[0], s[1], tbEmail.Text, tbID.Text ,tb_phonenumber.Text );
                 var logInFrm = new Login ();
                 logInFrm.Show ();
                 this.Close ();
