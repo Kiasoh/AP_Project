@@ -96,5 +96,70 @@ namespace Mail_Man
                 lblEmail.Content = "";
             }
         }
+
+        private void Name_Watermark_GotFocus ( object sender, RoutedEventArgs e )
+        {
+            Name_Watermark.Visibility = Visibility.Collapsed;
+            tbName.Visibility = Visibility.Visible;
+            tbName.Focus ();
+        }
+
+        private void tbName_LostFocus ( object sender, RoutedEventArgs e )
+        {
+            if ( string.IsNullOrEmpty ( tbName.Text ))
+            {
+                tbName.Visibility = Visibility.Collapsed;
+                Name_Watermark.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void tbID_Watermark_GotFocus ( object sender, RoutedEventArgs e )
+        {
+            tbID_Watermark.Visibility = Visibility.Collapsed;
+            tbID.Visibility = Visibility.Visible;
+            tbID.Focus ();
+        }
+
+        private void tbID_LostFocus ( object sender, RoutedEventArgs e )
+        {
+            if ( string.IsNullOrEmpty ( tbID.Text ) )
+            {
+                tbID.Visibility = Visibility.Collapsed;
+                tbID_Watermark.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void tbEmail_Watermark_GotFocus ( object sender, RoutedEventArgs e )
+        {
+            tbEmail_Watermark.Visibility = Visibility.Collapsed;
+            tbEmail.Visibility = Visibility.Visible;
+            tbEmail.Focus ();
+        }
+
+        private void tbEmail_LostFocus ( object sender, RoutedEventArgs e )
+        {
+            if ( string.IsNullOrEmpty ( tbEmail.Text ) )
+            {
+                tbEmail.Visibility = Visibility.Collapsed;
+                tbEmail_Watermark.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void tbUsername_Watermark_GotFocus ( object sender, RoutedEventArgs e )
+        {
+            tbUsername_Watermark.Visibility = Visibility.Collapsed;
+            tbUsername.Visibility = Visibility.Visible;
+            tbUsername.Focus ();
+        }
+
+        private void tbUsername_LostFocus ( object sender, RoutedEventArgs e )
+        {
+            if ( string.IsNullOrEmpty ( tbUsername.Text ) )
+            {
+                tbUsername.Visibility = Visibility.Collapsed;
+                tbUsername_Watermark.Visibility = Visibility.Visible;
+            }
+        }
+
     }
 }

@@ -86,5 +86,69 @@ namespace Mail_Man
             }
             else lblPhonenumber.Content = "";
         }
+
+        private void Name_Watermark_GotFocus ( object sender, RoutedEventArgs e )
+        {
+            Name_Watermark.Visibility = Visibility.Collapsed;
+            tbName.Visibility = Visibility.Visible;
+            tbName.Focus ();
+        }
+
+        private void tbName_LostFocus ( object sender, RoutedEventArgs e )
+        {
+            if ( string.IsNullOrEmpty ( tbName.Text ) )
+            {
+                tbName.Visibility = Visibility.Collapsed;
+                Name_Watermark.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void tbID_Watermark_GotFocus ( object sender, RoutedEventArgs e )
+        {
+            tbID_Watermark.Visibility = Visibility.Collapsed;
+            tbID.Visibility = Visibility.Visible;
+            tbID.Focus ();
+        }
+
+        private void tbID_LostFocus ( object sender, RoutedEventArgs e )
+        {
+            if ( string.IsNullOrEmpty ( tbID.Text ) )
+            {
+                tbID.Visibility = Visibility.Collapsed;
+                tbID_Watermark.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void tbEmail_Watermark_GotFocus ( object sender, RoutedEventArgs e )
+        {
+            tbEmail_Watermark.Visibility = Visibility.Collapsed;
+            tbEmail.Visibility = Visibility.Visible;
+            tbEmail.Focus ();
+        }
+
+        private void tbEmail_LostFocus ( object sender, RoutedEventArgs e )
+        {
+            if ( string.IsNullOrEmpty ( tbEmail.Text ) )
+            {
+                tbEmail.Visibility = Visibility.Collapsed;
+                tbEmail_Watermark.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void tb_phonenumber_Watermark_GotFocus ( object sender, RoutedEventArgs e )
+        {
+            tb_phonenumber_Watermark.Visibility = Visibility.Collapsed;
+            tb_phonenumber.Visibility = Visibility.Visible;
+            tb_phonenumber.Focus ();
+        }
+
+        private void tb_phonenumber_LostFocus ( object sender, RoutedEventArgs e )
+        {
+            if ( string.IsNullOrEmpty ( tb_phonenumber.Text ) )
+            {
+                tb_phonenumber.Visibility = Visibility.Collapsed;
+                tb_phonenumber_Watermark.Visibility = Visibility.Visible;
+            }
+        }
     }
 }

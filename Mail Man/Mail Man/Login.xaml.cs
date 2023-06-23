@@ -56,5 +56,21 @@ namespace Mail_Man
             SignupFrm.Show ();
             this.Close ();
         }
+
+        private void tbUsername_Watermark_GotFocus ( object sender, RoutedEventArgs e )
+        {
+            tbUsername_Watermark.Visibility = Visibility.Collapsed;
+            tbUsername.Visibility = Visibility.Visible;
+            tbUsername.Focus ();
+        }
+
+        private void tbUsername_LostFocus ( object sender, RoutedEventArgs e )
+        {
+            if ( string.IsNullOrEmpty ( tbUsername.Text ) )
+            {
+                tbUsername.Visibility = Visibility.Collapsed;
+                tbUsername_Watermark.Visibility = Visibility.Visible;
+            }
+        }
     }
 }
