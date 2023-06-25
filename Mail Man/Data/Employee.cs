@@ -43,10 +43,6 @@ namespace Data
             get { return _id; }
             set { value.IsThisIDValid (); _id = value; }
         }
-        public static void ReadData()
-        {
-
-        }
         public static Employee GetEmployee ( string username , string password )
         {
             return employees.First ( x => x.username == username && x.password == password); // Exception if not found : InvalidOperationException
@@ -60,6 +56,10 @@ namespace Data
             this.username = username;
             this.password = password;
             employees.Add ( this );
+        }
+        public override string ToString ()
+        {
+            return $"{FirstName} ; {LastName} ; {email} ; {id} ; {username} ; {password}";
         }
 
     }

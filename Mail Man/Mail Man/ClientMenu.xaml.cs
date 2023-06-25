@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using Data;
 namespace Mail_Man
 {
     /// <summary>
@@ -19,8 +19,10 @@ namespace Mail_Man
     /// </summary>
     public partial class ClientMenu : Window
     {
-        public ClientMenu()
+        public Customer? customer = null;
+        public ClientMenu(Customer customer)
         {
+            this.customer = customer;
             InitializeComponent();
         }
 

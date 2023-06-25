@@ -32,6 +32,8 @@ namespace Mail_Man
                 Employee employee = Employee.GetEmployee ( tbUsername.Text, tbPassword.Password );
                 lblError.Visibility = Visibility.Collapsed;
                 // go to Employee Page
+                var clientMenu = new MainWindow ();
+                clientMenu.Show ();
                 this.Close();
             }
             catch (InvalidOperationException ex)
@@ -39,11 +41,35 @@ namespace Mail_Man
                 Customer customer = Customer.GetCustomer ( tbUsername.Text, tbPassword.Password );
                 lblError.Visibility = Visibility.Collapsed;
                 // go to Customer Page
+                var clientMenu = new ClientMenu (customer);
+                clientMenu.Show ();
                 this.Close ();
             }
             catch 
             {
                 lblError.Visibility = Visibility.Visible;
+            }
+        }
+        private void btn_Signup ( object sender , RoutedEventArgs e)
+        {
+            var SignupFrm = new SignUp ();
+            SignupFrm.Show ();
+            this.Close ();
+        }
+
+        private void tbUsername_Watermark_GotFocus ( object sender, RoutedEventArgs e )
+        {
+            tbUsername_Watermark.Visibility = Visibility.Collapsed;
+            tbUsername.Visibility = Visibility.Visible;
+            tbUsername.Focus ();
+        }
+
+        private void tbUsername_LostFocus ( object sender, RoutedEventArgs e )
+        {
+            if ( string.IsNullOrEmpty ( tbUsername.Text ) )
+            {
+                tbUsername.Visibility = Visibility.Collapsed;
+                tbUsername_Watermark.Visibility = Visibility.Visible;
             }
         }
     }

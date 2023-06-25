@@ -6,6 +6,8 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Data.Models;
 using System.Net.Mail;
+using System.Net;
+
 namespace Data
 {
     public class Customer : IPerson<Customer>
@@ -26,7 +28,7 @@ namespace Data
         public string email
         {
             get { return _email; }
-            set { if ( !value.IsThisEmailValid () ) throw new Exception ( "Email Error" ); _lastName = value; }
+            set { if ( !value.IsThisEmailValid () ) throw new Exception ( "Email Error" ); _email = value; }
         }
         public string ssn
         {
@@ -37,6 +39,22 @@ namespace Data
         {
             get { return _phoneNumber; }
             set { if ( !value.IsThisPhoneNumberValid () ) throw new Exception ( "Invalid PhoneNumber" );  _phoneNumber = value; }
+        }
+        public Customer (string FirstName, string LastName , string email , string ssn , string phoneNumber , string? username = null , string? password = null)
+        {
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            this.email= email;
+            this.phoneNumber = phoneNumber;
+            this.ssn = ssn;
+            if (password == null && username == null)
+                Generate_UsernamePassword();
+            else
+            {
+                this.password = password;
+                this.username = username;
+            }
+            customers.Add ( this );
         }
         public void Generate_UsernamePassword()
         {
@@ -52,26 +70,37 @@ namespace Data
             username = $"user{randomInt}";
             string validChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             char[] chars = new char[size]; for ( int i = 0; i < size; i++ ) chars[i] = '-';
-            chars[rand.Next ( 0, validChars.Length  )] = validChars[rand.Next ( 0, 26 )];
-            chars[rand.Next ( 0, validChars.Length  )] = validChars[rand.Next ( 26, 52 )];
-            chars[rand.Next ( 0, validChars.Length  )] = validChars[rand.Next ( 52, validChars.Length )];
+            chars[rand.Next ( 0, size  )] = validChars[rand.Next ( 0, 26 )];
+            chars[rand.Next ( 0, size  )] = validChars[rand.Next ( 26, 52 )];
+            chars[rand.Next ( 0, size  )] = validChars[rand.Next ( 52, validChars.Length )];
             for ( int i = 0; i < chars.Length; i++ )
             {
-                if ( chars[i] =='-') chars[i] = validChars[rand.Next ( 0, validChars.Length )];
+                if ( chars[i] =='-') chars[i] = validChars[rand.Next ( 0, validChars.Length - 1 )];
             }
             password = new string( chars );
-            
-            SmtpClient smtpClient = new SmtpClient();
-            var mailMessage = new MailMessage
-            {
-                From = new MailAddress ( "kiarashs37@gmail.com" ),
-                Subject = "Your MAIL MAN Username and Password",
-                Body = $"<h1>Hello</h1><h2>Username :{username}</h2><h3>Password :{password}</h3>",
-                IsBodyHtml = true,
-            };
-            mailMessage.To.Add ( email );
 
-            smtpClient.Send ( mailMessage );
+            string fromMail = "KSPostmailProject@gmail.com";
+            string fromPassword = "yqgexaoctofxhorv";
+
+            MailMessage message = new MailMessage ();
+            message.From = new MailAddress ( fromMail );
+            message.Subject = "Your MAIL MAN Username and Password";
+            message.To.Add ( new MailAddress ( email ) );
+            message.Body = $"<html><body>Welcome to our service {FirstName} {LastName}!\n Username :{username} Password :{password} </body></html>";
+            message.IsBodyHtml = true;
+
+            var smtpClient = new SmtpClient ( "smtp.gmail.com" )
+            {
+                Port = 587,
+                Credentials = new NetworkCredential ( fromMail, fromPassword ),
+                EnableSsl = true,
+            };
+
+            smtpClient.Send ( message );
+        }
+        public override string ToString ()
+        {
+            return $"{FirstName} ; {LastName} ; {email} ; {ssn} ; {phoneNumber} ; {username} ; {password}";
         }
         public static Customer GetCustomer(string id)
         {

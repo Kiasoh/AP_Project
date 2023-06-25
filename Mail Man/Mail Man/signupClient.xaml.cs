@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using Data;
 namespace Mail_Man
 {
     /// <summary>
@@ -26,22 +26,129 @@ namespace Mail_Man
 
         private void btnSignUp_Click(object sender, RoutedEventArgs e)
         {
-
+            if ( lblID.Content == lblName.Content && lblName.Content == lblEmail.Content )
+            {
+                string[] s = tbName.Text.Split ( ' ' );
+                new Customer ( s[0], s[1], tbEmail.Text, tbID.Text ,tb_phonenumber.Text );
+                var logInFrm = new Login ();
+                logInFrm.Show ();
+                this.Close ();
+            }
         }
 
         private void tbName_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            string[] s = tbName.Text.Split ( ' ' );
+            bool flag = true;
+            foreach ( string ss in s )
+            {
+                if ( !ss.IsThisNameValid () )
+                {
+                    flag = false;
+                    break;
+                }
+            }
+            if ( !flag )
+            {
+                lblName.Content = "*Name is Invalid!*";
+                lblName.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                lblName.Content = "";
+            }
         }
 
         private void tbID_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            try { tbID.Text.IsThisSSNValid (); lblID.Content = ""; }
+            catch ( Exception ex ) { lblID.Visibility = Visibility.Visible; lblID.Content = $"*{ex.Message}*"; }
         }
 
         private void tbEmail_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if ( !tbEmail.Text.IsThisEmailValid () )
+            {
+                lblEmail.Visibility = Visibility.Visible;
+                lblEmail.Content = "*Email is Invalid!*";
+            }
+            else
+            {
+                lblEmail.Content = "";
+            }
+        }
 
+        private void tb_phonenumber_TextChanged ( object sender, TextChangedEventArgs e )
+        {
+            if ( !tb_phonenumber.Text.IsThisPhoneNumberValid () )
+            {
+                lblPhonenumber.Content = "*Phone number is Invalid!*";
+            }
+            else lblPhonenumber.Content = "";
+        }
+
+        private void Name_Watermark_GotFocus ( object sender, RoutedEventArgs e )
+        {
+            Name_Watermark.Visibility = Visibility.Collapsed;
+            tbName.Visibility = Visibility.Visible;
+            tbName.Focus ();
+        }
+
+        private void tbName_LostFocus ( object sender, RoutedEventArgs e )
+        {
+            if ( string.IsNullOrEmpty ( tbName.Text ) )
+            {
+                tbName.Visibility = Visibility.Collapsed;
+                Name_Watermark.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void tbID_Watermark_GotFocus ( object sender, RoutedEventArgs e )
+        {
+            tbID_Watermark.Visibility = Visibility.Collapsed;
+            tbID.Visibility = Visibility.Visible;
+            tbID.Focus ();
+        }
+
+        private void tbID_LostFocus ( object sender, RoutedEventArgs e )
+        {
+            if ( string.IsNullOrEmpty ( tbID.Text ) )
+            {
+                tbID.Visibility = Visibility.Collapsed;
+                tbID_Watermark.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void tbEmail_Watermark_GotFocus ( object sender, RoutedEventArgs e )
+        {
+            tbEmail_Watermark.Visibility = Visibility.Collapsed;
+            tbEmail.Visibility = Visibility.Visible;
+            tbEmail.Focus ();
+        }
+
+        private void tbEmail_LostFocus ( object sender, RoutedEventArgs e )
+        {
+            if ( string.IsNullOrEmpty ( tbEmail.Text ) )
+            {
+                tbEmail.Visibility = Visibility.Collapsed;
+                tbEmail_Watermark.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void tb_phonenumber_Watermark_GotFocus ( object sender, RoutedEventArgs e )
+        {
+            tb_phonenumber_Watermark.Visibility = Visibility.Collapsed;
+            tb_phonenumber.Visibility = Visibility.Visible;
+            tb_phonenumber.Focus ();
+        }
+
+        private void tb_phonenumber_LostFocus ( object sender, RoutedEventArgs e )
+        {
+            if ( string.IsNullOrEmpty ( tb_phonenumber.Text ) )
+            {
+                tb_phonenumber.Visibility = Visibility.Collapsed;
+                tb_phonenumber_Watermark.Visibility = Visibility.Visible;
+            }
         }
     }
 }
