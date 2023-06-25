@@ -38,12 +38,38 @@ namespace Mail_Man
             this.Close ();
         }
         
-        private void Button_Click_1 ( object sender, RoutedEventArgs e )
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Close ();
+
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void btn_order_Click ( object sender, RoutedEventArgs e )
+        {
+            grid_checkuser.Visibility = Visibility.Collapsed;
+            grid_reportOfOrders.Visibility = Visibility.Collapsed;
+            grid_ordering.Visibility = Visibility.Visible;
+        }
+
+        private void btn_report_Click ( object sender, RoutedEventArgs e )
+        {
+            grid_checkuser.Visibility = Visibility.Collapsed;
+            grid_reportOfOrders.Visibility = Visibility.Collapsed;
+            grid_ordering.Visibility = Visibility.Collapsed;
+        }
+
+        private void btn_show_information_Click ( object sender, RoutedEventArgs e )
+        {
+            grid_checkuser.Visibility = Visibility.Collapsed;
+            grid_reportOfOrders.Visibility = Visibility.Collapsed;
+            grid_ordering.Visibility = Visibility.Collapsed;
+        }
+
+        private void weight_txt_TextChanged ( object sender, TextChangedEventArgs e )
+        {
+
+        }
+
+        private void btn_home_Click ( object sender, RoutedEventArgs e )
         {
 
         }

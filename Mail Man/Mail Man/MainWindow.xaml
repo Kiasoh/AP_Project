@@ -11,11 +11,11 @@
             <ColumnDefinition Width="200*"/>
             <ColumnDefinition Width="900*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btn_home" Content="Home" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="72" Width="180" Foreground="#FFFF7B00" FontSize="20" FontFamily="Arial Rounded MT Bold" RenderTransformOrigin="0.511,0.41" FontWeight="Bold" Background="#FF181615" BorderBrush="#FF181615" Click="Button_Click_1"/>
+        <Button x:Name="btn_home" Content="Home" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="72" Width="180" Foreground="#FFFF7B00" FontSize="20" FontFamily="Arial Rounded MT Bold" RenderTransformOrigin="0.511,0.41" FontWeight="Bold" Background="#FF181615" BorderBrush="#FF181615" Click="btn_home_Click"/>
         <Button x:Name="btn_registration" Content="Registration" HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Top" Height="62" Width="180" Click="btnRegistration" Foreground="#FFFF7B00" Background="#FF181615" FontSize="20" FontFamily="Arial Rounded MT Bold" BorderBrush="#FF181615" FontWeight="Bold"/>
-        <Button x:Name="btn_order" Content="order" HorizontalAlignment="Center" Margin="0,190,0,0" VerticalAlignment="Top" Height="55" Width="180" Click="Button_Click_1" Background="#FF181615" Foreground="#FFFF7B00" BorderBrush="#FF181615" FontSize="20" FontFamily="Arial Rounded MT Bold" FontWeight="Bold"/>
-        <Button x:Name="btn_report" Content="Report of orders" HorizontalAlignment="Center" VerticalAlignment="Center" Height="69" Width="180" Click="Button_Click_1" Foreground="#FFFF7B00" Background="#FF181615" BorderBrush="#FF181615" FontSize="14" FontFamily="Arial Rounded MT Bold" FontWeight="Bold"/>
-        <Button x:Name="btn_show_information" Content="Show information" HorizontalAlignment="Center" Margin="0,344,0,0" VerticalAlignment="Top" Height="68" Width="180" Click="Button_Click_1" Background="#FF181615" Foreground="#FFFF7B00" BorderBrush="#FF181615" FontSize="14" FontFamily="Arial Rounded MT Bold" FontWeight="Bold"/>
+        <Button x:Name="btn_order" Content="Order" HorizontalAlignment="Center" Margin="0,190,0,0" VerticalAlignment="Top" Height="55" Width="180" Click="btn_order_Click" Background="#FF181615" Foreground="#FFFF7B00" BorderBrush="#FF181615" FontSize="20" FontFamily="Arial Rounded MT Bold" FontWeight="Bold"/>
+        <Button x:Name="btn_report" Content="Report of orders" HorizontalAlignment="Center" VerticalAlignment="Center" Height="69" Width="180" Click="btn_report_Click" Foreground="#FFFF7B00" Background="#FF181615" BorderBrush="#FF181615" FontSize="14" FontFamily="Arial Rounded MT Bold" FontWeight="Bold"/>
+        <Button x:Name="btn_show_information" Content="Show information" HorizontalAlignment="Center" Margin="0,344,0,0" VerticalAlignment="Top" Height="68" Width="180" Click="btn_show_information_Click" Background="#FF181615" Foreground="#FFFF7B00" BorderBrush="#FF181615" FontSize="14" FontFamily="Arial Rounded MT Bold" FontWeight="Bold"/>
         <Border BorderBrush="#FF1B1818" BorderThickness="1" Background="#FF181615" Panel.ZIndex="-10"/>
         <TextBlock HorizontalAlignment="Center" Margin="0,535,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="MV Boli"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/></TextBlock>
         <Grid x:Name="grid_checkuser" Grid.Column="1" Visibility="Collapsed">
@@ -36,7 +36,7 @@
             <TextBlock HorizontalAlignment="Left" Margin="27,33,0,0" TextWrapping="Wrap" Text="Welcome to oredering page" VerticalAlignment="Top" Height="51" Width="350" Foreground="White" FontSize="24" FontWeight="Bold"/>
         </Grid>
 
-        <Grid x:Name="grid_ordering" Grid.Column="1" Visibility="Collapsed">
+        <Grid x:Name="grid_ordering" Grid.Column="1" Visibility="Visible">
             <TextBox x:Name="recieveadress_txt" HorizontalAlignment="Left" Margin="587,61,0,0" TextWrapping="Wrap" Text="Receiver address" VerticalAlignment="Top" Width="218" Height="31" BorderBrush="#FFFF7B00" Foreground="#FFFF7B00" Background="#FF181615"/>
             <TextBox x:Name="sendaddress_txt" HorizontalAlignment="Left" Margin="41,61,0,0" TextWrapping="Wrap" Text="Self address" VerticalAlignment="Top" Width="218" Height="31" BorderBrush="#FFFF7B00" Foreground="#FFFF7B00" Background="#FF181615"/>
             <ComboBox x:Name="packagecontent_dropbox" HorizontalAlignment="Left" Margin="41,178,0,0" VerticalAlignment="Top" Width="218" IsDropDownOpen="True" SelectionChanged="ComboBox_SelectionChanged" Height="32" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" Background="#FF181615">
@@ -50,7 +50,7 @@
                 <CheckBox Content="usuall"/>
                 <CheckBox Content="VIP"/>
             </ComboBox>
-            <TextBlock x:Name="showtotal_txtblock" HorizontalAlignment="Left" Margin="80,409,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="46" Width="179" Background="Black"/>
+            <TextBlock x:Name="showtotal_txtblock" HorizontalAlignment="Left" Margin="80,409,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="46" Width="179" Background="Black"/>
             <TextBlock x:Name="total_txtblock" HorizontalAlignment="Left" Margin="10,416,0,0" TextWrapping="Wrap" Text="Total : " VerticalAlignment="Top" Height="29" Width="109" Foreground="#FF0B821D" FontSize="24"/>
             <Button x:Name="calculation_btn" Content="Calculation" HorizontalAlignment="Left" Margin="41,507,0,0" VerticalAlignment="Top" Height="39" Width="218" Background="#FF181615" BorderBrush="#FFFF7B00" Foreground="#FFFF7B00"/>
             <Button x:Name="submit_bin" Content="submit" HorizontalAlignment="Left" Margin="587,507,0,0" VerticalAlignment="Top" Height="39" Width="218" Background="#FFFF7B00" BorderBrush="#FF181615" Foreground="#FF181615" FontSize="18"/>

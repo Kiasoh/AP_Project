@@ -27,7 +27,7 @@ namespace Data
     public class Package
     {
         static List<Package> packages = new List<Package>();
-        Customer? customer;
+        Customer customer;
         public TypeOfPackage typeOfPackage;
         public TypeOfDelivery typeOfDelivery;
         public Status status;

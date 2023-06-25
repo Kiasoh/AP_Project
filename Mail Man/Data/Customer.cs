@@ -14,6 +14,7 @@ namespace Data
     {
         public static List <Customer> customers = new List<Customer>();
         string _firstName, _lastName, _email, username, password , _phoneNumber;
+        public int money = 0;
         string _ssn;
         public string FirstName
         {
@@ -56,6 +57,12 @@ namespace Data
             }
             customers.Add ( this );
         }
+        public void ChangePU ( string p, string u )
+        {
+            password = p;
+            username = u;
+        }
+
         public void Generate_UsernamePassword()
         {
             Random rand = new Random (); int size = 8;
