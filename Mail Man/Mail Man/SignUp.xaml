@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mail_Man"
         mc:Ignorable="d"
-        Title="SignUp" Height="450" Width="800" Background="#FF181615" WindowStyle="None">
+        Title="SignUp" Height="450" Width="800" Background="#FF181615" ResizeMode="NoResize">
     <Grid>
         <Grid Margin="232,10,232,10" Background="#FF1A1A1A">
             <TextBox x:Name="tbName" HorizontalAlignment="Center" LostFocus="tbName_LostFocus" Margin="0,31,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="172" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White" Height="27" TextChanged="tbName_TextChanged"/>
@@ -38,7 +38,7 @@
                 </Button.Background>
             </Button>
         </Grid>
-        <TextBlock HorizontalAlignment="Center" Margin="0,417,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="MV Boli"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Center" Margin="0,401,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="MV Boli"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/><Run/></TextBlock>
 
     </Grid>
 </Window>

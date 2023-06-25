@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mail_Man"
         mc:Ignorable="d"
-        Title="ClientMenu" Height="600" Width="1100" ResizeMode="NoResize" WindowStyle="None">
+        Title="ClientMenu" Height="600" Width="1100" ResizeMode="NoResize">
     <Grid Background="#FF1A1A1A">
         <Border BorderBrush="#FF1B1818" BorderThickness="1" Background="#FF181615" Panel.ZIndex="-10" Margin="0,0,900,0"/>
         <Button x:Name="btn_home" Content="Home" HorizontalAlignment="Left" Margin="10,24,0,0" VerticalAlignment="Top" Height="72" Width="180" Foreground="#FFFF7B00" FontSize="20" FontFamily="Arial Rounded MT Bold" RenderTransformOrigin="0.511,0.41" FontWeight="Bold" Background="#FF181615" BorderBrush="#FF181615" Click="Button_Click_1"/>

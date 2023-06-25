@@ -42,5 +42,10 @@ namespace Mail_Man
         {
             Close ();
         }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
