@@ -16,19 +16,25 @@
         <Button x:Name="btn_change_UserPass" Content="Change Username&#xD;&#xA;or Password" Click="btn_change_UserPass_Click" HorizontalAlignment="Left" Margin="10,355,0,0" VerticalAlignment="Top" Height="88" Width="190" Foreground="#FFFF7B00" FontSize="18" FontFamily="Arial Rounded MT Bold" RenderTransformOrigin="0.511,0.41" Background="#FF181615" BorderBrush="#FF181615"/>
 
 
-        <Grid x:Name="grid_reportOfOrders" Margin="205,10,0,-10" Visibility="Collapsed">
+        <Grid x:Name="grid_reportOfOrders" Margin="205,10,0,-10" Visibility="Visible">
             <TextBlock x:Name="txtblock_PersonalId" HorizontalAlignment="Left" Margin="56,60,0,0" TextWrapping="Wrap" Text="Personal ID" VerticalAlignment="Top" Height="36" Width="132" Cursor="" Foreground="#FFFF7B00" FontSize="24"/>
             <TextBlock x:Name="txtblock_PersonalId_Copy" HorizontalAlignment="Left" Margin="56,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="170" Cursor="" Foreground="#FFFF7B00" FontSize="24"><Run Text="Package Type"/><LineBreak/><Run/></TextBlock>
             <TextBlock x:Name="txtblock_PersonalId_Copy1" HorizontalAlignment="Left" Margin="56,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="170" Cursor="" Foreground="#FFFF7B00" FontSize="24"><Run Text="Price Paid"/><LineBreak/><Run/></TextBlock>
             <TextBlock x:Name="txtblock_PersonalId_Copy2" HorizontalAlignment="Left" Margin="56,328,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="132" Cursor="" Foreground="#FFFF7B00" FontSize="24"><Run Text="Weigh"/><LineBreak/><Run/></TextBlock>
             <TextBlock x:Name="txtblock_PersonalId_Copy3" HorizontalAlignment="Left" Margin="56,416,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="132" Cursor="" Foreground="#FFFF7B00" FontSize="24"><Run Text="Post Type"/><LineBreak/><Run/></TextBlock>
-            <Button Content="Search&#xD;&#xA;" Margin="597,498,88,54" Background="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="36" FontFamily="Bahnschrift Condensed"/>
-            <TextBlock HorizontalAlignment="Center" Margin="0,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" Width="218" Background="Black" Foreground="#FFFF7B00" RenderTransformOrigin="0.653,1.083"/>
-            <TextBlock HorizontalAlignment="Center" Margin="0,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" Width="218" Background="Black" Foreground="#FFFF7B00" RenderTransformOrigin="0.653,1.083"/>
-            <TextBlock HorizontalAlignment="Center" Margin="0,318,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" Width="218" Background="Black" Foreground="#FFFF7B00" RenderTransformOrigin="0.653,1.083"/>
-            <TextBlock HorizontalAlignment="Center" Margin="0,416,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" Width="218" Background="Black" Foreground="#FFFF7B00" RenderTransformOrigin="0.653,1.083"/>
-            <TextBlock HorizontalAlignment="Center" Margin="0,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" Width="218" Background="Black" Foreground="#FFFF7B00" RenderTransformOrigin="0.653,1.083"/>
-            <Grid Height="100" Width="100"/>
+            <Button Content="Search&#xD;&#xA;" Margin="597,498,88,40" Background="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="36" FontFamily="Bahnschrift Condensed"/>
+            <TextBlock x:Name="pricePaid_txt" HorizontalAlignment="Center" Margin="0,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" Width="218" Background="Black" Foreground="#FFFF7B00" RenderTransformOrigin="0.653,1.083"/>
+            <TextBlock x:Name="weigh_txt" HorizontalAlignment="Center" Margin="0,318,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" Width="218" Background="Black" Foreground="#FFFF7B00" RenderTransformOrigin="0.653,1.083"/>
+            <TextBlock x:Name="personalID_txt" HorizontalAlignment="Center" Margin="0,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" Width="218" Background="Black" Foreground="#FFFF7B00" RenderTransformOrigin="0.653,1.083"/>
+            <ComboBox x:Name="postType_combobox" HorizontalAlignment="Center" Margin="0,416,0,0" VerticalAlignment="Top" Width="218" RenderTransformOrigin="-1.062,13.458" Height="32">
+                <CheckBox Content="VIP"/>
+                <CheckBox Content="usuall"/>
+            </ComboBox>
+            <ComboBox x:Name="packagetop_combobox" HorizontalAlignment="Center" Margin="0,152,0,0" VerticalAlignment="Top" Width="218" Height="32">
+                <CheckBox Content="Object"/>
+                <CheckBox Content="Document"/>
+                <CheckBox Content="breackable"/>
+            </ComboBox>
         </Grid>
         <Grid x:Name="grid_showinformation" Margin="205,0,0,0" Visibility ="Collapsed">
             <TextBox HorizontalAlignment="Left" Margin="45,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291" Height="38" BorderBrush="#FFFF7B00" Background="Black"/>
@@ -55,7 +61,6 @@
                     </LinearGradientBrush>
                 </TextBlock.Foreground><Run Text="Charge Account"/><LineBreak/><Run/></TextBlock>
             <TextBox x:Name="cardNumber" HorizontalAlignment="Left" Margin="500,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="316" Height="34" TextChanged="cardNumber_TextChanged"/>
-            <TextBox x:Name="expiration" HorizontalAlignment="Left" Margin="500,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="316" Height="34" />
             <TextBox x:Name="cvv2" HorizontalAlignment="Left" Margin="500,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="316" Height="35" RenderTransformOrigin="0.491,0.025" TextChanged="cvv2_TextChanged"/>
             <TextBox x:Name="amount" HorizontalAlignment="Left" Margin="500,399,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="316" Height="44" TextChanged="amount_TextChanged"/>
             <Button x:Name="pay_btn" Content="Pay" HorizontalAlignment="Left" Margin="551,499,0,0" VerticalAlignment="Top" Height="59" Width="228" Click="pay_btn_Click" FontSize="24" Foreground="White" BorderBrush="#FF1A1A1A">
@@ -70,8 +75,11 @@
             <TextBlock x:Name="card_txtblock_Copy" HorizontalAlignment="Left" Margin="500,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119" Foreground="#FF37FF00" Height="19" Text="Expiration Date"/>
             <TextBlock x:Name="card_txtblock_Copy1" HorizontalAlignment="Left" Margin="500,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119" Foreground="#FF37FF00" Height="19" Text="CVV2"/>
             <TextBlock x:Name="card_txtblock_Copy2" HorizontalAlignment="Left" Margin="500,367,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119" Foreground="#FF37FF00" Height="19" Text="Amount"/>
+            <TextBox x:Name="expiration_year" HorizontalAlignment="Left" Margin="500,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="35"/>
+            <TextBox x:Name="expiration_month" HorizontalAlignment="Left" Margin="696,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="35"/>
+            <TextBlock HorizontalAlignment="Left" Margin="625,214,0,0" TextWrapping="Wrap" Text="    /" VerticalAlignment="Top" Height="35" Width="66" Foreground="White" FontSize="24"/>
         </Grid>
-        <Grid x:Name="grid_changeinformation" Margin="205,0,0,0" Visibility="Visible">
+        <Grid x:Name="grid_changeinformation" Margin="205,0,0,0" Visibility="Collapsed">
             <TextBlock HorizontalAlignment="Left" Margin="30,46,0,0" TextWrapping="Wrap" Text="Username : " VerticalAlignment="Top" Foreground="White" Height="38" Width="176" FontSize="24"/>
             <TextBlock HorizontalAlignment="Left" Margin="30,200,0,0" TextWrapping="Wrap" Text="Password : " VerticalAlignment="Top" Foreground="White" Height="38" Width="176" FontSize="24"/>
             <Button x:Name="Save" Content="Save" HorizontalAlignment="Left" Click="Save_Click" Margin="660,508,0,0" VerticalAlignment="Top" Height="46" Width="188" FontSize="18">
