@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ceTe.DynamicPDF;
 using Data;
+using Microsoft.Win32;
 namespace Mail_Man
 {
     /// <summary>
@@ -35,7 +38,7 @@ namespace Mail_Man
             grid_reportOfOrders.Visibility = Visibility.Collapsed;
             grid_wallet.Visibility = Visibility.Collapsed;
         }
-
+        // start of wallet
         private void btn_wallert_Click ( object sender, RoutedEventArgs e )
         {
             grid_changeinformation.Visibility = Visibility.Collapsed;
@@ -44,25 +47,6 @@ namespace Mail_Man
             grid_wallet.Visibility = Visibility.Visible;
             totalMoney_txtblock.Text = Return_Money ( customer.money );
         }
-
-
-
-        private void btn_change_UserPass_Click ( object sender, RoutedEventArgs e )
-        {
-            grid_changeinformation.Visibility = Visibility.Visible;
-            grid_showinformation.Visibility = Visibility.Collapsed;
-            grid_reportOfOrders.Visibility = Visibility.Collapsed;
-            grid_wallet.Visibility = Visibility.Collapsed;
-        }
-
-        private void btn_report_Click ( object sender, RoutedEventArgs e )
-        {
-            grid_changeinformation.Visibility = Visibility.Collapsed;
-            grid_showinformation.Visibility = Visibility.Collapsed;
-            grid_reportOfOrders.Visibility = Visibility.Visible;
-            grid_wallet.Visibility = Visibility.Collapsed;
-        }
-
         private void cardNumber_TextChanged ( object sender, TextChangedEventArgs e )
         {
 
@@ -76,40 +60,74 @@ namespace Mail_Man
         {
 
         }
-        private string Return_Money(int a)
+        private string Return_Money ( int a )
         {
             string s = "";
-            for ( int i = 0; i < a.ToString ().Length; i++ )
+            string ss = a.ToString ();
+            for ( int i = 0; i < ss.Length; i++ )
             {
-                if ( i % 3 == 0 && i != 0 ) s += ",";
-                s += ( a % 10 ).ToString ();
+                if ( i % 3 == 0 && i != 0 ) s = "," + s;
+                s = Char.ToString ( ss[ss.Length - i - 1] ) + s;
             }
             return s;
         }
+
         private void pay_btn_Click ( object sender, RoutedEventArgs e )
         {
-            int a;
-            if (cardNumber.Text.IsCardValid() && cvv2.Text.IsThisCVVValid() && int.TryParse(amount.Text , out a)) //add expiration valodation
+            
+            try
             {
-                customer.money += a;
-                if ( customer.money.ToString ().Length > 15 ) totalMoney_txtblock.Text = "Unable to show the amount!";
+                int a;
+                if ( cardNumber.Text.IsCardValid () && cvv2.Text.IsThisCVVValid () && int.TryParse ( amount.Text, out a ) && !( Convert.ToDateTime ( $"{int.Parse ( expiration_month.Text )}/{1}/{int.Parse(expiration_year.Text)}" ).IsExpired () )  ) //add expiration valodation
+                {
+                    customer.money += a;
+                    if ( customer.money.ToString ().Length > 15 ) totalMoney_txtblock.Text = "Unable to show the amount!";
+                    else
+                    {
+                        totalMoney_txtblock.Text = Return_Money ( customer.money );
+                    }
+                    if ( ( MessageBox.Show ( "Do you want to save the reciept?", "Reciept", MessageBoxButton.YesNo, MessageBoxImage.Question ) ) == MessageBoxResult.Yes )
+                    {
+                        /*
+                        SaveFileDialog saveFileDialog = new SaveFileDialog ();
+                        string s = "Your Reciept";
+                        saveFileDialog.FileName = "Reciept"; // Default file name
+                        saveFileDialog.DefaultExt = ".pdf"; // Default file extension
+                        saveFileDialog.Filter = "PDF documents (.pdf)|*.pdf"; // Filter files by extension
+                        if ( saveFileDialog.ShowDialog () == true )
+
+                        {
+                            Document document = new Document ();
+
+                            ceTe.DynamicPDF.Page page = new ceTe.DynamicPDF.Page ( PageSize.Letter, PageOrientation.Portrait, 54.0f );
+
+                            document.Pages.Add ( page );
+
+                            string labelText = "Hello World...\nFrom DynamicPDF Generator for .NET\nDynamicPDF.com";
+                            Label label = new Label ( labelText, 0, 0, 504, 100, Font.Helvetica, 18, TextAlign.Center );
+                            page.Elements.Add ( label );
+
+                            document.Draw ( "Output.pdf" );
+                        }
+                        */
+                    }
+                }
                 else
                 {
-                    totalMoney_txtblock.Text = Return_Money ( customer.money );
+                    if ( !cardNumber.Text.IsCardValid () ) MessageBox.Show ( "Invalid card number.", "Error", MessageBoxButton.OK, MessageBoxImage.Error );
+                    if ( !cvv2.Text.IsThisCVVValid () ) MessageBox.Show ( "Invalid cvv.", "Error", MessageBoxButton.OK, MessageBoxImage.Error );
+                    if ( !int.TryParse ( amount.Text, out a ) ) MessageBox.Show ( "Invalid amount.", "Error", MessageBoxButton.OK, MessageBoxImage.Error );
+                    if ( Convert.ToDateTime ( $"{int.Parse ( expiration_month.Text )}/{1}/{int.Parse ( expiration_year.Text )}" ).IsExpired () ) MessageBox.Show ( "Expired.", "Error", MessageBoxButton.OK, MessageBoxImage.Error );
+                    else if ( a < 0 ) MessageBox.Show ( "Invalid amount.", "Error", MessageBoxButton.OK, MessageBoxImage.Error );
                 }
             }
-            else
-            {
-                if ( !cardNumber.Text.IsCardValid () ) MessageBox.Show("Invalid card number." , "Error" , MessageBoxButton.OK, MessageBoxImage.Error );
-                if (!cvv2.Text.IsThisCVVValid () ) MessageBox.Show ( "Invalid cvv.", "Error", MessageBoxButton.OK, MessageBoxImage.Error );
-                if (!int.TryParse ( amount.Text, out a ) ) MessageBox.Show ( "Invalid amount.", "Error", MessageBoxButton.OK, MessageBoxImage.Error );
-                else if ( a  < 0) MessageBox.Show ( "Invalid amount.", "Error", MessageBoxButton.OK, MessageBoxImage.Error );
-            }
+            catch { }
         }
-
-        private void btn_home_Click ( object sender, RoutedEventArgs e )
+        //end of wallet
+        //start of change username and password
+        private void btn_change_UserPass_Click ( object sender, RoutedEventArgs e )
         {
-            grid_changeinformation.Visibility = Visibility.Collapsed;
+            grid_changeinformation.Visibility = Visibility.Visible;
             grid_showinformation.Visibility = Visibility.Collapsed;
             grid_reportOfOrders.Visibility = Visibility.Collapsed;
             grid_wallet.Visibility = Visibility.Collapsed;
@@ -121,19 +139,45 @@ namespace Mail_Man
         }
         private void Password_TextChanged ( object sender, TextChangedEventArgs e )
         {
-            if( Password.Text.IsThisPasswordValid()) {lblPassword.Content = $""; }
+            if ( Password.Text.IsThisPasswordValid () ) { lblPassword.Content = $""; }
             else { lblPassword.Visibility = Visibility.Visible; lblPassword.Content = $"*Password invalid!*"; }
         }
         private void Save_Click ( object sender, RoutedEventArgs e )
         {
-            if (lblPassword.Content == lblUsername.Content)
+            if ( lblPassword.Content == lblUsername.Content )
             {
-                customer.ChangePU(Password.Text , tbUsername.Text);
-                btn_home_Click (sender , e);
+                customer.ChangePU ( Password.Text, tbUsername.Text );
+                btn_home_Click ( sender, e );
                 SaveAndRead.WriteData ();
             }
+
+        }
+        //end of change username and password
+        //start of report
+        private void btn_report_Click ( object sender, RoutedEventArgs e )
+        {
+            grid_changeinformation.Visibility = Visibility.Collapsed;
+            grid_showinformation.Visibility = Visibility.Collapsed;
+            grid_reportOfOrders.Visibility = Visibility.Visible;
+            grid_wallet.Visibility = Visibility.Collapsed;
+        }
+        private void Search_Click ( object sender, RoutedEventArgs e )
+        {
             
         }
+        //end of report
 
+        
+
+        private void btn_home_Click ( object sender, RoutedEventArgs e )
+        {
+            grid_changeinformation.Visibility = Visibility.Collapsed;
+            grid_showinformation.Visibility = Visibility.Collapsed;
+            grid_reportOfOrders.Visibility = Visibility.Collapsed;
+            grid_wallet.Visibility = Visibility.Collapsed;
+        }
+        
+
+        
     }
 }

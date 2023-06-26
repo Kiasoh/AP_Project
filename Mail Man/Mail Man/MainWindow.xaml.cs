@@ -21,8 +21,10 @@ namespace Mail_Man
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        Employee? employee = null;
+        public MainWindow(Employee employee)
         {
+            this.employee = employee;
             InitializeComponent();
         }
 
@@ -42,13 +44,18 @@ namespace Mail_Man
         {
 
         }
-
+        //start of order
         private void btn_order_Click ( object sender, RoutedEventArgs e )
         {
             grid_checkuser.Visibility = Visibility.Collapsed;
             grid_reportOfOrders.Visibility = Visibility.Collapsed;
             grid_ordering.Visibility = Visibility.Visible;
         }
+        private void btnOrder_Click ( object sender, RoutedEventArgs e )
+        {
+
+        }
+        //end of order
 
         private void btn_report_Click ( object sender, RoutedEventArgs e )
         {
@@ -73,5 +80,7 @@ namespace Mail_Man
         {
 
         }
+
+        
     }
 }

@@ -31,6 +31,7 @@ namespace Mail_Man
                 string[] s = tbName.Text.Split ( ' ' );
                 new Customer ( s[0], s[1], tbEmail.Text, tbID.Text ,tb_phonenumber.Text );
                 var logInFrm = new Login ();
+                SaveAndRead.WriteData ();
                 logInFrm.Show ();
                 this.Close ();
             }

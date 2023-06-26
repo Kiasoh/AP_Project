@@ -43,7 +43,7 @@ namespace Data
         public static void IsThisUsernameValid ( this string id )
         {
             foreach ( var emp in Employee.employees ) if ( emp.username == id ) throw new Exception ( "This Username is already in use!" );
-
+            foreach ( var emp in Customer.customers ) if ( emp.username == id ) throw new Exception ( "This Username is already in use!" );
         }
         public static bool IsThisPhoneNumberValid(this string s)
         {
@@ -60,8 +60,8 @@ namespace Data
         public static bool IsExpired (this DateTime date)
         {
             DateTime now = DateTime.Now;
-            if(date.CompareTo ( now ) < 0) return false;
-            return true;
+            if(date.CompareTo ( now ) < 0) return true;
+            return false;
         }
         public static bool IsCardValid ( this string code )
         {

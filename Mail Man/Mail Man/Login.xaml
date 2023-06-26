@@ -26,7 +26,7 @@
             </Button>
             <Button x:Name="btn_signup" Click="btn_Signup" Content="Join now" HorizontalAlignment="Center" Margin="0,252,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FF1A1A1A" Background="#FF1A1A1A" FontWeight="Bold" Height="23" Width="89"/>
         </Grid>
-        <TextBox HorizontalAlignment="Center" Margin="0,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" Height="25" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White" Name ="tbUsername" LostFocus="tbUsername_LostFocus"/>
+        <TextBox HorizontalAlignment="Center" Margin="0,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" Height="29" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White" Name ="tbUsername" LostFocus="tbUsername_LostFocus"/>
         <TextBox x:Name="tbUsername_Watermark" HorizontalAlignment="Center" Margin="0,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="Gray" Height="29" GotFocus="tbUsername_Watermark_GotFocus" TextChanged="tbUsername_Watermark_TextChanged" Text="Username"/>
         <PasswordBox HorizontalAlignment="Center"  Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White" x:Name="tbPassword" VerticalAlignment="Top" Width="172" Height="30" Margin="0,242,0,0"/>
 

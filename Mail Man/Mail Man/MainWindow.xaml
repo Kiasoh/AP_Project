@@ -37,7 +37,7 @@
             <TextBlock HorizontalAlignment="Left" Margin="27,33,0,0" TextWrapping="Wrap" Text="Welcome to oredering page" VerticalAlignment="Top" Height="51" Width="350" Foreground="White" FontSize="24" FontWeight="Bold"/>
         </Grid>
 
-        <Grid x:Name="grid_ordering" Grid.Column="1" Visibility="Collapsed">
+        <Grid x:Name="grid_ordering" Grid.Column="1" Visibility="Visible">
             <TextBox x:Name="recieveadress_txt" HorizontalAlignment="Left" Margin="587,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="32" BorderBrush="#FFFF7B00" Foreground="#FFFF7B00" Background="#FF181615"/>
             <TextBox x:Name="sendaddress_txt" HorizontalAlignment="Left" Margin="41,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="31" BorderBrush="#FFFF7B00" Foreground="#FFFF7B00" Background="#FF181615"/>
             <ComboBox x:Name="packagecontent_dropbox" HorizontalAlignment="Left" Margin="41,178,0,0" VerticalAlignment="Top" Width="218" IsDropDownOpen="True" SelectionChanged="ComboBox_SelectionChanged" Height="32" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" Background="#FF181615">
@@ -127,7 +127,8 @@
 
         </Grid>
 
-        <Grid x:Name="grid_showPackage" Grid.Column="1" Visibility="Visible" Margin="10,10,0,0" >
+        <Grid x:Name="grid_showPackage" Grid.Column="1" Visibility="Collapsed" Margin="10,10,0,0" >
+            
             <ComboBox x:Name="packagecontent_dropbox_Copy" HorizontalAlignment="Left" Margin="36,227,0,0" VerticalAlignment="Top" Width="235" IsDropDownOpen="True" SelectionChanged="ComboBox_SelectionChanged" Height="42" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" Background="#FF181615">
                 <CheckBox Content="Object"/>
                 <CheckBox Content="Document"/>
@@ -180,7 +181,7 @@
             </TextBlock>
             <Label x:Name="sender_lbl" Grid.Column="1" Content="Label" HorizontalAlignment="Left" Margin="36,100,0,0" VerticalAlignment="Top" Height="62" Width="203" BorderBrush="#FFFF7B00" Foreground="#FFFF7B00"/>
             <Label x:Name="reciever_lbl" Grid.Column="1" Content="Label" HorizontalAlignment="Left" Margin="627,100,0,0" VerticalAlignment="Top" Height="62" Width="203" BorderBrush="#FFFF7B00" Foreground="#FFFF7B00"/>
-            <Label x:Name="weigh_lbl" Content="Label" HorizontalAlignment="Left" Margin="627,215,0,0" VerticalAlignment="Top" Height="54" Width="203" BorderBrush="#FFFF7B00" Foreground="#FFFF7B00"/>
+            <Label x:Name="weigh_lbl" Content="Label" HorizontalAlignment="Left" Margin="627,215,0,0" VerticalAlignment="Top" Height="54" Width="203" BorderBrush="#FFFF7B00" Foreground="#FFFF7B00" />
             <TextBlock x:Name="comment_txtblock" TextWrapping="Wrap" Text="Comment" Margin="36,520,28,10" Background="White"/>
             <ComboBox HorizontalAlignment="Left" Margin="36,435,0,0" VerticalAlignment="Top" Width="252" Height="44" Background="Black">
                 <CheckBox Content="Registered"/>

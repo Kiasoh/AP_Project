@@ -9,23 +9,23 @@
     <Grid Background="#FF1A1A1A">
         <Border BorderBrush="#FF1B1818" BorderThickness="1" Background="#FF181615" Panel.ZIndex="-10" Margin="0,0,900,0"/>
         <Button x:Name="btn_home" Content="Home" HorizontalAlignment="Left" Margin="10,24,0,0" VerticalAlignment="Top" Height="72" Width="180" Foreground="#FFFF7B00" FontSize="20" FontFamily="Arial Rounded MT Bold" RenderTransformOrigin="0.511,0.41" FontWeight="Bold" Background="#FF181615" BorderBrush="#FF181615" Click="btn_home_Click"/>
-        <Button x:Name="btn_report" Content="Report of orders" HorizontalAlignment="Left" VerticalAlignment="Top" Height="69" Width="180" Click="btn_report_Click" Foreground="#FFFF7B00" Background="#FF181615" BorderBrush="#FF181615" FontSize="18" FontFamily="Arial Rounded MT Bold" FontWeight="Bold" Margin="10,101,0,0"/>
+        <Button x:Name="btn_report" Content="Report of orders" HorizontalAlignment="Left" VerticalAlignment="Top" Height="69" Width="180" Click="btn_report_Click" Foreground="#FFFF7B00" Background="#FF181615" BorderBrush="#FF181615" FontSize="18" FontFamily="Arial Rounded MT Bold" FontWeight="Bold" Margin="10,101,0,0" />
         <TextBlock HorizontalAlignment="Left" Margin="50,542,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="MV Boli"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/></TextBlock>
         <Button x:Name="btn_show_information" Content="Show information" HorizontalAlignment="Left" Margin="10,188,0,0" VerticalAlignment="Top" Height="68" Width="180" Click="btn_show_information_Click" Background="#FF181615" Foreground="#FFFF7B00" BorderBrush="#FF181615" FontSize="18" FontFamily="Arial Rounded MT Bold" FontWeight="Bold"/>
         <Button x:Name="btn_wallert" Content="Wallet" HorizontalAlignment="Left" Click="btn_wallert_Click" Margin="10,0,0,0" VerticalAlignment="Center" Height="52" Width="180" Foreground="#FFFF7B00" FontSize="20" FontFamily="Arial Rounded MT Bold" RenderTransformOrigin="0.511,0.41" FontWeight="Bold" Background="#FF181615" BorderBrush="#FF181615"/>
         <Button x:Name="btn_change_UserPass" Content="Change Username&#xD;&#xA;or Password" Click="btn_change_UserPass_Click" HorizontalAlignment="Left" Margin="10,355,0,0" VerticalAlignment="Top" Height="88" Width="190" Foreground="#FFFF7B00" FontSize="18" FontFamily="Arial Rounded MT Bold" RenderTransformOrigin="0.511,0.41" Background="#FF181615" BorderBrush="#FF181615"/>
 
 
-        <Grid x:Name="grid_reportOfOrders" Margin="205,10,0,-10" Visibility="Visible">
+        <Grid x:Name="grid_reportOfOrders" Margin="205,10,0,-10" Visibility="Collapsed">
             <TextBlock x:Name="txtblock_PersonalId" HorizontalAlignment="Left" Margin="56,60,0,0" TextWrapping="Wrap" Text="Personal ID" VerticalAlignment="Top" Height="36" Width="132" Cursor="" Foreground="#FFFF7B00" FontSize="24"/>
             <TextBlock x:Name="txtblock_PersonalId_Copy" HorizontalAlignment="Left" Margin="56,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="170" Cursor="" Foreground="#FFFF7B00" FontSize="24"><Run Text="Package Type"/><LineBreak/><Run/></TextBlock>
             <TextBlock x:Name="txtblock_PersonalId_Copy1" HorizontalAlignment="Left" Margin="56,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="170" Cursor="" Foreground="#FFFF7B00" FontSize="24"><Run Text="Price Paid"/><LineBreak/><Run/></TextBlock>
             <TextBlock x:Name="txtblock_PersonalId_Copy2" HorizontalAlignment="Left" Margin="56,328,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="132" Cursor="" Foreground="#FFFF7B00" FontSize="24"><Run Text="Weigh"/><LineBreak/><Run/></TextBlock>
             <TextBlock x:Name="txtblock_PersonalId_Copy3" HorizontalAlignment="Left" Margin="56,416,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="132" Cursor="" Foreground="#FFFF7B00" FontSize="24"><Run Text="Post Type"/><LineBreak/><Run/></TextBlock>
-            <Button Content="Search&#xD;&#xA;" Margin="597,498,88,40" Background="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="36" FontFamily="Bahnschrift Condensed"/>
-            <TextBlock x:Name="pricePaid_txt" HorizontalAlignment="Center" Margin="0,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" Width="218" Background="Black" Foreground="#FFFF7B00" RenderTransformOrigin="0.653,1.083"/>
-            <TextBlock x:Name="weigh_txt" HorizontalAlignment="Center" Margin="0,318,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" Width="218" Background="Black" Foreground="#FFFF7B00" RenderTransformOrigin="0.653,1.083"/>
-            <TextBlock x:Name="personalID_txt" HorizontalAlignment="Center" Margin="0,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" Width="218" Background="Black" Foreground="#FFFF7B00" RenderTransformOrigin="0.653,1.083"/>
+            <Button Content="Search&#xD;&#xA;" Margin="597,498,88,40" Background="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="36" FontFamily="Bahnschrift Condensed" Click="Search_Click"/>
+            <TextBox x:Name="pricePaid_txt" HorizontalAlignment="Center" Margin="0,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" Width="218" Background="Black" Foreground="#FFFF7B00" RenderTransformOrigin="0.653,1.083"/>
+            <TextBox x:Name="weigh_txt" HorizontalAlignment="Center" Margin="0,318,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" Width="218" Background="Black" Foreground="#FFFF7B00" RenderTransformOrigin="0.653,1.083"/>
+            <TextBox x:Name="personalID_txt" HorizontalAlignment="Center" Margin="0,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" Width="218" Background="Black" Foreground="#FFFF7B00" RenderTransformOrigin="0.653,1.083"/>
             <ComboBox x:Name="postType_combobox" HorizontalAlignment="Center" Margin="0,416,0,0" VerticalAlignment="Top" Width="218" RenderTransformOrigin="-1.062,13.458" Height="32">
                 <CheckBox Content="VIP"/>
                 <CheckBox Content="usuall"/>
@@ -42,7 +42,7 @@
             <TextBlock HorizontalAlignment="Left" Margin="45,36,0,0" TextWrapping="Wrap" Text="Order ID" VerticalAlignment="Top" Height="38" Width="143" Foreground="#FF3C8223" FontSize="24"/>
 
         </Grid>
-        <Grid x:Name="grid_wallet" Margin="205,0,0,0" Visibility="Collapsed">
+        <Grid x:Name="grid_wallet" Margin="205,0,0,0" Visibility="Visible">
             <TextBlock x:Name="wallet_txtblock" HorizontalAlignment="Left" Margin="26,26,0,506" TextWrapping="Wrap" Width="158" FontSize="36">
                 <TextBlock.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">

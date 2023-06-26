@@ -26,7 +26,7 @@ namespace Data
     }
     public class Package
     {
-        static List<Package> packages = new List<Package>();
+        public static List<Package> packages = new List<Package>();
         Customer customer;
         public TypeOfPackage typeOfPackage;
         public TypeOfDelivery typeOfDelivery;
@@ -36,5 +36,18 @@ namespace Data
         public string? phoneNumber = null;
         public bool IsExpensive;
         public double weight, FinalPrice;
+        public Package(Customer customer , TypeOfPackage typeOfPackage , TypeOfDelivery typeOfDelivery , Status status , string addr , string adds , bool b , double weight , string? phonenumber = null )
+        {
+            this.customer = customer;
+            this.typeOfPackage = typeOfPackage;
+            this.typeOfDelivery = typeOfDelivery;
+            this.status = status;
+            addressReciever = addr;
+            this.addressSender = adds;
+            this.phoneNumber = phonenumber;
+            this.weight = weight;
+            IsExpensive = b;
+            packages.Add(this);
+        }
     }
 }

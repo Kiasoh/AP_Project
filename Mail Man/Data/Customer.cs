@@ -13,8 +13,9 @@ namespace Data
     public class Customer : IPerson<Customer>
     {
         public static List <Customer> customers = new List<Customer>();
-        string _firstName, _lastName, _email, username, password , _phoneNumber;
+        string _firstName, _lastName, _email, password , _phoneNumber;
         public int money = 0;
+        public string username;
         string _ssn;
         public string FirstName
         {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,32 +21,45 @@ namespace Mail_Man
     /// </summary>
     public partial class Login : Window
     {
+        static bool firsttime = true;
         public Login()
         {
             InitializeComponent();
+            if (firsttime)
+            {
+                SaveAndRead.ReadData ();
+                firsttime = false;
+            }
+            
         }
 
         private void btnLog_In(object sender, RoutedEventArgs e)
         {
             try
             {
-                Employee employee = Employee.GetEmployee ( tbUsername.Text, tbPassword.Password );
-                lblError.Visibility = Visibility.Collapsed;
-                // go to Employee Page
-                var clientMenu = new MainWindow ();
-                clientMenu.Show ();
-                this.Close();
+
+
+                try
+                {
+                    Employee employee = Employee.GetEmployee ( tbUsername.Text, tbPassword.Password );
+                    
+                    lblError.Visibility = Visibility.Collapsed;
+                    // go to Employee Page
+                    var clientMenu = new MainWindow ( employee );
+                    clientMenu.Show ();
+                    this.Close ();
+                }
+                catch ( InvalidOperationException ex )
+                {
+                    Customer customer = Customer.GetCustomer ( tbUsername.Text, tbPassword.Password );
+                    lblError.Visibility = Visibility.Collapsed;
+                    // go to Customer Page
+                    var clientMenu = new ClientMenu ( customer );
+                    clientMenu.Show ();
+                    this.Close ();
+                }
             }
-            catch (InvalidOperationException ex)
-            {
-                Customer customer = Customer.GetCustomer ( tbUsername.Text, tbPassword.Password );
-                lblError.Visibility = Visibility.Collapsed;
-                // go to Customer Page
-                var clientMenu = new ClientMenu (customer);
-                clientMenu.Show ();
-                this.Close ();
-            }
-            catch 
+            catch
             {
                 lblError.Visibility = Visibility.Visible;
             }

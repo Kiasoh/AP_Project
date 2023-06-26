@@ -64,10 +64,16 @@ namespace Mail_Man
             if (flag && lblID.Content == lblUsername.Content && lblUsername.Content == lblName.Content && lblUsername.Content == lblEmail.Content )
             {
                 string[] s = tbName.Text.Split ( ' ' );
-                new Employee ( s[0], s[1], tbEmail.Text, tbUsername.Text, Passbox.Password, tbID.Text );
-                var logInFrm = new Login ();
-                logInFrm.Show();
-                this.Close();
+                try
+                {
+                    new Employee ( s[0], s[1], tbEmail.Text, tbUsername.Text, Passbox.Password, tbID.Text );
+                    var logInFrm = new Login ();
+                    SaveAndRead.WriteData ();
+                    logInFrm.Show ();
+                    this.Close ();
+                }
+                catch { }
+                
             }
 
         }
