@@ -161,5 +161,19 @@ namespace Mail_Man
             }
         }
 
+        private void tbUsername_Watermark_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void tbEmail_Watermark_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Name_Watermark_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

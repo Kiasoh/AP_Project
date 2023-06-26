@@ -72,5 +72,10 @@ namespace Mail_Man
                 tbUsername_Watermark.Visibility = Visibility.Visible;
             }
         }
+
+        private void tbUsername_Watermark_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
