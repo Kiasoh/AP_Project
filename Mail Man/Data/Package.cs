@@ -28,6 +28,7 @@ namespace Data
     {
         public static List<Package> packages = new List<Package>();
         Customer customer;
+        public int id;
         public TypeOfPackage typeOfPackage;
         public TypeOfDelivery typeOfDelivery;
         public Status status;
@@ -36,8 +37,10 @@ namespace Data
         public string? phoneNumber = null;
         public bool IsExpensive;
         public double weight, FinalPrice;
+        public string comment ="";
         public Package(Customer customer , TypeOfPackage typeOfPackage , TypeOfDelivery typeOfDelivery , Status status , string addr , string adds , bool b , double weight , string? phonenumber = null )
         {
+            id = packages.Count;
             this.customer = customer;
             this.typeOfPackage = typeOfPackage;
             this.typeOfDelivery = typeOfDelivery;
@@ -48,6 +51,11 @@ namespace Data
             this.weight = weight;
             IsExpensive = b;
             packages.Add(this);
+        }
+        public override string ToString ()
+        {
+            if (phoneNumber==null) phoneNumber = "";
+            return $"{customer.ssn} ; {typeOfPackage.ToString()} ; {typeOfDelivery.ToString()} ; {status.ToString()} ; {addressReciever} ; {addressSender} ; {IsExpensive.ToString()} ; {weight.ToString()} ; {phoneNumber} ; {comment}";
         }
     }
 }

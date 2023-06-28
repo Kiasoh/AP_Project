@@ -10,7 +10,7 @@
         <TextBlock HorizontalAlignment="Center" Margin="0,415,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="MV Boli"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/><Run/></TextBlock>
         <Grid Margin="240,91,233,91" Background="#FF1A1A1A">
             <TextBlock HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap" Text="Welcome" VerticalAlignment="Top" Foreground="White" Height="27" Width="132" FontWeight="Bold" FontFamily="Gautami" FontSize="24"/>
-            <Label FontSize="10" Visibility="Collapsed" Foreground="Red" HorizontalContentAlignment="Center" VerticalAlignment="Bottom" Height="30" Margin="56" RenderTransformOrigin="0.499,0.553" Name="lblError" >*Username or Password is incorrect!*</Label>
+            <Label FontSize="10" Visibility="Collapsed" Foreground="Red" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="30" Margin="56,180,56,0" RenderTransformOrigin="0.499,0.553" Name="lblError" >*Username or Password is incorrect!*</Label>
             <Button Content="Log In" HorizontalAlignment="Center" Margin="0,205,0,0" VerticalAlignment="Top" Height="31" Width="160" FontFamily="Microsoft YaHei UI" FontSize="14" BorderBrush="#FFFF7B00" Foreground="White" Click="btnLog_In">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">

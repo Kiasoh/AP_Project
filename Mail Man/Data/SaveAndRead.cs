@@ -38,7 +38,21 @@ namespace Data
                 file.Close ();
             }
             catch { }
-            
+
+            try
+            {
+                Package p;
+                file = new StreamReader ( "Package.txt" );
+                string? line = null;
+                while ( ( line = file.ReadLine () ) != null )
+                {
+                    string[] comp = line.Split ( " ; " );
+                    try { p = new Package ( Customer.GetCustomer ( comp[0] ), (TypeOfPackage) Enum.Parse ( typeof ( TypeOfPackage ), comp[1] ), (TypeOfDelivery) Enum.Parse ( typeof ( TypeOfDelivery ), comp[2] ), (Status) Enum.Parse ( typeof ( Status ), comp[3] ), comp[4], comp[5], bool.Parse ( comp[6] ), double.Parse ( comp[7] ), comp[8] == "" ? null : comp[8] ); p.comment = comp[9]; }
+                    catch { }
+                }
+                file.Close ();
+            }
+            catch { }
 
         }
         public static void WriteData ()
@@ -60,6 +74,13 @@ namespace Data
             }
             file.Close ();
 
+            try { file = new StreamWriter ( "Package.txt" ); }
+            catch { File.Create ( "Package.txt" ); file = new StreamWriter ( "Package.txt" ); }
+            foreach ( var item in Package.packages )
+            {
+                file.WriteLine ( item.ToString () );
+            }
+            file.Close ();
         }
     }
 }

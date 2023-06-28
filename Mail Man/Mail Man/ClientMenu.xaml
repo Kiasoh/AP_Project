@@ -18,7 +18,7 @@
         <Button x:Name="btn_change_UserPass" Content="Change Username&#xD;&#xA;or Password" Click="btn_change_UserPass_Click" HorizontalAlignment="Left" Margin="10,355,0,0" VerticalAlignment="Top" Height="88" Width="190" Foreground="#FFFF7B00" FontSize="18" FontFamily="Arial Rounded MT Bold" RenderTransformOrigin="0.511,0.41" Background="#FF181615" BorderBrush="#FF181615"/>
 
 
-        <Grid x:Name="grid_reportOfOrders" Margin="205,10,0,-10" Visibility="Collapsed">
+        <Grid x:Name="grid_reportOfOrders" Margin="205,10,0,-10" Visibility="Visible">
             <TextBlock x:Name="txtblock_PersonalId" HorizontalAlignment="Left" Margin="56,60,0,0" TextWrapping="Wrap" Text="Personal ID" VerticalAlignment="Top" Height="36" Width="132" Cursor="" Foreground="#FFFF7B00" FontSize="24"/>
             <TextBlock x:Name="txtblock_PersonalId_Copy" HorizontalAlignment="Left" Margin="56,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="170" Cursor="" Foreground="#FFFF7B00" FontSize="24"><Run Text="Package Type"/><LineBreak/><Run/></TextBlock>
             <TextBlock x:Name="txtblock_PersonalId_Copy1" HorizontalAlignment="Left" Margin="56,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="170" Cursor="" Foreground="#FFFF7B00" FontSize="24"><Run Text="Price Paid"/><LineBreak/><Run/></TextBlock>

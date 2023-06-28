@@ -60,7 +60,7 @@ namespace Mail_Man
         {
 
         }
-        private string Return_Money ( int a )
+        public string Return_Money ( int a )
         {
             string s = "";
             string ss = a.ToString ();
@@ -176,8 +176,13 @@ namespace Mail_Man
             grid_reportOfOrders.Visibility = Visibility.Collapsed;
             grid_wallet.Visibility = Visibility.Collapsed;
         }
-        
 
-        
+        private void logout_btn_Click ( object sender, RoutedEventArgs e )
+        {
+            var login = new Login ();
+            login.Show ();
+            this.Close ();
+        }
+
     }
 }
