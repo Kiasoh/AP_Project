@@ -99,7 +99,7 @@
             <Label x:Name="lblPassword" HorizontalAlignment="Left" Margin="394,258,0,0" FontSize="18" VerticalAlignment="Top" Width="272" Foreground="Red" Height="58" HorizontalContentAlignment="Center"></Label>
 
         </Grid>
-        <Grid Margin="205,10,10,0">
+        <Grid x:Name="grid_information" Margin="205,10,10,0" Visibility="Collapsed">
             <ComboBox x:Name="packagecontent_dropbox_information" HorizontalAlignment="Left" Margin="36,227,0,0" VerticalAlignment="Top" Width="235" IsDropDownOpen="True"  Height="42" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" Background="#FF181615">
                 <CheckBox Content="Object"/>
                 <CheckBox Content="Document"/>
