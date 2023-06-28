@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mail_Man"
         mc:Ignorable="d"
-        Title="Login" Height="500" Width="800" Background="#FF181615" ResizeMode="NoResize">
+        Title="Login" Height="500" Width="800" Background="#FF181615" ResizeMode="NoResize" Icon="/PostLogo.png">
     <Grid>
         <TextBlock HorizontalAlignment="Center" Margin="0,415,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="MV Boli"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/><Run/></TextBlock>
         <Grid Margin="240,91,233,91" Background="#FF1A1A1A">

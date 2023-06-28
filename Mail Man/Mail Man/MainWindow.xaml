@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mail_Man"
         mc:Ignorable="d"
-        Title="Mail Man" Height="600" Width="1100" ResizeMode="NoResize">
+        Title="Mail Man" Height="600" Width="1100" ResizeMode="NoResize" Icon="/PostLogo.png">
     <Grid Background="#FF1A1A1A" RenderTransformOrigin="0.522,0.427">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200*"/>
@@ -16,7 +16,9 @@
         <Button x:Name="btn_order" Content="Order" HorizontalAlignment="Center" Margin="0,190,0,0" VerticalAlignment="Top" Height="55" Width="180" Click="btn_order_Click" Background="#FF181615" Foreground="#FFFF7B00" BorderBrush="#FF181615" FontSize="20" FontFamily="Arial Rounded MT Bold" FontWeight="Bold"/>
         <Button x:Name="btn_report" Content="Report of orders" HorizontalAlignment="Center" VerticalAlignment="Center" Height="69" Width="180" Click="btn_report_Click" Foreground="#FFFF7B00" Background="#FF181615" BorderBrush="#FF181615" FontSize="14" FontFamily="Arial Rounded MT Bold" FontWeight="Bold"/>
         <Button x:Name="btn_show_information" Content="Show information" HorizontalAlignment="Center" Margin="0,344,0,0" VerticalAlignment="Top" Height="68" Width="180" Click="btn_show_information_Click" Background="#FF181615" Foreground="#FFFF7B00" BorderBrush="#FF181615" FontSize="14" FontFamily="Arial Rounded MT Bold" FontWeight="Bold"/>
-        <Border BorderBrush="#FF1B1818" BorderThickness="1" Background="#FF181615" Panel.ZIndex="-10"/>
+        <Border BorderBrush="#FF1B1818" BorderThickness="1" Background="#FF181615" Panel.ZIndex="-10">
+            <Button x:Name="logout_btn" Content="Log out" Margin="-1,461,0,70" Background="#FF181615" BorderBrush="#FF181615" Foreground="#FFFF7B00" FontSize="14" FontWeight="Bold" FontFamily="Arial Rounded MT Bold"/>
+        </Border>
         <TextBlock HorizontalAlignment="Center" Margin="0,535,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="MV Boli"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/></TextBlock>
 
         <Grid x:Name="grid_checkuser" Grid.Column="1" Visibility="Collapsed">
@@ -37,20 +39,11 @@
             <TextBlock HorizontalAlignment="Left" Margin="27,33,0,0" TextWrapping="Wrap" Text="Welcome to oredering page" VerticalAlignment="Top" Height="51" Width="350" Foreground="White" FontSize="24" FontWeight="Bold"/>
         </Grid>
 
-        <Grid x:Name="grid_ordering" Grid.Column="1" Visibility="Visible">
+        <Grid x:Name="grid_ordering" Grid.Column="1" Visibility="Collapsed">
             <TextBox x:Name="recieveadress_txt" HorizontalAlignment="Left" Margin="587,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="32" BorderBrush="#FFFF7B00" Foreground="#FFFF7B00" Background="#FF181615"/>
             <TextBox x:Name="sendaddress_txt" HorizontalAlignment="Left" Margin="41,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="31" BorderBrush="#FFFF7B00" Foreground="#FFFF7B00" Background="#FF181615"/>
-            <ComboBox x:Name="packagecontent_dropbox" HorizontalAlignment="Left" Margin="41,178,0,0" VerticalAlignment="Top" Width="218" IsDropDownOpen="True" SelectionChanged="ComboBox_SelectionChanged" Height="32" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" Background="#FF181615">
-                <CheckBox Content="Object"/>
-                <CheckBox Content="Document"/>
-                <CheckBox Content="breackable"/>
-            </ComboBox>
             <CheckBox x:Name="expensive_checkbox" Content="Expensive" HorizontalAlignment="Left" Margin="587,298,0,0" VerticalAlignment="Top" Height="24" Width="218" Foreground="#FFFF7B00" FontSize="16" IsChecked="False" Cursor="" BorderBrush="#FFFF7B00"/>
             <TextBox x:Name="weight_txt" HorizontalAlignment="Left" Margin="587,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="28" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" Background="#FF181615"/>
-            <ComboBox x:Name="whichModel_dropbox" HorizontalAlignment="Left" Margin="41,292,0,0" VerticalAlignment="Top" Width="217" Height="30" BorderBrush="#FFFF7B00" Foreground="#FFFF7B00" Background="#FF181615">
-                <CheckBox Content="usuall"/>
-                <CheckBox Content="VIP"/>
-            </ComboBox>
             <TextBlock x:Name="showtotal_txtblock" HorizontalAlignment="Left" Margin="80,409,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="46" Width="179" Background="Black"/>
             <TextBlock x:Name="total_txtblock" HorizontalAlignment="Left" Margin="10,416,0,0" TextWrapping="Wrap" Text="Total : " VerticalAlignment="Top" Height="29" Width="109" Foreground="#FF0B821D" FontSize="24"/>
             <Button x:Name="calculation_btn" Content="Calculation" HorizontalAlignment="Left" Margin="41,507,0,0" VerticalAlignment="Top" Height="39" Width="218" Background="#FF181615" BorderBrush="#FFFF7B00" Foreground="#FFFF7B00"/>
@@ -79,7 +72,7 @@
                     </LinearGradientBrush>
                 </TextBlock.Foreground>
             </TextBlock>
-            <TextBlock x:Name="Type_txtblock" HorizontalAlignment="Left" Margin="41,250,0,0" TextWrapping="Wrap" Text="Type" VerticalAlignment="Top" Height="37" Width="217" FontSize="24">
+            <TextBlock x:Name="Type_txtblock" HorizontalAlignment="Left" Margin="41,262,0,0" TextWrapping="Wrap" Text="Type" VerticalAlignment="Top" Height="37" Width="217" FontSize="24">
                 <TextBlock.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFFF7B00" Offset="1"/>
@@ -95,6 +88,11 @@
                     </LinearGradientBrush>
                 </TextBlock.Foreground>
             </TextBlock>
+            <CheckBox x:Name="vip_checkbox" Content="VIP" HorizontalAlignment="Left" Margin="41,304,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="109"/>
+            <CheckBox x:Name="usuall_checkbox" Content="Usuall" HorizontalAlignment="Left" Margin="170,310,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" FontWeight="Bold" Width="89"/>
+            <CheckBox x:Name="breack_checkbox" Content="Breackable" HorizontalAlignment="Left" Margin="42,178,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="109"/>
+            <CheckBox x:Name="doc_checkbox" Content="Document" HorizontalAlignment="Left" Margin="42,206,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="109"/>
+            <CheckBox x:Name="object_checkbox" Content="Object" HorizontalAlignment="Left" Margin="42,234,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="109"/>
 
         </Grid>
 
@@ -127,8 +125,8 @@
 
         </Grid>
 
-        <Grid x:Name="grid_showPackage" Grid.Column="1" Visibility="Collapsed" Margin="10,10,0,0" >
-            
+        <Grid x:Name="grid_showPackage" Grid.Column="1" Visibility="Visible" Margin="10,10,0,0" >
+
             <ComboBox x:Name="packagecontent_dropbox_Copy" HorizontalAlignment="Left" Margin="36,227,0,0" VerticalAlignment="Top" Width="235" IsDropDownOpen="True" SelectionChanged="ComboBox_SelectionChanged" Height="42" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" Background="#FF181615">
                 <CheckBox Content="Object"/>
                 <CheckBox Content="Document"/>

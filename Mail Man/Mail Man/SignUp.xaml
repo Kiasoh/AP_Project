@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mail_Man"
         mc:Ignorable="d"
-        Title="SignUp" Height="500" Width="800" Background="#FF181615" ResizeMode="NoResize">
+        Title="SignUp" Height="500" Width="800" Background="#FF181615" ResizeMode="NoResize" Icon="/PostLogo.png">
     <Grid>
         <Grid Margin="232,10,232,23" Background="#FF1A1A1A">
             <TextBox x:Name="tbName" HorizontalAlignment="Center" LostFocus="tbName_LostFocus" Margin="0,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White" Height="27" TextChanged="tbName_TextChanged"/>
