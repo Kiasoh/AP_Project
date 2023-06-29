@@ -184,5 +184,9 @@ namespace Mail_Man
             this.Close ();
         }
 
+        private void packagecontent_dropbox_information_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
