@@ -27,7 +27,19 @@ namespace Mail_Man
             InitializeComponent();
             if (firsttime)
             {
+                StreamReader? file = null;
+                file = new StreamReader ( "Employee.txt" );
+                string? line = null;
+                while ( ( line = file.ReadLine () ) != null )
+                {
+                    string[] comp = line.Split ( " ; " );
+                    MessageBox.Show ( comp[1] );
+                    
+                }
+                file.Close ();
                 SaveAndRead.ReadData ();
+                MessageBox.Show ( Employee.employees[0].LastName );
+                MessageBox.Show ( Employee.employees[0].ToString() );
                 firsttime = false;
             }
             

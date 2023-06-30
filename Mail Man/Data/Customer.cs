@@ -108,7 +108,7 @@ namespace Data
         }
         public override string ToString ()
         {
-            return $"{FirstName} ; {LastName} ; {email} ; {ssn} ; {phoneNumber} ; {username} ; {password}";
+            return $"{FirstName} ; {LastName} ; {email} ; {ssn} ; {phoneNumber} ; {username} ; {password} ; {money}";
         }
         public static Customer GetCustomer(string id)
         {

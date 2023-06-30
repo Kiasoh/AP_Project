@@ -98,12 +98,12 @@
 
         </Grid>
 
-        <Grid x:Name="grid_reportOfOrders" Margin="5,10,0,-10" Grid.Column="1" Visibility="Collapsed">
+        <Grid x:Name="grid_reportOfOrders" Margin="5,10,0,-10" Grid.Column="1" Visibility="Visible">
             <TextBlock x:Name="txtblock_ssn" HorizontalAlignment="Left" Margin="56,65,0,0" TextWrapping="Wrap" Text="SSN" VerticalAlignment="Top" Height="36" Width="132" Cursor="" Foreground="#FFFF7B00" FontSize="24"/>
             <TextBlock x:Name="txtblock_pricepaid" HorizontalAlignment="Left" Margin="56,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="170" Cursor="" Foreground="#FFFF7B00" FontSize="24"><Run Text="Price Paid"/><LineBreak/><Run/></TextBlock>
             <TextBlock x:Name="txtblock_weigh" HorizontalAlignment="Left" Margin="56,328,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="132" Cursor="" Foreground="#FFFF7B00" FontSize="24"><Run Text="Weigh"/><LineBreak/><Run/></TextBlock>
             <TextBlock x:Name="txtblock_postType" HorizontalAlignment="Left" Margin="56,416,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="132" Cursor="" Foreground="#FFFF7B00" FontSize="24"><Run Text="Post Type"/><LineBreak/><Run/></TextBlock>
-            <Button Content="Search&#xD;&#xA;" Margin="597,498,88,49" Background="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="30" FontFamily="Bahnschrift Condensed"/>
+            <Button Content="Search&#xD;&#xA;" Click="btnSearch_order" Margin="597,498,88,49" Background="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="30" FontFamily="Bahnschrift Condensed"/>
             <TextBlock x:Name="txtblock_packagecontent" HorizontalAlignment="Left" Margin="56,148,0,0" TextWrapping="Wrap" Text="Package Content" VerticalAlignment="Top" Height="37" Width="218" FontSize="24">
                 <TextBlock.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -112,14 +112,14 @@
                     </LinearGradientBrush>
                 </TextBlock.Foreground>
             </TextBlock>
-            <CheckBox x:Name="vip_checkbox_" Checked="vip_checkbox_Checked" Content="VIP" HorizontalAlignment="Left" Margin="338,416,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="108"/>
-            <CheckBox x:Name="usuall_checkbox_" Checked="usuall_checkbox_Checked" Content="Usuall" HorizontalAlignment="Left" Margin="338,455,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" FontWeight="Bold" Width="90"/>
-            <CheckBox x:Name="breack_checkbox_" Checked="breack_checkbox_Checked" Content="Breackable" HorizontalAlignment="Left" Margin="338,134,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="110"/>
-            <CheckBox x:Name="doc_checkbox_" Checked="doc_checkbox_Checked" Content="Document" HorizontalAlignment="Left" Margin="338,162,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="110" RenderTransformOrigin="0.477,-0.194"/>
-            <CheckBox x:Name="object_checkbox_" Checked="object_checkbox_Checked" Content="Object" HorizontalAlignment="Left" Margin="338,189,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="110"/>
-            <TextBox x:Name="personalID_txt" HorizontalAlignment="Center" Margin="0,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="36"/>
-            <TextBox x:Name="pricePaid_txt" HorizontalAlignment="Center" Margin="0,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="36"/>
-            <TextBox x:Name="weigh_txt" HorizontalAlignment="Center" Margin="0,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="32"/>
+            <CheckBox x:Name="vip_checkbox_as" Checked="vip_checkbox_Checked" Content="VIP" HorizontalAlignment="Left" Margin="338,416,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="108"/>
+            <CheckBox x:Name="usuall_checkbox_as" Checked="usuall_checkbox_Checked" Content="Usuall" HorizontalAlignment="Left" Margin="338,455,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" FontWeight="Bold" Width="90"/>
+            <CheckBox x:Name="breack_checkbox_as" Checked="breack_checkbox_Checked" Content="Breackable" HorizontalAlignment="Left" Margin="338,134,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="110"/>
+            <CheckBox x:Name="doc_checkbox_as" Checked="doc_checkbox_Checked" Content="Document" HorizontalAlignment="Left" Margin="338,162,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="110" RenderTransformOrigin="0.477,-0.194"/>
+            <CheckBox x:Name="object_checkbox_as" Checked="object_checkbox_Checked" Content="Object" HorizontalAlignment="Left" Margin="338,189,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="110"/>
+            <TextBox x:Name="personalID_txt_as" HorizontalAlignment="Center" Margin="0,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="36"/>
+            <TextBox x:Name="pricePaid_txt_as" HorizontalAlignment="Center" Margin="0,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="36"/>
+            <TextBox x:Name="weight_txt_as" HorizontalAlignment="Center" Margin="0,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="32"/>
         </Grid>
 
         <Grid x:Name="grid_checkpackage" Grid.Column="1" Visibility="Collapsed" >

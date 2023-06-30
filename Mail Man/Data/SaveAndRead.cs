@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows;
 namespace Data
 {
     public class SaveAndRead
@@ -11,14 +11,16 @@ namespace Data
         public static void ReadData()
         {
             StreamReader? file = null;
+            
             try 
             {
+                Customer cust;
                 file = new StreamReader ( "Customer.txt" );
                 string? line = null;
                 while ( (line = file.ReadLine()) != null )
                 {
                     string[] comp = line.Split( " ; " );
-                    try {  new Customer ( comp[0], comp[1], comp[2], comp[3], comp[4] , comp[5] , comp[6] ) ; }
+                    try {  cust = new Customer ( comp[0], comp[1], comp[2], comp[3], comp[4] , comp[5] , comp[6] ) ; cust.money = int.Parse ( comp[7] ); }
                     catch { }
                 }
                 file.Close ();
@@ -32,6 +34,7 @@ namespace Data
                 while ( ( line = file.ReadLine () ) != null )
                 {
                     string[] comp = line.Split ( " ; " );
+                    
                     try { new Employee ( comp[0], comp[1], comp[2], comp[4], comp[5], comp[3] ) ; }
                     catch { }
                 }

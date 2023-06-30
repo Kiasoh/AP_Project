@@ -81,6 +81,7 @@ namespace Mail_Man
                 if ( cardNumber.Text.IsCardValid () && cvv2.Text.IsThisCVVValid () && int.TryParse ( amount.Text, out a ) && !( Convert.ToDateTime ( $"{int.Parse ( expiration_month.Text )}/{1}/{int.Parse(expiration_year.Text)}" ).IsExpired () )  ) //add expiration valodation
                 {
                     customer.money += a;
+                    SaveAndRead.WriteData ();
                     if ( customer.money.ToString ().Length > 15 ) totalMoney_txtblock.Text = "Unable to show the amount!";
                     else
                     {
@@ -147,8 +148,9 @@ namespace Mail_Man
             if ( lblPassword.Content == lblUsername.Content )
             {
                 customer.ChangePU ( Password.Text, tbUsername.Text );
-                btn_home_Click ( sender, e );
                 SaveAndRead.WriteData ();
+                btn_home_Click ( sender, e );
+                
             }
 
         }
@@ -185,6 +187,31 @@ namespace Mail_Man
         }
 
         private void packagecontent_dropbox_information_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void vip_checkbox_Checked ( object sender, RoutedEventArgs e )
+        {
+
+        }
+
+        private void usuall_checkbox_Checked ( object sender, RoutedEventArgs e )
+        {
+
+        }
+
+        private void breack_checkbox_Checked ( object sender, RoutedEventArgs e )
+        {
+
+        }
+
+        private void doc_checkbox_Checked ( object sender, RoutedEventArgs e )
+        {
+
+        }
+
+        private void object_checkbox_Checked ( object sender, RoutedEventArgs e )
         {
 
         }

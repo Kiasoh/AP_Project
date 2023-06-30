@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,6 +52,8 @@ namespace Mail_Man
             grid_checkuser.Visibility = Visibility.Visible;
             grid_reportOfOrders.Visibility = Visibility.Collapsed;
             grid_ordering.Visibility = Visibility.Collapsed;
+            grid_checkpackage.Visibility = Visibility.Collapsed;
+            grid_showPackage.Visibility = Visibility.Collapsed;
         }
         private void tbUsername_LostFocus ( object sender, RoutedEventArgs e )
         {
@@ -148,6 +151,7 @@ namespace Mail_Man
                 {
                     if ( customer.money < calculation () ) throw new Exception ();
                     new Package ( customer, t1, t2, Status.Registered, recieveadress_txt.Text, sendaddress_txt.Text, expensive_checkbox.IsChecked == true ? true : false, double.Parse ( weight_txt.Text ) );
+                    SaveAndRead.WriteData ();
                 }
                 catch (FormatException ex) { MessageBox.Show ( "Invalid weight!", "Format Error", MessageBoxButton.OK, MessageBoxImage.Error ); }
                 catch (Exception ex) { MessageBox.Show ( "Customer doesn't have enough money!", "Balance", MessageBoxButton.OK ); }
@@ -186,19 +190,55 @@ namespace Mail_Man
             catch { MessageBox.Show ( "Invalid weight!", "Format Error", MessageBoxButton.OK, MessageBoxImage.Error ); }
         }
         //end of order
-
+        //start of advance search
         private void btn_report_Click ( object sender, RoutedEventArgs e )
         {
             grid_checkuser.Visibility = Visibility.Collapsed;
-            grid_reportOfOrders.Visibility = Visibility.Collapsed;
+            grid_reportOfOrders.Visibility = Visibility.Visible;
             grid_ordering.Visibility = Visibility.Collapsed;
+            grid_checkpackage.Visibility = Visibility.Collapsed;
+            grid_showPackage.Visibility = Visibility.Collapsed;
         }
+        private void btnSearch_order ( object sender, RoutedEventArgs e )
+        {
+            StreamWriter? file = null;
+            try
+            {
+                try { file = new StreamWriter ( "SearchResult.csv" ); }
+                catch { File.Create ( "SearchResult.csv" ); file = new StreamWriter ( "Customer.csv" ); }
+                IEnumerable<Package> finalResult = Package.packages;
+                if ( personalID_txt_as.Text != String.Empty ) finalResult = finalResult.Where ( k => k.customer.ssn == personalID_txt_as.Text );
+                if ( pricePaid_txt_as.Text != String.Empty ) finalResult = finalResult.Where ( k => k.CalculateCost () == double.Parse ( pricePaid_txt_as.Text ) );
+                if ( weight_txt_as.Text != String.Empty ) finalResult = finalResult.Where ( k => k.weight == double.Parse ( weight_txt_as.Text ) );
+                finalResult = finalResult.Where ( k => 
+                ( k.typeOfPackage == TypeOfPackage.Breakable && (bool) breack_checkbox_as.IsChecked )
+                 || ( k.typeOfPackage == TypeOfPackage.Document && (bool) doc_checkbox_as.IsChecked )
+                 || ( k.typeOfPackage == TypeOfPackage.Object && (bool) object_checkbox_as.IsChecked )
+                 || ( k.typeOfDelivery == TypeOfDelivery.Special && (bool) vip_checkbox_as.IsChecked )
+                 || ( k.typeOfDelivery == TypeOfDelivery.Normal && (bool) usuall_checkbox_as.IsChecked ) );
+                
+                if ( finalResult.ToList ().Count == 0 ) MessageBox.Show ( "Found no package with these properties.", "Result", MessageBoxButton.OK, MessageBoxImage.None );
+                else
+                {
+                    foreach ( var item in finalResult ) file.WriteLine ( item.ToString () );
+                    
+                    MessageBox.Show ( "Results are saved!", "Result", MessageBoxButton.OK, MessageBoxImage.None );
+                }
+                
 
+            }
+            catch { MessageBox.Show ( "An error accured!", "Error", MessageBoxButton.OK, MessageBoxImage.Error ); }
+            finally { file.Close (); }
+        }
+        //end of advance search
+        // start of show package
         private void btn_show_information_Click ( object sender, RoutedEventArgs e )
         {
             grid_checkuser.Visibility = Visibility.Collapsed;
             grid_reportOfOrders.Visibility = Visibility.Collapsed;
             grid_ordering.Visibility = Visibility.Collapsed;
+            grid_checkpackage.Visibility = Visibility.Collapsed;
+            grid_showPackage.Visibility = Visibility.Collapsed;
         }
 
         private void weight_txt_TextChanged ( object sender, TextChangedEventArgs e )
@@ -208,7 +248,11 @@ namespace Mail_Man
 
         private void btn_home_Click ( object sender, RoutedEventArgs e )
         {
-
+            grid_checkuser.Visibility = Visibility.Visible;
+            grid_reportOfOrders.Visibility = Visibility.Collapsed;
+            grid_ordering.Visibility = Visibility.Collapsed;
+            grid_checkpackage.Visibility = Visibility.Collapsed;
+            grid_showPackage.Visibility = Visibility.Collapsed;
         }
 
         private void logout_btn_Click ( object sender, RoutedEventArgs e )
@@ -217,5 +261,8 @@ namespace Mail_Man
             login.Show ();
             this.Close ();
         }
+
+        
+        
     }
 }

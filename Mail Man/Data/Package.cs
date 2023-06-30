@@ -27,7 +27,7 @@ namespace Data
     public class Package
     {
         public static List<Package> packages = new List<Package>();
-        Customer customer;
+        public Customer customer;
         public int id;
         public TypeOfPackage typeOfPackage;
         public TypeOfDelivery typeOfDelivery;
@@ -56,6 +56,17 @@ namespace Data
         {
             if (phoneNumber==null) phoneNumber = "";
             return $"{customer.ssn} ; {typeOfPackage.ToString()} ; {typeOfDelivery.ToString()} ; {status.ToString()} ; {addressReciever} ; {addressSender} ; {IsExpensive.ToString()} ; {weight.ToString()} ; {phoneNumber} ; {comment}";
+        }
+        public double CalculateCost()
+        {
+            double cost = 10000;
+            if ( typeOfPackage == TypeOfPackage.Breakable ) cost *= 2;
+            else if ( typeOfPackage == TypeOfPackage.Document ) cost *= 1.5;
+            if ( IsExpensive ) cost *= 2;
+            double w = weight;
+            for ( w -= 0.5; w > 0; w -= 0.5 ) cost *= 1.2;
+            if ( typeOfDelivery == TypeOfDelivery.Special ) cost *= 1.5;
+            return cost;
         }
     }
 }

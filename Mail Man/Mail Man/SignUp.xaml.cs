@@ -35,6 +35,7 @@ namespace Mail_Man
                     break;
                 }
             }
+            try { s[1] = s[1]; } catch { flag = false; }
             if (!flag)
             {
                 lblName.Content = "*Name is Invalid!*";
