@@ -28,6 +28,9 @@ namespace Mail_Man
         {
             this.employee = employee;
             InitializeComponent();
+            RoutedEventArgs? e = null ;
+            object? sender = null;
+            btn_home_Click ( sender, e);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -248,7 +251,7 @@ namespace Mail_Man
 
         private void btn_home_Click ( object sender, RoutedEventArgs e )
         {
-            grid_checkuser.Visibility = Visibility.Visible;
+            grid_checkuser.Visibility = Visibility.Collapsed;
             grid_reportOfOrders.Visibility = Visibility.Collapsed;
             grid_ordering.Visibility = Visibility.Collapsed;
             grid_checkpackage.Visibility = Visibility.Collapsed;

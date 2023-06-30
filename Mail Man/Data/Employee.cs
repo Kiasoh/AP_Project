@@ -26,7 +26,7 @@ namespace Data
         public string email
         {
             get { return _email; }
-            set { if ( !value.IsThisEmailValid () ) throw new Exception ( "Email Error" ); _lastName = value; }
+            set { if ( !value.IsThisEmailValid () ) throw new Exception ( "Email Error" ); _email = value; }
         }
         public string username
         {
