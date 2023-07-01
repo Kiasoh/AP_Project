@@ -30,7 +30,7 @@ namespace Mail_Man
 
         }
 
-        
+        // start of show information
         private void btn_show_information_Click ( object sender, RoutedEventArgs e )
         {
             grid_changeinformation.Visibility = Visibility.Collapsed;
@@ -165,7 +165,33 @@ namespace Mail_Man
         }
         private void Search_Click ( object sender, RoutedEventArgs e )
         {
-            
+            StreamWriter? file = null;
+            try
+            {
+                try { file = new StreamWriter ( "SearchResultC.csv" ); }
+                catch { File.Create ( "SearchResultC.csv" ); file = new StreamWriter ( "SearchResultC.csv" ); }
+                IEnumerable<Package> finalResult = Package.packages.Where( k => k.customer == customer);
+                if ( pricePaid_txt_as.Text != String.Empty ) finalResult = finalResult.Where ( k => k.CalculateCost () == double.Parse ( pricePaid_txt_as.Text ) );
+                if ( weight_txt_as.Text != String.Empty ) finalResult = finalResult.Where ( k => k.weight == double.Parse ( weight_txt_as.Text ) );
+                finalResult = finalResult.Where ( k =>
+                ( k.typeOfPackage == TypeOfPackage.Breakable && (bool) breack_checkbox_as.IsChecked )
+                 || ( k.typeOfPackage == TypeOfPackage.Document && (bool) doc_checkbox_as.IsChecked )
+                 || ( k.typeOfPackage == TypeOfPackage.Object && (bool) object_checkbox_as.IsChecked )
+                 || ( k.typeOfDelivery == TypeOfDelivery.Special && (bool) vip_checkbox_as.IsChecked )
+                 || ( k.typeOfDelivery == TypeOfDelivery.Normal && (bool) usuall_checkbox_as.IsChecked ) );
+
+                if ( finalResult.ToList ().Count == 0 ) MessageBox.Show ( "Found no package with these properties.", "Result", MessageBoxButton.OK, MessageBoxImage.None );
+                else
+                {
+                    foreach ( var item in finalResult ) file.WriteLine ( item.ToString () );
+
+                    MessageBox.Show ( "Results are saved!", "Result", MessageBoxButton.OK, MessageBoxImage.None );
+                }
+
+
+            }
+            catch { MessageBox.Show ( "An error accured!", "Error", MessageBoxButton.OK, MessageBoxImage.Error ); }
+            finally { file.Close (); }
         }
         //end of report
 
@@ -215,5 +241,7 @@ namespace Mail_Man
         {
 
         }
+
+        
     }
 }

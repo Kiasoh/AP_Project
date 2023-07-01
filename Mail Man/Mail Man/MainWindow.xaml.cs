@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -24,6 +26,7 @@ namespace Mail_Man
     {
         Employee? employee = null;
         Customer? customer = null;
+        Package? package = null; // for show package
         public MainWindow(Employee employee)
         {
             this.employee = employee;
@@ -153,6 +156,7 @@ namespace Mail_Man
                 try 
                 {
                     if ( customer.money < calculation () ) throw new Exception ();
+                    customer.money -= (int)calculation ();
                     new Package ( customer, t1, t2, Status.Registered, recieveadress_txt.Text, sendaddress_txt.Text, expensive_checkbox.IsChecked == true ? true : false, double.Parse ( weight_txt.Text ) );
                     SaveAndRead.WriteData ();
                 }
@@ -208,7 +212,7 @@ namespace Mail_Man
             try
             {
                 try { file = new StreamWriter ( "SearchResult.csv" ); }
-                catch { File.Create ( "SearchResult.csv" ); file = new StreamWriter ( "Customer.csv" ); }
+                catch { File.Create ( "SearchResult.csv" ); file = new StreamWriter ( "SearchResult.csv" ); }
                 IEnumerable<Package> finalResult = Package.packages;
                 if ( personalID_txt_as.Text != String.Empty ) finalResult = finalResult.Where ( k => k.customer.ssn == personalID_txt_as.Text );
                 if ( pricePaid_txt_as.Text != String.Empty ) finalResult = finalResult.Where ( k => k.CalculateCost () == double.Parse ( pricePaid_txt_as.Text ) );
@@ -223,7 +227,7 @@ namespace Mail_Man
                 if ( finalResult.ToList ().Count == 0 ) MessageBox.Show ( "Found no package with these properties.", "Result", MessageBoxButton.OK, MessageBoxImage.None );
                 else
                 {
-                    foreach ( var item in finalResult ) file.WriteLine ( item.ToString () );
+                    foreach ( var item in finalResult ) file.WriteLine ( item.ToString () + " ; Package ID : " + Package.packages.IndexOf(item) );
                     
                     MessageBox.Show ( "Results are saved!", "Result", MessageBoxButton.OK, MessageBoxImage.None );
                 }
@@ -240,10 +244,89 @@ namespace Mail_Man
             grid_checkuser.Visibility = Visibility.Collapsed;
             grid_reportOfOrders.Visibility = Visibility.Collapsed;
             grid_ordering.Visibility = Visibility.Collapsed;
-            grid_checkpackage.Visibility = Visibility.Collapsed;
+            grid_checkpackage.Visibility = Visibility.Visible;
             grid_showPackage.Visibility = Visibility.Collapsed;
         }
 
+        private void btnSearch_order_showpackage ( object sender, RoutedEventArgs e )
+        {
+            try 
+            { 
+                lblError_findpackage.Visibility = Visibility.Collapsed; if ( int.Parse ( tbPackageID.Text ) >= Package.packages.Count ) throw new Exception ("*No Package Found!*"); grid_checkpackage.Visibility = Visibility.Collapsed; grid_showPackage.Visibility = Visibility.Visible;
+                Package a = Package.packages[ int.Parse ( tbPackageID.Text )]; package = a; sender_lbl.Content = a.addressSender; reciever_lbl.Content = a.addressReciever; weigh_lbl.Content = a.weight.ToString (); comment_txtblock.Text = a.comment;
+                if (a.typeOfDelivery == TypeOfDelivery.Normal) Usual_checkbox_showpack.IsChecked = true;
+                else Vip_checkbox_showpack.IsChecked= true;
+                if (a.typeOfPackage == TypeOfPackage.Object) checkbox_object.IsChecked = true;
+                else if (a.typeOfPackage == TypeOfPackage.Document) checkbox_doc.IsChecked = true;
+                else checkbox_breack.IsChecked = true;
+                if ( a.IsExpensive ) expensive_checkbox_showpack.IsChecked = true;
+                if ( a.status == Status.Registered ) regsitered_checkbox.IsChecked = true;
+                else if ( a.status == Status.OnTheWay ) sending_checkbox.IsChecked = true;
+                else if ( a.status == Status.ReadyToGO ) ready__checkbox.IsChecked = true;
+                else delivered_checkbox_Checked ( sender, e );
+            }
+            catch (FormatException ex) { MessageBox.Show ( "Invalid Foramt!", "Error", MessageBoxButton.OK, MessageBoxImage.Error ); }
+            catch (Exception ex) { lblError_findpackage.Content = ex.Message; lblError_findpackage.Visibility = Visibility.Visible; }
+        }
+
+        private void regsitered_checkbox_Checked ( object sender, RoutedEventArgs e )
+        {
+            if ( (bool)sending_checkbox.IsChecked )
+                sending_checkbox.IsChecked = false;
+            if ( (bool) ready__checkbox.IsChecked )
+                ready__checkbox.IsChecked = false;
+            package.status = Status.Registered;
+            SaveAndRead.WriteData ();
+        }
+
+        private void ready__checkbox_Checked ( object sender, RoutedEventArgs e )
+        {
+            if ( (bool)sending_checkbox.IsChecked )
+                sending_checkbox.IsChecked = false;
+            if ( (bool) regsitered_checkbox.IsChecked )
+                regsitered_checkbox.IsChecked = false;
+            package.status = Status.ReadyToGO;
+            SaveAndRead.WriteData ();
+        }
+
+        private void sending_checkbox_Checked ( object sender, RoutedEventArgs e )
+        {
+            if ( (bool) ready__checkbox.IsChecked ) ready__checkbox.IsChecked = false;
+            if ( (bool) regsitered_checkbox.IsChecked ) regsitered_checkbox.IsChecked = false;
+            package.status = Status.OnTheWay;
+            SaveAndRead.WriteData ();
+        }
+
+        private void delivered_checkbox_Checked ( object sender, RoutedEventArgs e )
+        {
+            ready__checkbox.IsEnabled = false;
+            regsitered_checkbox.IsEnabled = false;
+            sending_checkbox.IsEnabled = false;
+            if ( package.status != Status.Delivered ) SendMail (); 
+            package.status = Status.Delivered;
+            SaveAndRead.WriteData ();
+        }
+        private void SendMail()
+        {
+            string fromMail = "KSPostmailProject@gmail.com";
+            string fromPassword = "yqgexaoctofxhorv";
+
+            MailMessage message = new MailMessage ();
+            message.From = new MailAddress ( fromMail );
+            message.Subject = "Your MAIL MAN Username and Password";
+            message.To.Add ( new MailAddress ( package.customer.email ) );
+            message.Body = $"<html><body> Hello {package.customer.FirstName}!\nWe hope you are satisfied with our services. \nIf you have any question or suggestion, fill the comment section in the app and our employees will get back at you as soon as possible.\nThank you for choosing and trusting us.\nHaVe A nIcE dAy! </body></html>";
+            message.IsBodyHtml = true;
+
+            var smtpClient = new SmtpClient ( "smtp.gmail.com" )
+            {
+                Port = 587,
+                Credentials = new NetworkCredential ( fromMail, fromPassword ),
+                EnableSsl = true,
+            };
+
+            smtpClient.Send ( message );
+        }
         private void weight_txt_TextChanged ( object sender, TextChangedEventArgs e )
         {
 
@@ -265,7 +348,6 @@ namespace Mail_Man
             this.Close ();
         }
 
-        
         
     }
 }

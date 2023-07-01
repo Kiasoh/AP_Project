@@ -18,8 +18,8 @@
         <Button x:Name="btn_change_UserPass" Content="Change Username&#xD;&#xA;or Password" Click="btn_change_UserPass_Click" HorizontalAlignment="Left" Margin="10,355,0,0" VerticalAlignment="Top" Height="88" Width="190" Foreground="#FFFF7B00" FontSize="18" FontFamily="Arial Rounded MT Bold" RenderTransformOrigin="0.511,0.41" Background="#FF181615" BorderBrush="#FF181615"/>
 
 
-        <Grid x:Name="grid_reportOfOrders" Margin="205,10,0,-10" Visibility="Visible">
-            <TextBlock x:Name="txtblock_PersonalId" HorizontalAlignment="Left" Margin="56,60,0,0" TextWrapping="Wrap" Text="Personal ID" VerticalAlignment="Top" Height="36" Width="132" Cursor="" FontSize="24">
+        <Grid x:Name="grid_reportOfOrders" Margin="205,10,0,-10" Visibility="Collapsed">
+            <TextBlock x:Name="txtblock_PersonalId" HorizontalAlignment="Left" Visibility="Collapsed" Margin="56,60,0,0" TextWrapping="Wrap" Text="Personal ID" VerticalAlignment="Top" Height="36" Width="132" Cursor="" FontSize="24">
                 <TextBlock.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="White"/>
@@ -42,9 +42,9 @@
                     </LinearGradientBrush>
                 </TextBlock.Foreground><Run Text="Weigh"/><LineBreak/><Run/></TextBlock>
             <Button Content="Search&#xD;&#xA;" Margin="597,498,88,40" Background="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="36" FontFamily="Bahnschrift Condensed" Click="Search_Click"/>
-            <TextBox x:Name="pricePaid_txt" HorizontalAlignment="Center" Margin="0,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" Width="218" Background="#FF181615" Foreground="#FFFF7B00" RenderTransformOrigin="0.653,1.083"/>
-            <TextBox x:Name="weigh_txt" HorizontalAlignment="Center" Margin="0,318,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" Width="218" Background="#FF181615" Foreground="#FFFF7B00" RenderTransformOrigin="0.653,1.083"/>
-            <TextBox x:Name="personalID_txt" HorizontalAlignment="Center" Margin="0,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" Width="218" Background="#FF181615" Foreground="#FFFF7B00" RenderTransformOrigin="0.653,1.083"/>
+            <TextBox x:Name="pricePaid_txt_as" HorizontalAlignment="Center" Margin="0,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" Width="218" Background="#FF181615" Foreground="#FFFF7B00" RenderTransformOrigin="0.653,1.083"/>
+            <TextBox x:Name="weight_txt_as" HorizontalAlignment="Center" Margin="0,318,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" Width="218" Background="#FF181615" Foreground="#FFFF7B00" RenderTransformOrigin="0.653,1.083"/>
+            
             <TextBlock x:Name="Type_txtblock" HorizontalAlignment="Left" Margin="58,417,0,0" TextWrapping="Wrap" Text="Type" VerticalAlignment="Top" Height="37" Width="217" FontSize="24">
                 <TextBlock.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -61,15 +61,15 @@
                     </LinearGradientBrush>
                 </TextBlock.Foreground>
             </TextBlock>
-            <CheckBox x:Name="vip_checkbox" Checked="vip_checkbox_Checked" Content="VIP" HorizontalAlignment="Left" Margin="338,436,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="110"/>
-            <CheckBox x:Name="usuall_checkbox" Checked="usuall_checkbox_Checked" Content="Usuall" HorizontalAlignment="Left" Margin="468,436,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" FontWeight="Bold" Width="88"/>
-            <CheckBox x:Name="breack_checkbox" Checked="breack_checkbox_Checked" Content="Breackable" HorizontalAlignment="Left" Margin="349,167,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="109"/>
-            <CheckBox x:Name="doc_checkbox" Checked="doc_checkbox_Checked" Content="Document" HorizontalAlignment="Left" Margin="349,139,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="109"/>
-            <CheckBox x:Name="object_checkbox" Checked="object_checkbox_Checked" Content="Object" HorizontalAlignment="Left" Margin="349,195,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="109"/>
+            <CheckBox x:Name="vip_checkbox_as" Checked="vip_checkbox_Checked" Content="VIP" HorizontalAlignment="Left" Margin="338,436,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="110"/>
+            <CheckBox x:Name="usuall_checkbox_as" Checked="usuall_checkbox_Checked" Content="Usuall" HorizontalAlignment="Left" Margin="468,436,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" FontWeight="Bold" Width="88"/>
+            <CheckBox x:Name="breack_checkbox_as" Checked="breack_checkbox_Checked" Content="Breackable" HorizontalAlignment="Left" Margin="349,167,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="109"/>
+            <CheckBox x:Name="doc_checkbox_as" Checked="doc_checkbox_Checked" Content="Document" HorizontalAlignment="Left" Margin="349,139,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="109"/>
+            <CheckBox x:Name="object_checkbox_as" Checked="object_checkbox_Checked" Content="Object" HorizontalAlignment="Left" Margin="349,195,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="109"/>
         </Grid>
-        <Grid x:Name="grid_showinformation" Margin="205,0,0,0" Visibility ="Collapsed">
+        <Grid x:Name="grid_showinformation" Margin="205,0,0,0" Visibility ="Visible">
             <TextBox HorizontalAlignment="Left" Margin="45,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291" Height="38" BorderBrush="#FFFF7B00" Background="Black"/>
-            <Button Content="Show" HorizontalAlignment="Left" Margin="448,86,0,0" VerticalAlignment="Top" Height="38" Width="142" Foreground="#FFFF7B00" Background="#FF1A1A1A" BorderBrush="#FFFF7B00"/>
+            <Button x:Name="btnSearch_package" Click="btnSearch_package_Click" Content="Show" HorizontalAlignment="Left" Margin="448,86,0,0" VerticalAlignment="Top" Height="38" Width="142" Foreground="#FFFF7B00" Background="#FF1A1A1A" BorderBrush="#FFFF7B00"/>
             <TextBlock HorizontalAlignment="Left" Margin="45,36,0,0" TextWrapping="Wrap" Text="Order ID" VerticalAlignment="Top" Height="38" Width="143" Foreground="#FF3C8223" FontSize="24"/>
 
         </Grid>

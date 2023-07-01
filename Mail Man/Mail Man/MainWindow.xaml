@@ -41,12 +41,12 @@
             <TextBlock HorizontalAlignment="Left" Margin="27,33,0,0" TextWrapping="Wrap" Text="Welcome to oredering page" VerticalAlignment="Top" Height="51" Width="350" Foreground="White" FontSize="24" FontWeight="Bold"/>
         </Grid>
 
-        <Grid x:Name="grid_ordering" Grid.Column="1" Visibility="Collapsed">
+        <Grid x:Name="grid_ordering" Grid.Column="1" Visibility="Visible">
             <TextBox x:Name="recieveadress_txt" HorizontalAlignment="Left" Margin="587,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="32" BorderBrush="#FFFF7B00" Foreground="#FFFF7B00" Background="#FF181615"/>
             <TextBox x:Name="sendaddress_txt" HorizontalAlignment="Left" Margin="41,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="31" BorderBrush="#FFFF7B00" Foreground="#FFFF7B00" Background="#FF181615"/>
             <CheckBox x:Name="expensive_checkbox" Content="Expensive" HorizontalAlignment="Left" Margin="587,298,0,0" VerticalAlignment="Top" Height="24" Width="218" Foreground="#FFFF7B00" FontSize="16" IsChecked="False" Cursor="" BorderBrush="#FFFF7B00"/>
             <TextBox x:Name="weight_txt" HorizontalAlignment="Left" Margin="587,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="28" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" Background="#FF181615"/>
-            <TextBlock x:Name="showtotal_txtblock" HorizontalAlignment="Left" Margin="80,409,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="46" Width="179" Background="Black"/>
+            <TextBlock x:Name="showtotal_txtblock" HorizontalAlignment="Left" Margin="80,409,0,0" TextWrapping="Wrap" FontSize="22" VerticalAlignment="Top" Height="46" Width="179" Background="Black" Foreground="#FF0B821D" Text=""/>
             <TextBlock x:Name="total_txtblock" HorizontalAlignment="Left" Margin="10,416,0,0" TextWrapping="Wrap" Text="Total : " VerticalAlignment="Top" Height="29" Width="109" Foreground="#FF0B821D" FontSize="24"/>
             <Button x:Name="calculation_btn" Click="calculation_btn_Click" Content="Calculation" HorizontalAlignment="Left" Margin="41,507,0,0" VerticalAlignment="Top" Height="39" Width="218" Background="#FF181615" BorderBrush="#FFFF7B00" Foreground="#FFFF7B00"/>
             <Button x:Name="submit_bin" Click="submit_bin_Click" Content="Submit" HorizontalAlignment="Left" Margin="587,507,0,0" VerticalAlignment="Top" Height="39" Width="218" Background="#FFFF7B00" BorderBrush="#FF181615" Foreground="#FF181615" FontSize="18"/>
@@ -98,7 +98,7 @@
 
         </Grid>
 
-        <Grid x:Name="grid_reportOfOrders" Margin="5,10,0,-10" Grid.Column="1" Visibility="Visible">
+        <Grid x:Name="grid_reportOfOrders" Margin="5,10,0,-10" Grid.Column="1" Visibility="Collapsed">
             <TextBlock x:Name="txtblock_ssn" HorizontalAlignment="Left" Margin="56,65,0,0" TextWrapping="Wrap" Text="SSN" VerticalAlignment="Top" Height="36" Width="132" Cursor="" Foreground="#FFFF7B00" FontSize="24"/>
             <TextBlock x:Name="txtblock_pricepaid" HorizontalAlignment="Left" Margin="56,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="170" Cursor="" Foreground="#FFFF7B00" FontSize="24"><Run Text="Price Paid"/><LineBreak/><Run/></TextBlock>
             <TextBlock x:Name="txtblock_weigh" HorizontalAlignment="Left" Margin="56,328,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="132" Cursor="" Foreground="#FFFF7B00" FontSize="24"><Run Text="Weigh"/><LineBreak/><Run/></TextBlock>
@@ -123,16 +123,17 @@
         </Grid>
 
         <Grid x:Name="grid_checkpackage" Grid.Column="1" Visibility="Collapsed" >
-            <TextBox HorizontalAlignment="Center" Margin="0,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="276" Height="43" Foreground="#FFFF7B00" Background="#FF181615" BorderBrush="#FFFF7B00"/>
-            <Button Content="Search" HorizontalAlignment="Center" Margin="0,380,0,0" VerticalAlignment="Top" Height="36" Width="179" BorderBrush="#FFFF7B00" Background="#FFFF7B00" FontSize="22" FontWeight="Bold"/>
+            <TextBox x:Name="tbPackageID" HorizontalAlignment="Center" VerticalContentAlignment="Center" Margin="0,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="276" Height="43" Foreground="#FFFF7B00" Background="#FF181615" BorderBrush="#FFFF7B00"/>
+            <Label x:Name="lblError_findpackage" VerticalContentAlignment="Center" Visibility="Collapsed" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Width="276" Height="43" Content="*No package found!*" Foreground="Red" Margin="0,292,0,0" />
+            <Button Content="Search" Click="btnSearch_order_showpackage" HorizontalAlignment="Center" Margin="0,380,0,0" VerticalAlignment="Top" Height="36" Width="179" BorderBrush="#FFFF7B00" Background="#FFFF7B00" FontSize="22" FontWeight="Bold"/>
             <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Show Package" VerticalAlignment="Top" Height="80" Width="327" Foreground="White" FontSize="36"/>
-            <TextBlock HorizontalAlignment="Center" Margin="0,190,0,0" TextWrapping="Wrap" Text="write your id of package" VerticalAlignment="Top" Foreground="White" Height="34" Width="210" FontSize="18"/>
+            <TextBlock HorizontalAlignment="Center" TextAlignment="Center" Margin="0,190,0,0" TextWrapping="Wrap" Text="Enter your package ID" VerticalAlignment="Top" Foreground="White" Height="34" Width="210" FontSize="18"/>
 
         </Grid>
 
         <Grid x:Name="grid_showPackage" Grid.Column="1" Visibility="Collapsed" Margin="10,10,0,0" >
             <CheckBox x:Name="expensive_checkbox_showpack" Content="Expensive" HorizontalAlignment="Left" Margin="614,421,0,0" VerticalAlignment="Top" Height="33" Width="234" Foreground="#FFFF7B00" FontSize="16" IsChecked="False" Cursor="" BorderBrush="#FFFF7B00"/>
-            <TextBlock x:Name="weigh_txtblock_showpack" HorizontalAlignment="Left" Margin="627,162,0,0" TextWrapping="Wrap" Text="Weigh" VerticalAlignment="Top" Height="52" Width="117" FontSize="24">
+            <TextBlock x:Name="weight_txtblock_showpack" HorizontalAlignment="Left" Margin="627,162,0,0" TextWrapping="Wrap" Text="Weigh" VerticalAlignment="Top" Height="52" Width="117" FontSize="24">
                 <TextBlock.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFFF7B00" Offset="1"/>
@@ -184,15 +185,15 @@
                     </LinearGradientBrush>
                 </TextBlock.Foreground>
             </TextBlock>
-            <CheckBox x:Name="regsitered_checkbox" Content="Registered" HorizontalAlignment="Left" Margin="45,388,0,0" VerticalAlignment="Top" Height="33" Width="117" Foreground="#FFFF7B00" FontSize="16" IsChecked="False" Cursor="" BorderBrush="#FFFF7B00"/>
-            <CheckBox x:Name="ready__checkbox" Content="Ready for send" HorizontalAlignment="Left" Margin="182,382,0,0" VerticalAlignment="Top" Height="33" Width="138" Foreground="#FFFF7B00" FontSize="16" IsChecked="False" Cursor="" BorderBrush="#FFFF7B00"/>
-            <CheckBox x:Name="sending_checkbox" Content="Sending" HorizontalAlignment="Left" Margin="45,421,0,0" VerticalAlignment="Top" Height="34" Width="117" Foreground="#FFFF7B00" FontSize="16" IsChecked="False" Cursor="" BorderBrush="#FFFF7B00"/>
-            <CheckBox x:Name="delivered_checkbox" Content="Delivered" HorizontalAlignment="Left" Margin="182,415,0,0" VerticalAlignment="Top" Height="34" Width="122" Foreground="#FFFF7B00" FontSize="16" IsChecked="False" Cursor="" BorderBrush="#FFFF7B00"/>
-            <CheckBox x:Name="expensive_checkbox_showpack_Copy" Content="Usuall" HorizontalAlignment="Left" Margin="627,337,0,0" VerticalAlignment="Top" Height="33" Width="105" Foreground="#FFFF7B00" FontSize="16" IsChecked="False" Cursor="" BorderBrush="#FFFF7B00"/>
-            <CheckBox x:Name="expensive_checkbox_showpack_Copy1" Content="VIP" HorizontalAlignment="Left" Margin="627,370,0,0" VerticalAlignment="Top" Height="33" Width="105" Foreground="#FFFF7B00" FontSize="16" IsChecked="False" Cursor="" BorderBrush="#FFFF7B00"/>
-            <CheckBox x:Name="checkbox_breack" Checked="breack_checkbox_Checked" Content="Breackable" HorizontalAlignment="Left" Margin="45,238,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="109"/>
-            <CheckBox x:Name="checkbox_doc" Checked="doc_checkbox_Checked" Content="Document" HorizontalAlignment="Left" Margin="45,215,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="109"/>
-            <CheckBox x:Name="checkbox_object" Checked="object_checkbox_Checked" Content="Object" HorizontalAlignment="Left" Margin="45,269,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="109"/>
+            <CheckBox x:Name="regsitered_checkbox" Checked="regsitered_checkbox_Checked" Content="Registered" HorizontalAlignment="Left" Margin="45,388,0,0" VerticalAlignment="Top" Height="33" Width="117" Foreground="#FFFF7B00" FontSize="16" IsChecked="False" Cursor="" BorderBrush="#FFFF7B00"/>
+            <CheckBox x:Name="ready__checkbox" Checked="ready__checkbox_Checked" Content="Ready for send" HorizontalAlignment="Left" Margin="182,382,0,0" VerticalAlignment="Top" Height="33" Width="138" Foreground="#FFFF7B00" FontSize="16" IsChecked="False" Cursor="" BorderBrush="#FFFF7B00"/>
+            <CheckBox x:Name="sending_checkbox" Checked="sending_checkbox_Checked" Content="Sending" HorizontalAlignment="Left" Margin="45,421,0,0" VerticalAlignment="Top" Height="34" Width="117" Foreground="#FFFF7B00" FontSize="16" IsChecked="False" Cursor="" BorderBrush="#FFFF7B00"/>
+            <CheckBox x:Name="delivered_checkbox" Checked="delivered_checkbox_Checked" Content="Delivered" HorizontalAlignment="Left" Margin="182,415,0,0" VerticalAlignment="Top" Height="34" Width="122" Foreground="#FFFF7B00" FontSize="16" IsChecked="False" Cursor="" BorderBrush="#FFFF7B00"/>
+            <CheckBox x:Name="Usual_checkbox_showpack" IsHitTestVisible="False" Focusable="False" Content="Usual" HorizontalAlignment="Left" Margin="627,337,0,0" VerticalAlignment="Top" Height="33" Width="105" Foreground="#FFFF7B00" FontSize="16" IsChecked="False" Cursor="" BorderBrush="#FFFF7B00"/>
+            <CheckBox x:Name="Vip_checkbox_showpack" Content="VIP" HorizontalAlignment="Left" IsHitTestVisible="False" Focusable="False" Margin="627,370,0,0" VerticalAlignment="Top" Height="33" Width="105" Foreground="#FFFF7B00" FontSize="16" IsChecked="False" Cursor="" BorderBrush="#FFFF7B00"/>
+            <CheckBox x:Name="checkbox_breack" IsHitTestVisible="False" Focusable="False" Checked="breack_checkbox_Checked" Content="Breackable" HorizontalAlignment="Left" Margin="45,238,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="109"/>
+            <CheckBox x:Name="checkbox_doc" IsHitTestVisible="False" Focusable="False" Checked="doc_checkbox_Checked" Content="Document" HorizontalAlignment="Left" Margin="45,217,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="109"/>
+            <CheckBox x:Name="checkbox_object" IsHitTestVisible="False" Focusable="False" Checked="object_checkbox_Checked" Content="Object" HorizontalAlignment="Left" Margin="45,269,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="109"/>
         </Grid>
 
 
