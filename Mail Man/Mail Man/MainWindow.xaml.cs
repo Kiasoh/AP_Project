@@ -96,7 +96,7 @@ namespace Mail_Man
                 tbUsername.Text.IsThisSSNValid ();
                 if (MessageBox.Show("This Customer is not registered. Do you want to register a new customer?" , "Add Customer" , MessageBoxButton.YesNo , MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
-                    var SignupFrm = new signupClient ();
+                    var SignupFrm = new signupClient (employee);
                     SignupFrm.Show ();
                     SignupFrm.tbID.Text = tbUsername.Text;
                     this.Close ();
