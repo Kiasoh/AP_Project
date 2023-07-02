@@ -28,12 +28,16 @@ namespace Mail_Man
         {
             if ( lblID.Content == lblName.Content && lblName.Content == lblEmail.Content )
             {
-                string[] s = tbName.Text.Split ( ' ' );
-                new Customer ( s[0], s[1], tbEmail.Text, tbID.Text ,tb_phonenumber.Text );
-                var logInFrm = new Login ();
-                SaveAndRead.WriteData ();
-                logInFrm.Show ();
-                this.Close ();
+                try
+                {
+                    string[] s = tbName.Text.Split ( ' ' );
+                    new Customer ( s[0], s[1], tbEmail.Text, tbID.Text, tb_phonenumber.Text );
+                    var logInFrm = new Login ();
+                    SaveAndRead.WriteData ();
+                    logInFrm.Show ();
+                    this.Close ();
+                }
+                catch {  }
             }
         }
 
@@ -49,6 +53,7 @@ namespace Mail_Man
                     break;
                 }
             }
+            try { s[1] = s[1]; } catch { flag = false; }
             if ( !flag )
             {
                 lblName.Content = "*Name is Invalid!*";
