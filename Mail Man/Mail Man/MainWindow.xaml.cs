@@ -43,7 +43,7 @@ namespace Mail_Man
 
         private void btnRegistration(object sender, RoutedEventArgs e)
         {
-            var SignupFrm = new signupClient ();
+            var SignupFrm = new signupClient (employee);
             SignupFrm.Show ();
             this.Close ();
         }
@@ -299,10 +299,14 @@ namespace Mail_Man
 
         private void delivered_checkbox_Checked ( object sender, RoutedEventArgs e )
         {
+            sending_checkbox.IsChecked = false;
+            ready__checkbox.IsChecked = false;
+            regsitered_checkbox.IsChecked = false;
             ready__checkbox.IsEnabled = false;
             regsitered_checkbox.IsEnabled = false;
             sending_checkbox.IsEnabled = false;
-            if ( package.status != Status.Delivered ) SendMail (); 
+            if ( package.status != Status.Delivered ) SendMail ();
+            delivered_checkbox.IsEnabled = false;
             package.status = Status.Delivered;
             SaveAndRead.WriteData ();
         }

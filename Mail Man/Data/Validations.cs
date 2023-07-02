@@ -63,19 +63,23 @@ namespace Data
             if(date.CompareTo ( now ) < 0) return true;
             return false;
         }
+        private static int ha(string s)
+        {
+            return ( int.Parse ( s[1].ToString () ) + int.Parse ( s[0].ToString () ) );
+        }
         public static bool IsCardValid ( this string code )
         {
             int sum = 0;
 
             for (int i = 0; i < code.Length; i++)
             {
-                if (i%2 == 0)
+                if (i%2 == 1)
                 {
-                    sum += int.Parse ( code[i].ToString() );
+                    sum += int.Parse ( code[i].ToString() ) ;
                 }
                 else
                 {
-                    sum += int.Parse ( code[i].ToString () ) * 2;
+                    sum += int.Parse ( code[i].ToString () ) * 2 >= 10 ? ha ( (int.Parse ( code[i].ToString () ) * 2).ToString() ) : int.Parse ( code[i].ToString () ) * 2;
                 }
             }
             if (sum %10 == 0) return true;
