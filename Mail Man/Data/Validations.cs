@@ -16,7 +16,7 @@ namespace Data
         }
         public static bool IsThisEmailValid ( this string name )
         {
-            Regex regex = new Regex ( "^[A-Za-z0-9]{3,32}@[A-Za-z]{3,32}\\.[A-Za-z]{2,3}$" );
+            Regex regex = new Regex ( "^[A-Za-z0-9.]{3,32}@[A-Za-z]{3,32}\\.[A-Za-z]{2,3}$" );
             if ( regex.IsMatch ( name ) ) return true;
             return false;
         }
