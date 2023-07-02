@@ -67,7 +67,7 @@
             <CheckBox x:Name="doc_checkbox_as" Checked="doc_checkbox_Checked" Content="Document" HorizontalAlignment="Left" Margin="349,139,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="109"/>
             <CheckBox x:Name="object_checkbox_as" Checked="object_checkbox_Checked" Content="Object" HorizontalAlignment="Left" Margin="349,195,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="109"/>
         </Grid>
-        <Grid x:Name="grid_showinformation" Margin="205,0,0,0" Visibility ="Visible">
+        <Grid x:Name="grid_showinformation" Margin="205,0,0,0" Visibility ="Collapsed">
             <TextBox HorizontalAlignment="Left" Margin="45,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291" Height="38" BorderBrush="#FFFF7B00" Background="Black"/>
             <Button x:Name="btnSearch_package" Click="btnSearch_package_Click" Content="Show" HorizontalAlignment="Left" Margin="448,86,0,0" VerticalAlignment="Top" Height="38" Width="142" Foreground="#FFFF7B00" Background="#FF1A1A1A" BorderBrush="#FFFF7B00"/>
             <TextBlock HorizontalAlignment="Left" Margin="45,36,0,0" TextWrapping="Wrap" Text="Order ID" VerticalAlignment="Top" Height="38" Width="143" Foreground="#FF3C8223" FontSize="24"/>

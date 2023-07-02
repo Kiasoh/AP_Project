@@ -23,7 +23,12 @@ namespace Mail_Man
         {
             InitializeComponent();
         }
-
+        Employee? employee1 = null;
+        public signupClient (Employee employee)
+        {
+            employee1 = employee;
+            InitializeComponent ();
+        }
         private void btnSignUp_Click(object sender, RoutedEventArgs e)
         {
             if ( lblID.Content == lblName.Content && lblName.Content == lblEmail.Content )
@@ -32,7 +37,7 @@ namespace Mail_Man
                 {
                     string[] s = tbName.Text.Split ( ' ' );
                     new Customer ( s[0], s[1], tbEmail.Text, tbID.Text, tb_phonenumber.Text );
-                    var logInFrm = new Login ();
+                    var logInFrm = new MainWindow (employee1);
                     SaveAndRead.WriteData ();
                     logInFrm.Show ();
                     this.Close ();

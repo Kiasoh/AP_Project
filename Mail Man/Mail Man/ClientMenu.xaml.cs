@@ -12,8 +12,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using ceTe.DynamicPDF;
+//using ceTe.DynamicPDF;
 using Data;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 using Microsoft.Win32;
 namespace Mail_Man
 {
@@ -89,7 +91,7 @@ namespace Mail_Man
                     }
                     if ( ( MessageBox.Show ( "Do you want to save the reciept?", "Reciept", MessageBoxButton.YesNo, MessageBoxImage.Question ) ) == MessageBoxResult.Yes )
                     {
-                        /*
+                        
                         SaveFileDialog saveFileDialog = new SaveFileDialog ();
                         string s = "Your Reciept";
                         saveFileDialog.FileName = "Reciept"; // Default file name
@@ -98,6 +100,7 @@ namespace Mail_Man
                         if ( saveFileDialog.ShowDialog () == true )
 
                         {
+                            /*
                             Document document = new Document ();
 
                             ceTe.DynamicPDF.Page page = new ceTe.DynamicPDF.Page ( PageSize.Letter, PageOrientation.Portrait, 54.0f );
@@ -109,8 +112,18 @@ namespace Mail_Man
                             page.Elements.Add ( label );
 
                             document.Draw ( "Output.pdf" );
+                            */
+                            Document doctum = new Document ( iTextSharp.text.PageSize.A6, 10, 10, 42, 35 );
+                            PdfWriter writer = PdfWriter.GetInstance ( doctum, new FileStream ( saveFileDialog.FileName, FileMode.Create ) );
+                            doctum.Open ();
+                            
+                            doctum.SetMargins ( 10, 10, 10, 10 );
+                            iTextSharp.text.Paragraph paragraph2 = new iTextSharp.text.Paragraph ( $"Your reciept : \n\n{customer.FirstName} {customer.LastName} with Username {customer.username}\n{DateTime.Now}\ncharged account for {a}$\n" +
+                            $"Your balance : {customer.money}" );
+                            doctum.Add ( paragraph2 );
+                            doctum.Close ();
                         }
-                        */
+
                     }
                 }
                 else
