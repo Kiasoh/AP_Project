@@ -5,31 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mail_Man"
         mc:Ignorable="d"
-        Title="Login" Height="500" Width="800" Background="#FF181615" ResizeMode="NoResize" Icon="/PostLogo.png">
+        Title="Login" Height="500" Width="800" ResizeMode="NoResize" Icon="/PostLogo.png">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF181818" Offset="0.947"/>
+            <GradientStop Color="#FFBA8B02" Offset="0"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
-        <TextBlock HorizontalAlignment="Center" Margin="0,415,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="MV Boli"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/><Run/></TextBlock>
-        <Grid Margin="240,91,233,91" Background="#FF1A1A1A">
-            <TextBlock HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap" Text="Welcome" VerticalAlignment="Top" Foreground="White" Height="27" Width="132" FontWeight="Bold" FontFamily="Gautami" FontSize="24"/>
-            <Label FontSize="10" Visibility="Collapsed" Foreground="Red" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="30" Margin="56,180,56,0" RenderTransformOrigin="0.499,0.553" Name="lblError" >*Username or Password is incorrect!*</Label>
-            <Button Content="Log In" HorizontalAlignment="Center" Margin="0,205,0,0" VerticalAlignment="Top" Height="31" Width="160" FontFamily="Microsoft YaHei UI" FontSize="14" BorderBrush="#FFFF7B00" Foreground="White" Click="btnLog_In">
-                <Button.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFB52121"/>
-                        <GradientStop Color="#FFFF7B00" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Background>
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="10"></Setter>
-                    </Style>
-                </Button.Resources>
-            </Button>
-            <Button x:Name="btn_signup" Click="btn_Signup" Content="Join now" HorizontalAlignment="Center" Margin="0,252,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FF1A1A1A" Background="#FF1A1A1A" FontWeight="Bold" Height="23" Width="89"/>
-        </Grid>
+        <TextBlock HorizontalAlignment="Center" Margin="0,435,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFC07F00" FontFamily="MV Boli" Height="30"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/><Run/></TextBlock>
+        <Border Background="#FF1A1A1A" BorderBrush="Black" Margin="240,91,233,91"  BorderThickness="1" CornerRadius="10" Opacity="0.9">
+            <Grid>
+                <Label FontSize="10" Visibility="Collapsed" Foreground="Red" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="30" Margin="56,180,56,0" RenderTransformOrigin="0.499,0.553" Name="lblError" >*Username or Password is incorrect!*</Label>
+                <Button Content="Log In" HorizontalAlignment="Center" Margin="0,205,0,0" VerticalAlignment="Top" Height="31" Width="160" FontFamily="Microsoft YaHei UI" FontSize="14" BorderBrush="#FFFF7B00" Foreground="White" Click="btnLog_In">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFB52121"/>
+                            <GradientStop Color="#FFFF7B00" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"></Setter>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button x:Name="btn_signup" Click="btn_Signup" Content="Join now" HorizontalAlignment="Center" Margin="0,253,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="#FF1A1A1A" Background="#FF1A1A1A" Height="23" Width="89" FontFamily="Dubai Light" FontSize="16" FontWeight="Bold"/>
+            </Grid>
+        </Border>
         <TextBox HorizontalAlignment="Center" VerticalContentAlignment="Center" Margin="0,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" Height="29" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White" Name ="tbUsername" LostFocus="tbUsername_LostFocus"/>
-        <TextBox x:Name="tbUsername_Watermark" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="Gray" Height="29" GotFocus="tbUsername_Watermark_GotFocus" TextChanged="tbUsername_Watermark_TextChanged" Text="Username"/>
-        <PasswordBox HorizontalAlignment="Center"  Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White" x:Name="tbPassword" VerticalAlignment="Top" Width="172" Height="30" Margin="0,242,0,0"/>
-
+        <TextBox x:Name="tbUsername_Watermark" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" BorderBrush="#FFFF7B00" Foreground="Gray" Height="29" GotFocus="tbUsername_Watermark_GotFocus" TextChanged="tbUsername_Watermark_TextChanged" Text="Username" Background="#FF1A1A1A" SelectionBrush="#FFC07F00"/>
+        <PasswordBox HorizontalAlignment="Center"  Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White" x:Name="tbPassword" VerticalAlignment="Top" Width="172" Height="30" Margin="0,242,0,0" SelectionBrush="#FFC07F00"/>
+        <TextBlock HorizontalAlignment="Left" Margin="285,186,0,0" TextWrapping="Wrap" Text="👤" VerticalAlignment="Top" Height="18" Foreground="#FFC07F00"/>
+        <TextBlock HorizontalAlignment="Left" Margin="285,249,0,0" TextWrapping="Wrap" Text="🔐" VerticalAlignment="Top" Foreground="#FFC07F00"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,123,0,0" TextWrapping="Wrap" Text="Welcome" VerticalAlignment="Top" Foreground="White" Height="27" Width="112" FontWeight="Bold" FontFamily="Gautami" FontSize="24"/>
 
     </Grid>
 </Window>
