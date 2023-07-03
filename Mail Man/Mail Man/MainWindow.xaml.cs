@@ -251,7 +251,8 @@ namespace Mail_Man
         private void btnSearch_order_showpackage ( object sender, RoutedEventArgs e )
         {
             try 
-            { 
+            {
+                regsitered_checkbox.IsChecked = false; expensive_checkbox_showpack.IsChecked = false; sending_checkbox.IsChecked = false; ready__checkbox.IsChecked = false; delivered_checkbox.IsChecked = false; Usual_checkbox_showpack.IsChecked = false; Vip_checkbox_showpack.IsChecked = false; checkbox_object.IsChecked = false; checkbox_doc.IsChecked = false; checkbox_breack.IsChecked = false;
                 lblError_findpackage.Visibility = Visibility.Collapsed; if ( int.Parse ( tbPackageID.Text ) >= Package.packages.Count ) throw new Exception ("*No Package Found!*"); grid_checkpackage.Visibility = Visibility.Collapsed; grid_showPackage.Visibility = Visibility.Visible;
                 Package a = Package.packages[ int.Parse ( tbPackageID.Text )]; package = a; sender_lbl.Content = a.addressSender; reciever_lbl.Content = a.addressReciever; weigh_lbl.Content = a.weight.ToString (); comment_txtblock.Text = a.comment;
                 if (a.typeOfDelivery == TypeOfDelivery.Normal) Usual_checkbox_showpack.IsChecked = true;
@@ -343,6 +344,7 @@ namespace Mail_Man
             grid_ordering.Visibility = Visibility.Collapsed;
             grid_checkpackage.Visibility = Visibility.Collapsed;
             grid_showPackage.Visibility = Visibility.Collapsed;
+            
         }
 
         private void logout_btn_Click ( object sender, RoutedEventArgs e )

@@ -98,7 +98,7 @@
 
         </Grid>
 
-        <Grid x:Name="grid_reportOfOrders" Margin="5,10,0,-10" Grid.Column="1" Visibility="Visible">
+        <Grid x:Name="grid_reportOfOrders" Margin="5,10,0,-10" Grid.Column="1" Visibility="Collapsed">
             <TextBlock x:Name="txtblock_ssn" HorizontalAlignment="Left" Margin="56,65,0,0" TextWrapping="Wrap" Text="SSN" VerticalAlignment="Top" Height="36" Width="132" Cursor="" FontSize="24">
                 <TextBlock.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -156,8 +156,8 @@
 
         </Grid>
 
-        <Grid x:Name="grid_showPackage" Grid.Column="1" Visibility="Collapsed" Margin="10,10,0,0" >
-            <CheckBox x:Name="expensive_checkbox_showpack" Content="Expensive" HorizontalAlignment="Left" Margin="614,421,0,0" VerticalAlignment="Top" Height="33" Width="234" Foreground="#FFFF7B00" FontSize="16" IsChecked="False" Cursor="" BorderBrush="#FFFF7B00"/>
+        <Grid x:Name="grid_showPackage" Grid.Column="1" Visibility="Visible" Margin="10,10,0,0" >
+            <CheckBox x:Name="expensive_checkbox_showpack" IsHitTestVisible="False" Focusable="False" Content="Expensive" HorizontalAlignment="Left" Margin="614,421,0,0" VerticalAlignment="Top" Height="33" Width="234" Foreground="#FFFF7B00" FontSize="16" IsChecked="False" Cursor="" BorderBrush="#FFFF7B00"/>
             <TextBlock x:Name="weight_txtblock_showpack" HorizontalAlignment="Left" Margin="627,162,0,0" TextWrapping="Wrap" Text="Weigh" VerticalAlignment="Top" Height="52" Width="117" FontSize="24">
                 <TextBlock.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
