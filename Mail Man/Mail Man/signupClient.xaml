@@ -5,10 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mail_Man"
         mc:Ignorable="d"
-        Title="signupClient"  Height="450" Width="800" Background="#FF181615" ResizeMode="NoResize" Icon="/PostLogo.png">
+        Title="signupClient"  Height="450" Width="800" ResizeMode="NoResize" Icon="/PostLogo.png">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF181818" Offset="1"/>
+            <GradientStop Color="#FFBA8B02" Offset="0"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
-        <Grid Margin="232,10,232,10" Background="#FF1A1A1A">
-            <TextBlock HorizontalAlignment="Center" Margin="0,375,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="MV Boli" Height="33"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/><Run/></TextBlock>
+        <Border Background="#FF1A1A1A" BorderBrush="#FF1A1A1A" Margin="240,10,232,22"  BorderThickness="1" CornerRadius="10" Opacity="0.9">
+        <Grid>
+            <TextBlock HorizontalAlignment="Center" Margin="0,375,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFC07F00" FontFamily="MV Boli" Height="33"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/><Run/></TextBlock>
             <TextBox x:Name="tbName" HorizontalAlignment="Center" Margin="0,48,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="172" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White" Height="27" TextChanged="tbName_TextChanged" LostFocus="tbName_LostFocus"/>
             <TextBox x:Name="Name_Watermark" HorizontalAlignment="Center" Margin="0,48,0,0" TextWrapping="Wrap" Text="First And Last Name" VerticalAlignment="Top" Width="172" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="Gray" Height="27" GotFocus="Name_Watermark_GotFocus"/>
             <Label x:Name="lblName" Content="" HorizontalAlignment="Center" Margin="0,75,0,0" FontSize="10" VerticalAlignment="Top" Width="172" Foreground="Red" Height="30" HorizontalContentAlignment="Center"/>
@@ -34,7 +41,12 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
+            <TextBlock HorizontalAlignment="Left" Margin="50,194,0,0" TextWrapping="Wrap" Text="📧" VerticalAlignment="Top" Height="18" Foreground="#FFC07F00"/>
+            <TextBlock HorizontalAlignment="Left" Margin="50,48,0,0" TextWrapping="Wrap" Text="📝" VerticalAlignment="Top" Height="18" Foreground="#FFC07F00"/>
+            <TextBlock HorizontalAlignment="Left" Margin="50,266,0,0" TextWrapping="Wrap" Text="☎️" VerticalAlignment="Top" Height="18" Foreground="#FFC07F00" RenderTransformOrigin="0.546,1.086"/>
+            <TextBlock HorizontalAlignment="Left" Margin="50,118,0,0" TextWrapping="Wrap" Text="👤" VerticalAlignment="Top" Height="18" Foreground="#FFC07F00"/>
         </Grid>
+        </Border>
 
     </Grid>
 </Window>

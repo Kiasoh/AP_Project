@@ -11,15 +11,15 @@
             <ColumnDefinition Width="200*"/>
             <ColumnDefinition Width="900*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btn_home" Content="Home" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="72" Width="180" Foreground="#FFFF7B00" FontSize="16" FontFamily="Arial Rounded MT Bold" RenderTransformOrigin="0.511,0.41" FontWeight="Bold" Background="#FF181615" BorderBrush="#FF181615" Click="btn_home_Click"/>
-        <Button x:Name="btn_registration" Content="Registration" HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Top" Height="62" Width="180" Click="btnRegistration" Foreground="#FFFF7B00" Background="#FF181615" FontSize="16" FontFamily="Arial Rounded MT Bold" BorderBrush="#FF181615" FontWeight="Bold"/>
+        <Button x:Name="btn_home" Content="🏠 Home" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="72" Width="180" Foreground="#FFFF7B00" FontSize="16" FontFamily="Arial Rounded MT Bold" RenderTransformOrigin="0.511,0.41" FontWeight="Bold" Background="#FF181615" BorderBrush="#FF181615" Click="btn_home_Click"/>
+        <Button x:Name="btn_registration" Content="🎖 Registration" HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Top" Height="62" Width="180" Click="btnRegistration" Foreground="#FFFF7B00" Background="#FF181615" FontSize="16" FontFamily="Arial Rounded MT Bold" BorderBrush="#FF181615" FontWeight="Bold"/>
         <Button x:Name="btn_order" Content="Order" HorizontalAlignment="Center" Margin="0,190,0,0" VerticalAlignment="Top" Height="55" Width="180" Click="btn_order_Click" Background="#FF181615" Foreground="#FFFF7B00" BorderBrush="#FF181615" FontSize="16" FontFamily="Arial Rounded MT Bold" FontWeight="Bold"/>
         <Button x:Name="btn_report" Content="Report of orders" HorizontalAlignment="Center" VerticalAlignment="Center" Height="69" Width="180" Click="btn_report_Click" Foreground="#FFFF7B00" Background="#FF181615" BorderBrush="#FF181615" FontSize="16" FontFamily="Arial Rounded MT Bold" FontWeight="Bold"/>
         <Button x:Name="btn_show_information" Content="Show information" HorizontalAlignment="Center" Margin="0,344,0,0" VerticalAlignment="Top" Height="68" Width="180" Click="btn_show_information_Click" Background="#FF181615" Foreground="#FFFF7B00" BorderBrush="#FF181615" FontSize="16" FontFamily="Arial Rounded MT Bold" FontWeight="Bold"/>
         <Border BorderBrush="#FF1B1818" BorderThickness="1" Background="#FF181615" Panel.ZIndex="-10">
             <Button x:Name="logout_btn" Click="logout_btn_Click" Content="Log out" Margin="-1,461,0,70" Background="#FF181615" BorderBrush="#FF181615" Foreground="#FFFF7B00" FontSize="16" FontWeight="Bold" FontFamily="Arial Rounded MT Bold"/>
         </Border>
-        <TextBlock HorizontalAlignment="Center" Margin="0,535,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="MV Boli"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/></TextBlock>
+        <TextBlock HorizontalAlignment="Center" Margin="0,535,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFC07F00" FontFamily="MV Boli"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/></TextBlock>
 
         <Grid x:Name="grid_checkuser" Grid.Column="1" Visibility="Collapsed">
             <TextBox HorizontalAlignment="Center" Margin="0,166,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="320" Height="41" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White" Name ="tbUsername" LostFocus="tbUsername_LostFocus" TextChanged="tbUsername_TextChanged"/>
@@ -98,7 +98,7 @@
 
         </Grid>
 
-        <Grid x:Name="grid_reportOfOrders" Margin="5,10,0,-10" Grid.Column="1" Visibility="Visible">
+        <Grid x:Name="grid_reportOfOrders" Margin="5,10,0,-10" Grid.Column="1" Visibility="Collapsed">
             <TextBlock x:Name="txtblock_ssn" HorizontalAlignment="Left" Margin="56,65,0,0" TextWrapping="Wrap" Text="SSN" VerticalAlignment="Top" Height="36" Width="132" Cursor="" FontSize="24">
                 <TextBlock.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
