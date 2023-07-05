@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mail_Man"
         mc:Ignorable="d"
-        Title="Login" Height="500" Width="800" Background="#0A1828" ResizeMode="NoResize" Icon="/PostLogo.png">
+        Title="Login" Height="500" Width="800" Background="#0C1A1A" ResizeMode="NoResize" Icon="/PostLogo.png">
     <Grid>
         <TextBlock HorizontalAlignment="Center" Margin="0,415,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="MV Boli"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/><Run/></TextBlock>
-        <Grid Margin="240,91,233,91" Background="#0A1828">
+        <Grid Margin="240,91,233,91" Background="#0C1A1A">
             <TextBlock HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap" Text="Welcome" VerticalAlignment="Top" Foreground="White" Height="27" Width="132" FontWeight="Bold" FontFamily="Gautami" FontSize="24"/>
             <Label FontSize="10" Visibility="Collapsed" Foreground="#178582" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="30" Margin="56,180,56,0" RenderTransformOrigin="0.499,0.553" Name="lblError" >*Username or Password is incorrect!*</Label>
             <Button Content="Log In" HorizontalAlignment="Center" Margin="0,205,0,0" VerticalAlignment="Top" Height="31" Width="160" FontFamily="Microsoft YaHei UI" FontSize="14" BorderBrush="#BFA181" Foreground="White" Click="btnLog_In">
@@ -24,11 +24,11 @@
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button x:Name="btn_signup" Click="btn_Signup" Content="Join now" HorizontalAlignment="Center" Margin="0,252,0,0" VerticalAlignment="Top" Foreground="#BFA181" BorderBrush="#0A1828" Background="#0A1828" FontWeight="Bold" Height="23" Width="89"/>
+            <Button x:Name="btn_signup" Click="btn_Signup" Content="Join now" HorizontalAlignment="Center" Margin="0,252,0,0" VerticalAlignment="Top" Foreground="#BFA181" BorderBrush="#0C1A1A" Background="#0C1A1A" FontWeight="Bold" Height="23" Width="89"/>
         </Grid>
-        <TextBox HorizontalAlignment="Center" VerticalContentAlignment="Center" Margin="0,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" Height="29" Background="#0A1828" BorderBrush="#BFA181" Foreground="White" Name ="tbUsername" LostFocus="tbUsername_LostFocus"/>
-        <TextBox x:Name="tbUsername_Watermark" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" Background="#0A1828" BorderBrush="#BFA181" Foreground="Gray" Height="29" GotFocus="tbUsername_Watermark_GotFocus" TextChanged="tbUsername_Watermark_TextChanged" Text="Username"/>
-        <PasswordBox HorizontalAlignment="Center"  Background="#0A1828" BorderBrush="#BFA181" Foreground="White" x:Name="tbPassword" VerticalAlignment="Top" Width="172" Height="30" Margin="0,242,0,0"/>
+        <TextBox HorizontalAlignment="Center" VerticalContentAlignment="Center" Margin="0,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" Height="29" Background="#0C1A1A" BorderBrush="#BFA181" Foreground="White" Name ="tbUsername" LostFocus="tbUsername_LostFocus"/>
+        <TextBox x:Name="tbUsername_Watermark" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" Background="#0C1A1A" BorderBrush="#BFA181" Foreground="Gray" Height="29" GotFocus="tbUsername_Watermark_GotFocus" TextChanged="tbUsername_Watermark_TextChanged" Text="Username"/>
+        <PasswordBox HorizontalAlignment="Center"  VerticalContentAlignment="Center" Background="#0C1A1A" BorderBrush="#BFA181" Foreground="White" x:Name="tbPassword" VerticalAlignment="Top" Width="172" Height="30" Margin="0,242,0,0"/>
 
 
     </Grid>

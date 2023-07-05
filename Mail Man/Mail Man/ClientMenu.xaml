@@ -6,16 +6,16 @@
         xmlns:local="clr-namespace:Mail_Man"
         mc:Ignorable="d"
         Title="ClientMenu" Height="600" Width="1100" ResizeMode="NoResize">
-    <Grid Background="#0A1828">
-        <Border BorderBrush="#FF1B1818" BorderThickness="1" Background="#0A1828" Panel.ZIndex="-10" Margin="0,0,900,0">
-            <Button x:Name="logout_btn" Click="logout_btn_Click" Content="Log out" Margin="0,471,-1,59" Background="#0A1828" BorderBrush="#0A1828" Foreground="#BFA181" FontSize="14" FontWeight="Bold" FontFamily="Arial Rounded MT Bold"/>
+    <Grid Background="#0C1A1A">
+        <Border BorderBrush="#FF1B1818" BorderThickness="1" Background="#0C1A1A" Panel.ZIndex="-10" Margin="0,0,900,0">
+            <Button x:Name="logout_btn" Click="logout_btn_Click" Content="Log out" Margin="0,471,-1,59" Background="#0C1A1A" BorderBrush="#0C1A1A" Foreground="#BFA181" FontSize="14" FontWeight="Bold" FontFamily="Arial Rounded MT Bold"/>
         </Border>
-        <Button x:Name="btn_home" Content="Home" HorizontalAlignment="Left" Margin="10,24,0,0" VerticalAlignment="Top" Height="72" Width="180" Foreground="#BFA181" FontSize="20" FontFamily="Arial Rounded MT Bold" RenderTransformOrigin="0.511,0.41" FontWeight="Bold" Background="#0A1828" BorderBrush="#0A1828" Click="btn_home_Click"/>
-        <Button x:Name="btn_report" Content="Report of orders" HorizontalAlignment="Left" VerticalAlignment="Top" Height="69" Width="180" Click="btn_report_Click" Foreground="#BFA181" Background="#0A1828" BorderBrush="#0A1828" FontSize="18" FontFamily="Arial Rounded MT Bold" FontWeight="Bold" Margin="10,101,0,0" />
+        <Button x:Name="btn_home" Content="Home" HorizontalAlignment="Left" Margin="10,24,0,0" VerticalAlignment="Top" Height="72" Width="180" Foreground="#BFA181" FontSize="20" FontFamily="Arial Rounded MT Bold" RenderTransformOrigin="0.511,0.41" FontWeight="Bold" Background="#0C1A1A" BorderBrush="#0C1A1A" Click="btn_home_Click"/>
+        <Button x:Name="btn_report" Content="Report of orders" HorizontalAlignment="Left" VerticalAlignment="Top" Height="69" Width="180" Click="btn_report_Click" Foreground="#BFA181" Background="#0C1A1A" BorderBrush="#0C1A1A" FontSize="18" FontFamily="Arial Rounded MT Bold" FontWeight="Bold" Margin="10,101,0,0" />
         <TextBlock HorizontalAlignment="Left" Margin="50,542,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="MV Boli"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/></TextBlock>
-        <Button x:Name="btn_show_information" Content="Show information" HorizontalAlignment="Left" Margin="10,188,0,0" VerticalAlignment="Top" Height="68" Width="180" Click="btn_show_information_Click" Background="#0A1828" Foreground="#BFA181" BorderBrush="#0A1828" FontSize="18" FontFamily="Arial Rounded MT Bold" FontWeight="Bold"/>
-        <Button x:Name="btn_wallert" Content="Wallet" HorizontalAlignment="Left" Click="btn_wallert_Click" Margin="10,0,0,0" VerticalAlignment="Center" Height="52" Width="180" Foreground="#BFA181" FontSize="20" FontFamily="Arial Rounded MT Bold" RenderTransformOrigin="0.511,0.41" FontWeight="Bold" Background="#0A1828" BorderBrush="#0A1828"/>
-        <Button x:Name="btn_change_UserPass" Content="Change Username&#xD;&#xA;or Password" Click="btn_change_UserPass_Click" HorizontalAlignment="Left" Margin="10,355,0,0" VerticalAlignment="Top" Height="88" Width="190" Foreground="#BFA181" FontSize="18" FontFamily="Arial Rounded MT Bold" RenderTransformOrigin="0.511,0.41" Background="#0A1828" BorderBrush="#0A1828"/>
+        <Button x:Name="btn_show_information" Content="Show information" HorizontalAlignment="Left" Margin="10,188,0,0" VerticalAlignment="Top" Height="68" Width="180" Click="btn_show_information_Click" Background="#0C1A1A" Foreground="#BFA181" BorderBrush="#0C1A1A" FontSize="18" FontFamily="Arial Rounded MT Bold" FontWeight="Bold"/>
+        <Button x:Name="btn_wallert" Content="Wallet" HorizontalAlignment="Left" Click="btn_wallert_Click" Margin="10,0,0,0" VerticalAlignment="Center" Height="52" Width="180" Foreground="#BFA181" FontSize="20" FontFamily="Arial Rounded MT Bold" RenderTransformOrigin="0.511,0.41" FontWeight="Bold" Background="#0C1A1A" BorderBrush="#0C1A1A"/>
+        <Button x:Name="btn_change_UserPass" Content="Change Username&#xD;&#xA;or Password" Click="btn_change_UserPass_Click" HorizontalAlignment="Left" Margin="10,355,0,0" VerticalAlignment="Top" Height="88" Width="190" Foreground="#BFA181" FontSize="18" FontFamily="Arial Rounded MT Bold" RenderTransformOrigin="0.511,0.41" Background="#0C1A1A" BorderBrush="#0C1A1A"/>
 
 
         <Grid x:Name="grid_reportOfOrders" Margin="205,10,0,-10" Visibility="Collapsed">
@@ -42,8 +42,8 @@
                     </LinearGradientBrush>
                 </TextBlock.Foreground><Run Text="Weigh"/><LineBreak/><Run/></TextBlock>
             <Button Content="Search&#xD;&#xA;" Margin="597,498,88,40" Background="#BFA181" BorderBrush="#BFA181" FontSize="36" FontFamily="Bahnschrift Condensed" Click="Search_Click"/>
-            <TextBox x:Name="pricePaid_txt_as" HorizontalAlignment="Center" Margin="0,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" Width="218" Background="#0A1828" Foreground="#BFA181" RenderTransformOrigin="0.653,1.083"/>
-            <TextBox x:Name="weight_txt_as" HorizontalAlignment="Center" Margin="0,318,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" Width="218" Background="#0A1828" Foreground="#BFA181" RenderTransformOrigin="0.653,1.083"/>
+            <TextBox x:Name="pricePaid_txt_as"  VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" Width="218" Background="#0C1A1A" Foreground="#BFA181" RenderTransformOrigin="0.653,1.083"/>
+            <TextBox x:Name="weight_txt_as" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,318,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" Width="218" Background="#0C1A1A" Foreground="#BFA181" RenderTransformOrigin="0.653,1.083"/>
 
             <TextBlock x:Name="Type_txtblock" HorizontalAlignment="Left" Margin="58,417,0,0" TextWrapping="Wrap" Text="Type" VerticalAlignment="Top" Height="37" Width="217" FontSize="24">
                 <TextBlock.Foreground>
@@ -68,8 +68,8 @@
             <CheckBox x:Name="object_checkbox_as" Checked="object_checkbox_Checked" Content="Object" HorizontalAlignment="Left" Margin="349,195,0,0" VerticalAlignment="Top" Foreground="#BFA181" BorderBrush="#BFA181" FontSize="18" Width="109"/>
         </Grid>
         <Grid x:Name="grid_showinformation" Margin="205,0,0,0" Visibility ="Collapsed">
-            <TextBox x:Name="tbPackageID" HorizontalAlignment="Left" Margin="45,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291" Height="38" Foreground="White" BorderBrush="#BFA181" Background="Black"/>
-            <Label x:Name="lblError_findpackage" VerticalContentAlignment="Center" Visibility="Collapsed" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Width="276" Height="43" Content="*No package found!*" Foreground="Red" Margin="52,124,0,0" />
+            <TextBox x:Name="tbPackageID" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="45,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291" Height="38" Foreground="White" BorderBrush="#BFA181" Background="Black"/>
+            <Label x:Name="lblError_findpackage"  VerticalContentAlignment="Center" Visibility="Collapsed" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Width="276" Height="43" Content="*No package found!*" Foreground="Red" Margin="52,124,0,0" />
             <TextBlock HorizontalAlignment="Left" Margin="45,36,0,0" TextWrapping="Wrap" Text="Order ID" VerticalAlignment="Top" Height="38" Width="143" FontSize="24">
                 <TextBlock.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -78,7 +78,7 @@
                     </LinearGradientBrush>
                 </TextBlock.Foreground>
             </TextBlock>
-            <Button x:Name="btnSearch_package" Click="btnSearch_package_Click" Content="Search" HorizontalAlignment="Left" Margin="448,86,0,0" VerticalAlignment="Top" Height="38" Width="142" Foreground="#BFA181" Background="#0A1828" BorderBrush="#BFA181"/>
+            <Button x:Name="btnSearch_package" Click="btnSearch_package_Click" Content="Search" HorizontalAlignment="Left" Margin="448,86,0,0" VerticalAlignment="Top" Height="38" Width="142" Foreground="#BFA181" Background="#0C1A1A" BorderBrush="#BFA181"/>
         </Grid>
 
         <Grid x:Name="grid_wallet" Margin="205,0,0,0" Visibility="Collapsed">
@@ -99,13 +99,13 @@
                         <GradientStop Color="#BFA181" Offset="0"/>
                     </LinearGradientBrush>
                 </TextBlock.Foreground><Run Text="Charge Account"/><LineBreak/><Run/></TextBlock>
-            <TextBox x:Name="cardNumber" HorizontalAlignment="Left" Margin="500,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="316" Height="34" TextChanged="cardNumber_TextChanged"/>
-            <TextBox x:Name="cvv2" HorizontalAlignment="Left" Margin="500,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="316" Height="35" RenderTransformOrigin="0.491,0.025" TextChanged="cvv2_TextChanged"/>
-            <TextBox x:Name="amount" HorizontalAlignment="Left" Margin="500,399,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="316" Height="44" TextChanged="amount_TextChanged"/>
-            <Button x:Name="pay_btn" Content="Pay" HorizontalAlignment="Left" Margin="551,499,0,0" VerticalAlignment="Top" Height="59" Width="228" Click="pay_btn_Click" FontSize="24" Foreground="White" BorderBrush="#0A1828">
+            <TextBox x:Name="cardNumber" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="500,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="316" Height="34" TextChanged="cardNumber_TextChanged"/>
+            <TextBox x:Name="cvv2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="500,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="316" Height="35" RenderTransformOrigin="0.491,0.025" TextChanged="cvv2_TextChanged"/>
+            <TextBox x:Name="amount" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="500,399,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="316" Height="44" TextChanged="amount_TextChanged"/>
+            <Button x:Name="pay_btn" Content="Pay" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="551,499,0,0" VerticalAlignment="Top" Height="59" Width="228" Click="pay_btn_Click" FontSize="24" Foreground="White" BorderBrush="#0C1A1A">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFB52121"/>
+                        <GradientStop Color="#178582"/>
                         <GradientStop Color="#BFA181" Offset="1"/>
                     </LinearGradientBrush>
                 </Button.Background>
@@ -114,8 +114,8 @@
             <TextBlock x:Name="card_txtblock_Copy" HorizontalAlignment="Left" Margin="500,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119" Foreground="#FF37FF00" Height="19" Text="Expiration Date"/>
             <TextBlock x:Name="card_txtblock_Copy1" HorizontalAlignment="Left" Margin="500,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119" Foreground="#FF37FF00" Height="19" Text="CVV2"/>
             <TextBlock x:Name="card_txtblock_Copy2" HorizontalAlignment="Left" Margin="500,367,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119" Foreground="#FF37FF00" Height="19" Text="Amount"/>
-            <TextBox x:Name="expiration_year" HorizontalAlignment="Left" Margin="500,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="35"/>
-            <TextBox x:Name="expiration_month" HorizontalAlignment="Left" Margin="696,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="35"/>
+            <TextBox x:Name="expiration_year" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="500,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="35"/>
+            <TextBox x:Name="expiration_month" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="696,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="35"/>
             <TextBlock HorizontalAlignment="Left" Margin="625,214,0,0" TextWrapping="Wrap" Text="    /" VerticalAlignment="Top" Height="35" Width="66" Foreground="White" FontSize="24"/>
         </Grid>
         <Grid x:Name="grid_changeinformation" Margin="205,0,0,0" Visibility="Collapsed">
@@ -129,9 +129,9 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <TextBox x:Name="tbUsername" HorizontalAlignment="Left" Margin="394,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="272" Height="58" Foreground="#BFA181" Background="#0A1828" BorderBrush="White" TextChanged="tbusername_TextChanged"/>
+            <TextBox x:Name="tbUsername" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="394,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="272" Height="58" Foreground="#BFA181" Background="#0C1A1A" BorderBrush="White" TextChanged="tbusername_TextChanged"/>
             <Label x:Name="lblUsername" HorizontalAlignment="Left" Margin="394,94,0,0" FontSize="18" VerticalAlignment="Top" Width="272" Foreground="Red" Height="58" HorizontalContentAlignment="Center"></Label>
-            <TextBox x:Name="Password" HorizontalAlignment="Left" Margin="394,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272" Height="56" Foreground="#BFA181" BorderBrush="White" Background="#0A1828" TextChanged="Password_TextChanged"/>
+            <TextBox x:Name="Password" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="394,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272" Height="56" Foreground="#BFA181" BorderBrush="White" Background="#0C1A1A" TextChanged="Password_TextChanged"/>
             <Label x:Name="lblPassword" HorizontalAlignment="Left" Margin="394,258,0,0" FontSize="18" VerticalAlignment="Top" Width="272" Foreground="Red" Height="58" HorizontalContentAlignment="Center"></Label>
 
         </Grid>
@@ -180,7 +180,7 @@
             <Label x:Name="sender_lbl" Grid.Column="1" Content="Label" HorizontalAlignment="Left" Margin="36,100,0,0" VerticalAlignment="Top" Height="62" Width="203" BorderBrush="#BFA181" Foreground="#BFA181"/>
             <Label x:Name="reciever_lbl" Grid.Column="1" Content="Label" HorizontalAlignment="Left" Margin="627,100,0,0" VerticalAlignment="Top" Height="62" Width="203" BorderBrush="#BFA181" Foreground="#BFA181"/>
             <Label x:Name="weigh_lbl" Content="Label" HorizontalAlignment="Left" Margin="627,215,0,0" VerticalAlignment="Top" Height="54" Width="203" BorderBrush="#BFA181" Foreground="#BFA181" />
-            <TextBox x:Name="comment_tb" IsEnabled="False" TextChanged="comment_tb_TextChanged" TextWrapping="Wrap" Text="" Margin="36,483,28,47" Background="White"/>
+            <TextBox x:Name="comment_tb" VerticalContentAlignment="Center" IsEnabled="False" TextChanged="comment_tb_TextChanged" TextWrapping="Wrap" Text="" Margin="36,483,28,47" Background="White"/>
             <TextBlock x:Name="status_txtblock" HorizontalAlignment="Left" Margin="36,336,0,0" TextWrapping="Wrap" Text="Status" VerticalAlignment="Top" Height="52" Width="118" FontSize="36">
                 <TextBlock.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">

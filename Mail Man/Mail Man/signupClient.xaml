@@ -5,23 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mail_Man"
         mc:Ignorable="d"
-        Title="signupClient"  Height="450" Width="800" Background="#0A1828" ResizeMode="NoResize" Icon="/PostLogo.png">
+        Title="signupClient"  Height="450" Width="800" Background="#0C1A1A" ResizeMode="NoResize" Icon="/PostLogo.png">
     <Grid>
-        <Grid Margin="232,10,232,10" Background="#0A1828">
+        <Grid Margin="232,10,232,10" Background="#0C1A1A">
             <TextBlock HorizontalAlignment="Center" Margin="0,375,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="MV Boli" Height="33"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/><Run/></TextBlock>
-            <TextBox x:Name="tbName" HorizontalAlignment="Center" Margin="0,48,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="172" Background="#0A1828" BorderBrush="#BFA181" Foreground="White" Height="27" TextChanged="tbName_TextChanged" LostFocus="tbName_LostFocus"/>
-            <TextBox x:Name="Name_Watermark" HorizontalAlignment="Center" Margin="0,48,0,0" TextWrapping="Wrap" Text="First And Last Name" VerticalAlignment="Top" Width="172" Background="#0A1828" BorderBrush="#BFA181" Foreground="Gray" Height="27" GotFocus="Name_Watermark_GotFocus"/>
+            <TextBox x:Name="tbName" HorizontalAlignment="Center" Margin="0,48,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="172" Background="#0C1A1A" BorderBrush="#BFA181" VerticalContentAlignment="Center" Foreground="White" Height="27" TextChanged="tbName_TextChanged" LostFocus="tbName_LostFocus"/>
+            <TextBox x:Name="Name_Watermark" HorizontalAlignment="Center" Margin="0,48,0,0" TextWrapping="Wrap" Text="First And Last Name" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="172" Background="#0C1A1A" BorderBrush="#BFA181" Foreground="Gray" Height="27" GotFocus="Name_Watermark_GotFocus"/>
             <Label x:Name="lblName" Content="" HorizontalAlignment="Center" Margin="0,75,0,0" FontSize="10" VerticalAlignment="Top" Width="172" Foreground="Red" Height="30" HorizontalContentAlignment="Center"/>
             <Label x:Name="lblID" HorizontalAlignment="Center" Margin="0,144,0,0" FontSize="10" VerticalAlignment="Top" Width="172" Foreground="Red" Height="30" HorizontalContentAlignment="Center"/>
-            <Label x:Name="lblEmail" HorizontalAlignment="Center" Margin="0,224,0,0" FontSize="10" VerticalAlignment="Top" Width="172" Foreground="Red" Height="30" HorizontalContentAlignment="Center"/>
-            <Label x:Name="lblPhonenumber" HorizontalAlignment="Center" Margin="0,291,0,0" FontSize="10" VerticalAlignment="Top" Width="172" Foreground="Red" Height="30" HorizontalContentAlignment="Center"/>
-            <TextBox x:Name="tbID" HorizontalAlignment="Center" Margin="0,117,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="172" Background="#0A1828" BorderBrush="#BFA181" Foreground="White" Height="27" TextChanged="tbID_TextChanged" LostFocus="tbID_LostFocus"/>
-            <TextBox x:Name="tbID_Watermark" HorizontalAlignment="Center" Margin="0,117,0,0" TextWrapping="Wrap" Text="SSN" VerticalAlignment="Top" Width="172" Background="#0A1828" BorderBrush="#BFA181" Foreground="Gray" Height="27" GotFocus="tbID_Watermark_GotFocus"/>
-            <TextBox x:Name="tbEmail"  HorizontalAlignment="Center" Margin="0,188,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="172" Background="#0A1828" BorderBrush="#BFA181" Foreground="White" Height="31" TextChanged="tbEmail_TextChanged" LostFocus="tbEmail_LostFocus"/>
-            <TextBox x:Name="tbEmail_Watermark"  HorizontalAlignment="Center" Margin="0,188,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="172" Background="#0A1828" BorderBrush="#BFA181" Foreground="Gray" Height="31" GotFocus="tbEmail_Watermark_GotFocus"/>
-            <TextBox x:Name="tb_phonenumber" HorizontalAlignment="Center" Margin="0,260,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="172" Background="#0A1828" BorderBrush="#BFA181" Foreground="White" Height="31" TextChanged="tb_phonenumber_TextChanged" LostFocus="tb_phonenumber_LostFocus"/>
-            <TextBox x:Name="tb_phonenumber_Watermark" HorizontalAlignment="Center" Margin="0,260,0,0" TextWrapping="Wrap" Text="Phone Number" VerticalAlignment="Top" Width="172" Background="#0A1828" BorderBrush="#BFA181" Foreground="Gray" Height="31" GotFocus="tb_phonenumber_Watermark_GotFocus"/>
-            <Button x:Name="btnSignUp" Content="Signup" HorizontalAlignment="Center" Margin="0,326,0,0" VerticalAlignment="Top" Height="37" Width="218" FontFamily="Microsoft YaHei UI" FontSize="14" BorderBrush="#BFA181" Foreground="White" Click="btnSignUp_Click" >
+            <Label x:Name="lblEmail" HorizontalAlignment="Center" Margin="0,224,0,0" FontSize="10" VerticalAlignment="Top" Width="172" Foreground="Red"  Height="30" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lblPhonenumber" HorizontalAlignment="Center" Margin="0,291,0,0" FontSize="10" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="172" Foreground="Red" Height="30" HorizontalContentAlignment="Center"/>
+            <TextBox x:Name="tbID" HorizontalAlignment="Center" Margin="0,117,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" Text="" VerticalAlignment="Top" Width="172" Background="#0C1A1A" BorderBrush="#BFA181" Foreground="White" Height="27" TextChanged="tbID_TextChanged" LostFocus="tbID_LostFocus"/>
+            <TextBox x:Name="tbID_Watermark" HorizontalAlignment="Center" VerticalContentAlignment="Center" Margin="0,117,0,0" TextWrapping="Wrap" Text="SSN" VerticalAlignment="Top" Width="172" Background="#0C1A1A" BorderBrush="#BFA181" Foreground="Gray" Height="27" GotFocus="tbID_Watermark_GotFocus"/>
+            <TextBox x:Name="tbEmail"  HorizontalAlignment="Center" VerticalContentAlignment="Center" Margin="0,188,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="172" Background="#0C1A1A" BorderBrush="#BFA181" Foreground="White" Height="31" TextChanged="tbEmail_TextChanged" LostFocus="tbEmail_LostFocus"/>
+            <TextBox x:Name="tbEmail_Watermark" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,188,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="172" Background="#0C1A1A" BorderBrush="#BFA181" Foreground="Gray" Height="31" GotFocus="tbEmail_Watermark_GotFocus"/>
+            <TextBox x:Name="tb_phonenumber" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,260,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="172" Background="#0C1A1A" BorderBrush="#BFA181" Foreground="White" Height="31" TextChanged="tb_phonenumber_TextChanged" LostFocus="tb_phonenumber_LostFocus"/>
+            <TextBox x:Name="tb_phonenumber_Watermark" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,260,0,0" TextWrapping="Wrap" Text="Phone Number" VerticalAlignment="Top" Width="172" Background="#0C1A1A" BorderBrush="#BFA181" Foreground="Gray" Height="31" GotFocus="tb_phonenumber_Watermark_GotFocus"/>
+            <Button x:Name="btnSignUp" Content="Signup" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,326,0,0" VerticalAlignment="Top" Height="37" Width="218" FontFamily="Microsoft YaHei UI" FontSize="14" BorderBrush="#BFA181" Foreground="White" Click="btnSignUp_Click" >
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="10"/>
@@ -29,7 +29,7 @@
                 </Button.Resources>
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFB52121"/>
+                        <GradientStop Color="#178582"/>
                         <GradientStop Color="#BFA181" Offset="1"/>
                     </LinearGradientBrush>
                 </Button.Background>
