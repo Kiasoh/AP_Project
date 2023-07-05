@@ -161,5 +161,14 @@ namespace Mail_Man
                 tb_phonenumber_Watermark.Visibility = Visibility.Visible;
             }
         }
+
+        private void leftarrow_btn_Click ( object sender, RoutedEventArgs e )
+        {
+
+            var login = new MainWindow (employee1);
+            login.Show ();
+            this.Close ();
+
+        }
     }
 }

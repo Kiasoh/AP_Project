@@ -182,5 +182,12 @@ namespace Mail_Man
         {
 
         }
+
+        private void leftarrow_btn_Click ( object sender, RoutedEventArgs e )
+        {
+            var login = new Login ();
+            login.Show ();
+            this.Close ();
+        }
     }
 }
