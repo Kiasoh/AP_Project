@@ -37,6 +37,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
+            <Button x:Name="leftarrow_btn" Content="⬅️" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FF1A1A1A" Background="#FF1A1A1A" Height="31" Width="47" FontSize="24" FontWeight="Bold" FontFamily="Algerian"/>
         </Grid>
         <TextBlock HorizontalAlignment="Center" Margin="0,413,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="MV Boli" Height="21"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/><Run/></TextBlock>
 
