@@ -22,8 +22,8 @@
         <TextBlock HorizontalAlignment="Left" Margin="50,542,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="MV Boli"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/></TextBlock>
         <Button x:Name="btn_show_information" Content="Show information" HorizontalAlignment="Left" Margin="10,188,0,0" VerticalAlignment="Top" Height="68" Width="169" Click="btn_show_information_Click" Background="#0C1A1A" Foreground="#BFA181" BorderBrush="#0C1A1A" FontSize="18" FontFamily="Arial Rounded MT Bold" FontWeight="Bold"/>
         <Button x:Name="btn_wallert" Content="Wallet" HorizontalAlignment="Left" Click="btn_wallert_Click" Margin="10,292,0,0" VerticalAlignment="Center" Height="52" Width="169" Foreground="#BFA181" FontSize="16" FontFamily="Arial Rounded MT Bold" RenderTransformOrigin="0.511,0.41" FontWeight="Bold" Background="#0C1A1A" BorderBrush="#0C1A1A"/>
-            <Button x:Name="btn_change_UserPass" Content="Change Username&#xD;&#xA;or Password" Click="btn_change_UserPass_Click" HorizontalAlignment="Left" Margin="10,355,0,0" VerticalAlignment="Top" Height="88" Width="169" Foreground="#BFA181" FontSize="18" FontFamily="Arial Rounded MT Bold" RenderTransformOrigin="0.511,0.41" Background="#0C1A1A" BorderBrush="#0C1A1A"/>
-            <Grid x:Name="grid_reportOfOrders" Margin="205,10,0,-10" Visibility="Collapsed">
+        <Button x:Name="btn_change_UserPass" Content="Change Username&#xD;&#xA;and Password" Click="btn_change_UserPass_Click" HorizontalAlignment="Left" Margin="16,292,0,0" VerticalAlignment="Top" Height="88" Width="168" Foreground="#BFA181" FontSize="18" FontFamily="Arial Rounded MT Bold" RenderTransformOrigin="0.511,0.41" Background="#0C1A1A" BorderBrush="#0C1A1A"/>
+        <Grid x:Name="grid_reportOfOrders" Margin="205,10,0,-10" Visibility="Collapsed">
             <TextBlock x:Name="txtblock_PersonalId" HorizontalAlignment="Left" Visibility="Collapsed" Margin="56,60,0,0" TextWrapping="Wrap" Text="Personal ID" VerticalAlignment="Top" Height="36" Width="132" Cursor="" FontSize="24">
                 <TextBlock.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -70,8 +70,8 @@
 
             <CheckBox x:Name="vip_checkbox_as" Checked="vip_checkbox_Checked" Content="VIP" HorizontalAlignment="Left" Margin="338,436,0,0" VerticalAlignment="Top" Foreground="#BFA181" BorderBrush="#BFA181" FontSize="18" Width="110"/>
             <CheckBox x:Name="usuall_checkbox_as" Checked="usuall_checkbox_Checked" Content="Usuall" HorizontalAlignment="Left" Margin="468,436,0,0" VerticalAlignment="Top" Foreground="#BFA181" BorderBrush="#BFA181" FontSize="18" Width="88"/>
-            <CheckBox x:Name="breack_checkbox_as" Checked="breack_checkbox_Checked" Content="Breackable" HorizontalAlignment="Left" Margin="349,167,0,0" VerticalAlignment="Top" Foreground="#BFA181" BorderBrush="#BFA181" FontSize="18" Width="109"/>
-            <CheckBox x:Name="doc_checkbox_as" Checked="doc_checkbox_Checked" Content="Document" HorizontalAlignment="Left" Margin="338,43,0,0" VerticalAlignment="Top" Foreground="#BFA181" BorderBrush="#BFA181" FontSize="18" Width="109"/>
+            <CheckBox x:Name="breack_checkbox_as" Checked="breack_checkbox_Checked" Content="Breackable" HorizontalAlignment="Left" Margin="338,89,0,0" VerticalAlignment="Top" Foreground="#BFA181" BorderBrush="#BFA181" FontSize="18" Width="109"/>
+            <CheckBox x:Name="doc_checkbox_as" Checked="doc_checkbox_Checked" Content="Document" HorizontalAlignment="Left" Margin="338,49,0,0" VerticalAlignment="Top" Foreground="#BFA181" BorderBrush="#BFA181" FontSize="18" Width="109"/>
             <CheckBox x:Name="object_checkbox_as" Checked="object_checkbox_Checked" Content="Object" HorizontalAlignment="Left" Margin="338,125,0,0" VerticalAlignment="Top" Foreground="#BFA181" BorderBrush="#BFA181" FontSize="18" Width="109"/>
         </Grid>
         <Grid x:Name="grid_showinformation" Margin="205,0,0,0" Visibility ="Collapsed">
@@ -99,7 +99,7 @@
                 </TextBlock.Foreground><Run Text="Wallet"/><LineBreak/><Run/></TextBlock>
 
             <TextBlock x:Name="totalMoney_txtblock" HorizontalAlignment="Left" Text="" TextAlignment="Center" FontSize="30" Margin="173,474,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="46" Width="280" Foreground="White" Background="Black"/>
-            <TextBlock x:Name="TOTALmoney_txtblock" HorizontalAlignment="Left" Margin="10,474,0,0" TextWrapping="Wrap" Text="TOTAL Money" VerticalAlignment="Top" Foreground="#BFA181" Height="46" Width="158" FontSize="22"/>
+            <TextBlock x:Name="TOTALmoney_txtblock" HorizontalAlignment="Left" Margin="10,480,0,0" TextWrapping="Wrap" Text="TOTAL Money" VerticalAlignment="Top" Foreground="#BFA181" Height="46" Width="158" FontSize="22"/>
             <Rectangle HorizontalAlignment="Left" Height="520" Margin="470,0,0,0" VerticalAlignment="Center" Width="390" Stroke="White"/>
 
             <TextBlock HorizontalAlignment="Left" Margin="490,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="52" Width="307" FontSize="36">
@@ -113,7 +113,7 @@
             <TextBox VerticalContentAlignment="Center" x:Name="cvv2" HorizontalAlignment="Left" Margin="500,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="316" Height="35" RenderTransformOrigin="0.491,0.025" TextChanged="cvv2_TextChanged"/>
             <TextBox VerticalContentAlignment="Center" x:Name="amount" HorizontalAlignment="Left" Margin="500,399,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="316" Height="44" TextChanged="amount_TextChanged"/>
 
-            <Button x:Name="pay_btn" Content="Pay" HorizontalAlignment="Left" Margin="551,70,0,0" VerticalAlignment="Top" Height="59" Width="228" Click="pay_btn_Click" FontSize="24" Foreground="White" BorderBrush="#0C1A1A">
+            <Button x:Name="pay_btn" Content="Pay" HorizontalAlignment="Left" Margin="551,474,0,0" VerticalAlignment="Top" Height="59" Width="228" Click="pay_btn_Click" FontSize="24" Foreground="White" BorderBrush="#0C1A1A">
 
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -136,7 +136,7 @@
             <Button x:Name="Save" Content="Save" HorizontalAlignment="Left" Click="Save_Click" Margin="660,508,0,0" VerticalAlignment="Top" Height="46" Width="188" FontSize="18" Foreground="White" BorderBrush="#FF1A1A1A">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFEF1212"/>
+                        <GradientStop Color="#0a1828"/>
                         <GradientStop Color="#BFA181" Offset="1"/>
                     </LinearGradientBrush>
                 </Button.Background>
@@ -148,8 +148,8 @@
             <Label x:Name="lblPassword" HorizontalAlignment="Left" Margin="394,258,0,0" FontSize="18" VerticalAlignment="Top" Width="272" Foreground="Red" Height="58" HorizontalContentAlignment="Center"></Label>
 
         </Grid>
-        <Grid x:Name="grid_showPackage" Visibility="Visible" Margin="205,10,0,0" >
-            <CheckBox x:Name="expensive_checkbox_showpack" IsHitTestVisible="False" Focusable="False" IsEnabled="False" Content="Expensive" HorizontalAlignment="Left" Margin="614,421,0,0" VerticalAlignment="Top" Height="33" Width="234" Foreground="#BFA181" FontSize="16" IsChecked="False" Cursor="" BorderBrush="#BFA181"/>
+        <Grid x:Name="grid_showPackage" Visibility="Collapsed" Margin="205,10,0,0" >
+            <CheckBox x:Name="expensive_checkbox_showpack" IsHitTestVisible="False" Focusable="False" IsEnabled="False" Content="Expensive" HorizontalAlignment="Left" Margin="627,421,0,0" VerticalAlignment="Top" Height="33" Width="234" Foreground="#BFA181" FontSize="16" IsChecked="False" Cursor="" BorderBrush="#BFA181"/>
             <TextBlock x:Name="weight_txtblock_showpack" HorizontalAlignment="Left" Margin="627,162,0,0" TextWrapping="Wrap" Text="Weigh" VerticalAlignment="Top" Height="52" Width="117" FontSize="24">
                 <TextBlock.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
