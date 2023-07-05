@@ -24,12 +24,15 @@ namespace Mail_Man
     /// </summary>
     public partial class ClientMenu : Window
     {
+        Package? package = null;
         public Customer? customer = null;
         public ClientMenu(Customer customer)
         {
             this.customer = customer;
             InitializeComponent();
-
+            RoutedEventArgs? e = null;
+            object? sender = null;
+            btn_home_Click ( sender, e );
         }
 
         // start of show information
@@ -37,8 +40,43 @@ namespace Mail_Man
         {
             grid_changeinformation.Visibility = Visibility.Collapsed;
             grid_showinformation.Visibility = Visibility.Visible;
+            grid_showPackage.Visibility = Visibility.Collapsed;
             grid_reportOfOrders.Visibility = Visibility.Collapsed;
             grid_wallet.Visibility = Visibility.Collapsed;
+            
+        }
+        private void btnSearch_package_Click ( object sender, RoutedEventArgs e )
+        {
+            try
+            {
+                regsitered_checkbox.IsChecked = false; sending_checkbox.IsChecked = false; expensive_checkbox_showpack.IsChecked = false; ready__checkbox.IsChecked = false; delivered_checkbox.IsChecked = false; comment_tb.IsEnabled = false; Usual_checkbox_showpack.IsChecked = false; Vip_checkbox_showpack.IsChecked = false; checkbox_object.IsChecked = false; checkbox_doc.IsChecked = false; checkbox_breack.IsChecked = false;
+                lblError_findpackage.Visibility = Visibility.Collapsed; if ( Package.packages[ int.Parse ( tbPackageID.Text )].customer != customer  ) throw new Exception ( "*No Package Found!*" ); grid_showinformation.Visibility = Visibility.Collapsed; grid_showPackage.Visibility = Visibility.Visible;
+                Package a = Package.packages[int.Parse ( tbPackageID.Text )]; package = a; sender_lbl.Content = a.addressSender; reciever_lbl.Content = a.addressReciever; weigh_lbl.Content = a.weight.ToString (); comment_tb.Text = a.comment;
+                if ( a.typeOfDelivery == TypeOfDelivery.Normal ) Usual_checkbox_showpack.IsChecked = true;
+                else Vip_checkbox_showpack.IsChecked = true;
+                if ( a.typeOfPackage == TypeOfPackage.Object ) checkbox_object.IsChecked = true;
+                else if ( a.typeOfPackage == TypeOfPackage.Document ) checkbox_doc.IsChecked = true;
+                else checkbox_breack.IsChecked = true;
+                if ( a.IsExpensive ) expensive_checkbox_showpack.IsChecked = true;
+                if ( a.status == Status.Registered ) regsitered_checkbox.IsChecked = true;
+                else if ( a.status == Status.OnTheWay ) sending_checkbox.IsChecked = true;
+                else if ( a.status == Status.ReadyToGO ) ready__checkbox.IsChecked = true;
+                else
+                {
+                    delivered_checkbox.IsChecked = true;
+                    comment_tb.IsEnabled = true;
+                }
+                if (a.status != Status.Delivered ) comment_tb.IsEnabled = false;
+            }
+            catch ( FormatException ex ) { MessageBox.Show ( "Invalid Foramt!", "Error", MessageBoxButton.OK, MessageBoxImage.Error ); }
+            catch ( Exception ex ) { lblError_findpackage.Content = ex.Message; lblError_findpackage.Visibility = Visibility.Visible; }
+        }
+        
+        private void comment_tb_TextChanged ( object sender, TextChangedEventArgs e )
+        {
+            package.comment = comment_tb.Text;
+            try { SaveAndRead.WriteData (); }
+            catch { }
         }
         // start of wallet
         private void btn_wallert_Click ( object sender, RoutedEventArgs e )
@@ -216,6 +254,7 @@ namespace Mail_Man
             grid_showinformation.Visibility = Visibility.Collapsed;
             grid_reportOfOrders.Visibility = Visibility.Collapsed;
             grid_wallet.Visibility = Visibility.Collapsed;
+            grid_showPackage.Visibility = Visibility.Collapsed;
         }
 
         private void logout_btn_Click ( object sender, RoutedEventArgs e )
@@ -255,9 +294,6 @@ namespace Mail_Man
 
         }
 
-        private void btnSearch_package_Click ( object sender, RoutedEventArgs e )
-        {
-
-        }
+        
     }
 }

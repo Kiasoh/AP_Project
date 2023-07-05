@@ -52,7 +52,7 @@
                 <TextBlock HorizontalAlignment="Left" Margin="43,31,0,0" TextWrapping="Wrap" Text="📝" VerticalAlignment="Top" Height="18" Foreground="#FFC07F00"/>
             </Grid>
         </Border>
-        <TextBlock HorizontalAlignment="Center" Margin="0,407,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFC07F00" FontFamily="MV Boli" Height="22"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/><Run/></TextBlock>
+            <TextBlock HorizontalAlignment="Center" Margin="0,407,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFC07F00" FontFamily="MV Boli" Height="22"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/><Run/></TextBlock>
 
     </Grid>
 </Window>
