@@ -41,14 +41,12 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-<<<<<<< HEAD
             <TextBlock HorizontalAlignment="Left" Margin="50,194,0,0" TextWrapping="Wrap" Text="📧" VerticalAlignment="Top" Height="18" Foreground="#FFC07F00"/>
             <TextBlock HorizontalAlignment="Left" Margin="50,48,0,0" TextWrapping="Wrap" Text="📝" VerticalAlignment="Top" Height="18" Foreground="#FFC07F00"/>
             <TextBlock HorizontalAlignment="Left" Margin="50,266,0,0" TextWrapping="Wrap" Text="☎️" VerticalAlignment="Top" Height="18" Foreground="#FFC07F00" RenderTransformOrigin="0.546,1.086"/>
             <TextBlock HorizontalAlignment="Left" Margin="50,118,0,0" TextWrapping="Wrap" Text="👤" VerticalAlignment="Top" Height="18" Foreground="#FFC07F00"/>
-=======
-            <Button x:Name="leftarrow_btn" Content="⬅️" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FF1A1A1A" Background="#FF1A1A1A" Height="31" Width="47" FontSize="24" FontWeight="Bold" FontFamily="Algerian"/>
->>>>>>> develop
+            <Button x:Name="leftarrow_btn" Content="⬅️" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Foreground="#FFC07F00" BorderBrush="#FF1A1A1A" Background="#FF1A1A1A" Height="31" Width="47" FontSize="24" FontWeight="Bold" FontFamily="Algerian"/>
+
         </Grid>
         </Border>
 
