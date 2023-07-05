@@ -15,7 +15,7 @@
     <Grid>
         
         <Grid Margin="232,10,232,10">
-            <TextBlock HorizontalAlignment="Center" Margin="0,375,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="MV Boli" Height="33"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/><Run/></TextBlock>
+            <TextBlock HorizontalAlignment="Center" Margin="0,375,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFC07F00" FontFamily="MV Boli" Height="33"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/><Run/></TextBlock>
             <TextBox VerticalContentAlignment="Center" x:Name="tbName" HorizontalAlignment="Center" Margin="0,48,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="172" Background="#0C1A1A" BorderBrush="#BFA181" Foreground="White" Height="27" TextChanged="tbName_TextChanged" LostFocus="tbName_LostFocus"/>
             <TextBox VerticalContentAlignment="Center" x:Name="Name_Watermark" HorizontalAlignment="Center" Margin="0,48,0,0" TextWrapping="Wrap" Text="First And Last Name" VerticalAlignment="Top" Width="172" Background="#0C1A1A" BorderBrush="#BFA181" Foreground="Gray" Height="27" GotFocus="Name_Watermark_GotFocus"/>
             <Label x:Name="lblName" Content="" HorizontalAlignment="Center" Margin="0,75,0,0" FontSize="10" VerticalAlignment="Top" Width="172" Foreground="Red" Height="30" HorizontalContentAlignment="Center"/>
@@ -41,7 +41,11 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button x:Name="leftarrow_btn" Click="leftarrow_btn_Click" Content="⬅️" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FF1A1A1A" Background="#FF1A1A1A" Height="31" Width="47" FontSize="24" FontWeight="Bold" FontFamily="Algerian"/>
+            <Button x:Name="leftarrow_btn" Click="leftarrow_btn_Click" Content="⬅️" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="#FFBFA181" BorderBrush="#FF0A1828" Background="#FF0A1828" Height="31" Width="40" FontSize="24" FontWeight="Bold" FontFamily="Algerian"/>
+            <TextBlock HorizontalAlignment="Left" Margin="50,194,0,0" TextWrapping="Wrap" Text="📧" VerticalAlignment="Top" Height="18" Foreground="#FFBFA181"/>
+            <TextBlock HorizontalAlignment="Left" Margin="50,48,0,0" TextWrapping="Wrap" Text="📝" VerticalAlignment="Top" Height="18" Foreground="#FFBFA181"/>
+            <TextBlock HorizontalAlignment="Left" Margin="50,266,0,0" TextWrapping="Wrap" Text="☎️" VerticalAlignment="Top" Height="18" Foreground="#FFBFA181" RenderTransformOrigin="0.546,1.086"/>
+            <TextBlock HorizontalAlignment="Left" Margin="50,118,0,0" TextWrapping="Wrap" Text="👤" VerticalAlignment="Top" Height="18" Foreground="#FFBFA181"/>
         </Grid>
 
     </Grid>

@@ -25,7 +25,7 @@
         <Border BorderBrush="#FF1B1818" BorderThickness="1" Background="#0C1A1A" Panel.ZIndex="-10">
             <Button x:Name="logout_btn" Click="logout_btn_Click" Content="Log out" Margin="-1,461,0,70" Background="#0C1A1A" BorderBrush="#0C1A1A" Foreground="#BFA181" FontSize="16" FontWeight="Bold" FontFamily="Arial Rounded MT Bold"/>
         </Border>
-        <TextBlock HorizontalAlignment="Center" Margin="0,535,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="MV Boli"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/></TextBlock>
+        <TextBlock HorizontalAlignment="Center" Margin="0,535,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFC07F00" FontFamily="MV Boli"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/></TextBlock>
 
         <Grid x:Name="grid_checkuser" Grid.Column="1" Visibility="Collapsed">
             <TextBox VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,166,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="320" Height="41" Background="#0C1A1A" BorderBrush="#BFA181" Foreground="White" Name ="tbUsername" LostFocus="tbUsername_LostFocus" TextChanged="tbUsername_TextChanged"/>
@@ -52,7 +52,7 @@
             <TextBox VerticalContentAlignment="Center" x:Name="sendaddress_txt" HorizontalAlignment="Left" Margin="41,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="31" BorderBrush="#BFA181" Foreground="#BFA181" Background="#0C1A1A"/>
             <CheckBox x:Name="expensive_checkbox" Content="Expensive" HorizontalAlignment="Left" Margin="587,298,0,0" VerticalAlignment="Top" Height="24" Width="218" Foreground="#BFA181" FontSize="16" IsChecked="False" Cursor="" BorderBrush="#BFA181"/>
             <TextBox VerticalContentAlignment="Center" x:Name="weight_txt" HorizontalAlignment="Left" Margin="587,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="28" Foreground="#BFA181" BorderBrush="#BFA181" Background="#0C1A1A"/>
-            <TextBlock x:Name="showtotal_txtblock" HorizontalAlignment="Left" Margin="80,409,0,0" TextWrapping="Wrap" FontSize="22" VerticalAlignment="Top" Height="46" Width="179" Background="Black" Foreground="#FF0B821D" Text=""/>
+            <TextBlock x:Name="showtotal_txtblock" HorizontalAlignment="Left" Margin="80,409,0,0" TextWrapping="Wrap" FontSize="22" VerticalAlignment="Top" Height="46" Width="179" Background="#FF0A1515" Foreground="#FF0B821D" Text=""/>
             <TextBlock x:Name="total_txtblock" HorizontalAlignment="Left" Margin="10,416,0,0" TextWrapping="Wrap" Text="Total : " VerticalAlignment="Top" Height="29" Width="109" Foreground="#FF0B821D" FontSize="24"/>
             <Button x:Name="calculation_btn" Click="calculation_btn_Click" Content="Calculation" HorizontalAlignment="Left" Margin="41,507,0,0" VerticalAlignment="Top" Height="39" Width="218" Background="#0C1A1A" BorderBrush="#BFA181" Foreground="#BFA181"/>
             <Button x:Name="submit_bin" Click="submit_bin_Click" Content="Submit" HorizontalAlignment="Left" Margin="587,507,0,0" VerticalAlignment="Top" Height="39" Width="218" Background="#BFA181" BorderBrush="#0C1A1A" Foreground="#0C1A1A" FontSize="18" FontWeight="Bold"/>
@@ -162,7 +162,7 @@
 
         </Grid>
 
-        <Grid x:Name="grid_showPackage" Grid.Column="1" Visibility="Visible" Margin="10,10,0,0" >
+        <Grid x:Name="grid_showPackage" Grid.Column="1" Visibility="Collapsed" Margin="10,10,0,0" >
             <CheckBox x:Name="expensive_checkbox_showpack" IsHitTestVisible="False" Focusable="False" Content="Expensive" HorizontalAlignment="Left" Margin="614,421,0,0" VerticalAlignment="Top" Height="33" Width="234" Foreground="#BFA181" FontSize="16" IsChecked="False" Cursor="" BorderBrush="#BFA181"/>
             <TextBlock x:Name="weight_txtblock_showpack" HorizontalAlignment="Left" Margin="627,162,0,0" TextWrapping="Wrap" Text="Weigh" VerticalAlignment="Top" Height="52" Width="117" FontSize="24">
                 <TextBlock.Foreground>
@@ -223,7 +223,7 @@
             <CheckBox x:Name="Usual_checkbox_showpack" IsHitTestVisible="False" Focusable="False" Content="Usual" HorizontalAlignment="Left" Margin="627,337,0,0" VerticalAlignment="Top" Height="33" Width="105" Foreground="#BFA181" FontSize="16" IsChecked="False" Cursor="" BorderBrush="#BFA181"/>
             <CheckBox x:Name="Vip_checkbox_showpack" Content="VIP" HorizontalAlignment="Left" IsHitTestVisible="False" Focusable="False" Margin="627,370,0,0" VerticalAlignment="Top" Height="33" Width="105" Foreground="#BFA181" FontSize="16" IsChecked="False" Cursor="" BorderBrush="#BFA181"/>
             <CheckBox x:Name="checkbox_breack" IsHitTestVisible="False" Focusable="False" Checked="breack_checkbox_Checked" Content="Breackable" HorizontalAlignment="Left" Margin="45,238,0,0" VerticalAlignment="Top" Foreground="#BFA181" BorderBrush="#BFA181" FontSize="18" Width="109"/>
-            <CheckBox x:Name="checkbox_doc" IsHitTestVisible="False" Focusable="False" Checked="doc_checkbox_Checked" Content="Document" HorizontalAlignment="Left" Margin="45,217,0,0" VerticalAlignment="Top" Foreground="#BFA181" BorderBrush="#BFA181" FontSize="18" Width="109"/>
+            <CheckBox x:Name="checkbox_doc" IsHitTestVisible="False" Focusable="False" Checked="doc_checkbox_Checked" Content="Document" HorizontalAlignment="Left" Margin="45,210,0,0" VerticalAlignment="Top" Foreground="#BFA181" BorderBrush="#BFA181" FontSize="18" Width="109"/>
             <CheckBox x:Name="checkbox_object" IsHitTestVisible="False" Focusable="False" Checked="object_checkbox_Checked" Content="Object" HorizontalAlignment="Left" Margin="45,269,0,0" VerticalAlignment="Top" Foreground="#BFA181" BorderBrush="#BFA181" FontSize="18" Width="109"/>
         </Grid>
 
