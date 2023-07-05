@@ -5,26 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mail_Man"
         mc:Ignorable="d"
-        Title="SignUp" Height="500" Width="800" Background="#FF181615" ResizeMode="NoResize" Icon="/PostLogo.png">
+        Title="SignUp" Height="500" Width="800" Background="#0A1828" ResizeMode="NoResize" Icon="/PostLogo.png">
     <Grid>
-        <Grid Margin="232,10,232,23" Background="#FF1A1A1A">
-            <TextBox x:Name="tbName" HorizontalAlignment="Center" LostFocus="tbName_LostFocus" Margin="0,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White" Height="27" TextChanged="tbName_TextChanged"/>
-            <TextBox x:Name="Name_Watermark" GotFocus="Name_Watermark_GotFocus" HorizontalAlignment="Center" Margin="0,31,0,0" TextWrapping="Wrap" Text="First and Last Name" VerticalAlignment="Top" Width="172" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="Gray" Height="27" TextChanged="Name_Watermark_TextChanged"/>
+        <Grid Margin="232,10,232,23" Background="#0A1828">
+            <TextBox x:Name="tbName" HorizontalAlignment="Center" LostFocus="tbName_LostFocus" Margin="0,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" Background="#0A1828" BorderBrush="#BFA181" Foreground="White" Height="27" TextChanged="tbName_TextChanged"/>
+            <TextBox x:Name="Name_Watermark" GotFocus="Name_Watermark_GotFocus" HorizontalAlignment="Center" Margin="0,31,0,0" TextWrapping="Wrap" Text="First and Last Name" VerticalAlignment="Top" Width="172" Background="#0A1828" BorderBrush="#BFA181" Foreground="Gray" Height="27" TextChanged="Name_Watermark_TextChanged"/>
             <Label x:Name="lblName" Content="" Visibility="Collapsed" HorizontalAlignment="Center" Margin="0,53,0,0" FontSize="10" VerticalAlignment="Top" Width="172" Foreground="Red" Height="30" HorizontalContentAlignment="Center"></Label>
             <Label x:Name="lblID" HorizontalAlignment="Center" Margin="0,102,0,0" FontSize="10" VerticalAlignment="Top" Width="172" Foreground="Red" Height="30" HorizontalContentAlignment="Center"></Label>
             <Label x:Name="lblUsername" HorizontalAlignment="Center" Margin="0,210,0,0" FontSize="10" VerticalAlignment="Top" Width="172" Foreground="Red" Height="30" HorizontalContentAlignment="Center"></Label>
             <Label x:Name="lblEmail" HorizontalAlignment="Center" Margin="0,158,0,0" FontSize="10" VerticalAlignment="Top" Width="172" Foreground="Red" Height="30" HorizontalContentAlignment="Center"></Label>
             <Label x:Name="lblPassword" HorizontalAlignment="Center" Margin="0,260,0,0" FontSize="10" VerticalAlignment="Top" Width="172" Foreground="Red" Height="30" HorizontalContentAlignment="Center"></Label>
             <Label x:Name="lblPasswordRe" HorizontalAlignment="Center" Margin="0,314,0,0" FontSize="10" VerticalAlignment="Top" Width="172" Foreground="Red" Height="30" HorizontalContentAlignment="Center"></Label>
-            <TextBox x:Name="tbID" HorizontalAlignment="Center" Margin="0,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="172" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White" Height="27" TextChanged="tbID_TextChanged" LostFocus="tbID_LostFocus"/>
-            <TextBox x:Name="tbID_Watermark" HorizontalAlignment="Center" Margin="0,78,0,0" TextWrapping="Wrap" Text="PersonaID" VerticalAlignment="Top" Width="172" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="Gray" Height="27" GotFocus="tbID_Watermark_GotFocus"/>
-            <TextBox x:Name="tbUsername" HorizontalAlignment="Center" Margin="0,184,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="172" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White" Height="29" TextChanged="tbusername_TextChanged" LostFocus="tbUsername_LostFocus"/>
-            <TextBox x:Name="tbUsername_Watermark" HorizontalAlignment="Center" Margin="0,184,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="172" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="Gray" Height="29" GotFocus="tbUsername_Watermark_GotFocus" TextChanged="tbUsername_Watermark_TextChanged"/>
-            <TextBox x:Name="tbEmail" HorizontalAlignment="Center" Margin="0,132,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="172" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White" Height="31" TextChanged="tbEmail_TextChanged" LostFocus="tbEmail_LostFocus"/>
-            <TextBox x:Name="tbEmail_Watermark" HorizontalAlignment="Center" Margin="0,132,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="172" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="Gray" Height="31" GotFocus="tbEmail_Watermark_GotFocus" TextChanged="tbEmail_Watermark_TextChanged"/>
-            <PasswordBox x:Name="Passbox" HorizontalAlignment="Center" Margin="0,233,0,0" VerticalAlignment="Top" Width="172" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White" Height="29"/>
-            <PasswordBox x:Name="AgainPassbox" HorizontalAlignment="Center" Margin="0,286,0,0" VerticalAlignment="Top" Width="172" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White" Height="30"/>
-            <Button x:Name="btnSignUp" Content="Signup" HorizontalAlignment="Center" Margin="0,348,0,0" VerticalAlignment="Top" Height="37" Width="218" FontFamily="Microsoft YaHei UI" FontSize="14" BorderBrush="#FFFF7B00" Foreground="White" Click="btnSignUp_Click" >
+            <TextBox x:Name="tbID" HorizontalAlignment="Center" Margin="0,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="172" Background="#0A1828" BorderBrush="#BFA181" Foreground="White" Height="27" TextChanged="tbID_TextChanged" LostFocus="tbID_LostFocus"/>
+            <TextBox x:Name="tbID_Watermark" HorizontalAlignment="Center" Margin="0,78,0,0" TextWrapping="Wrap" Text="PersonaID" VerticalAlignment="Top" Width="172" Background="#0A1828" BorderBrush="#BFA181" Foreground="Gray" Height="27" GotFocus="tbID_Watermark_GotFocus"/>
+            <TextBox x:Name="tbUsername" HorizontalAlignment="Center" Margin="0,184,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="172" Background="#0A1828" BorderBrush="#BFA181" Foreground="White" Height="29" TextChanged="tbusername_TextChanged" LostFocus="tbUsername_LostFocus"/>
+            <TextBox x:Name="tbUsername_Watermark" HorizontalAlignment="Center" Margin="0,184,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="172" Background="#0A1828" BorderBrush="#BFA181" Foreground="Gray" Height="29" GotFocus="tbUsername_Watermark_GotFocus" TextChanged="tbUsername_Watermark_TextChanged"/>
+            <TextBox x:Name="tbEmail" HorizontalAlignment="Center" Margin="0,132,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="172" Background="#0A1828" BorderBrush="#BFA181" Foreground="White" Height="31" TextChanged="tbEmail_TextChanged" LostFocus="tbEmail_LostFocus"/>
+            <TextBox x:Name="tbEmail_Watermark" HorizontalAlignment="Center" Margin="0,132,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="172" Background="#0A1828" BorderBrush="#BFA181" Foreground="Gray" Height="31" GotFocus="tbEmail_Watermark_GotFocus" TextChanged="tbEmail_Watermark_TextChanged"/>
+            <PasswordBox x:Name="Passbox" HorizontalAlignment="Center" Margin="0,233,0,0" VerticalAlignment="Top" Width="172" Background="#0A1828" BorderBrush="#BFA181" Foreground="White" Height="29"/>
+            <PasswordBox x:Name="AgainPassbox" HorizontalAlignment="Center" Margin="0,286,0,0" VerticalAlignment="Top" Width="172" Background="#0A1828" BorderBrush="#BFA181" Foreground="White" Height="30"/>
+            <Button x:Name="btnSignUp" Content="Signup" HorizontalAlignment="Center" Margin="0,348,0,0" VerticalAlignment="Top" Height="37" Width="218" FontFamily="Microsoft YaHei UI" FontSize="14" BorderBrush="#BFA181" Foreground="White" Click="btnSignUp_Click" >
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="10"/>
@@ -33,7 +33,7 @@
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFB52121"/>
-                        <GradientStop Color="#FFFF7B00" Offset="1"/>
+                        <GradientStop Color="#BFA181" Offset="1"/>
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
