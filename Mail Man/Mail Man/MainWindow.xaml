@@ -6,7 +6,13 @@
         xmlns:local="clr-namespace:Mail_Man"
         mc:Ignorable="d"
         Title="Mail Man" Height="600" Width="1100" ResizeMode="NoResize" Icon="/PostLogo.png">
-    <Grid Background="#0C1A1A" RenderTransformOrigin="0.522,0.427">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0,1" StartPoint="1,1">
+            <GradientStop Color="#0C1A1A" Offset="1"/>
+            <GradientStop Color="#0a1828" Offset="0"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid RenderTransformOrigin="0.522,0.427">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200*"/>
             <ColumnDefinition Width="900*"/>

@@ -5,9 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mail_Man"
         mc:Ignorable="d"
-        Title="SignUp" Height="500" Width="800" Background="#0C1A1A" ResizeMode="NoResize" Icon="/PostLogo.png">
+        Title="SignUp" Height="500" Width="800" ResizeMode="NoResize" Icon="/PostLogo.png">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#0C1A1A" Offset="1"/>
+            <GradientStop Color="#0a1828" Offset="0"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
-        <Grid Margin="232,10,232,23" Background="#0C1A1A">
+        <Grid Margin="232,10,232,23" >
             <TextBox x:Name="tbName" HorizontalAlignment="Center" LostFocus="tbName_LostFocus" Margin="0,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" Background="#0C1A1A" BorderBrush="#BFA181" Foreground="White" Height="27" TextChanged="tbName_TextChanged"/>
             <TextBox x:Name="Name_Watermark" GotFocus="Name_Watermark_GotFocus" HorizontalAlignment="Center" Margin="0,31,0,0" TextWrapping="Wrap" Text="First and Last Name" VerticalAlignment="Top" Width="172" Background="#0C1A1A" BorderBrush="#BFA181" Foreground="Gray" Height="27" TextChanged="Name_Watermark_TextChanged"/>
             <Label x:Name="lblName" Content="" Visibility="Collapsed" HorizontalAlignment="Center" Margin="0,53,0,0" FontSize="10" VerticalAlignment="Top" Width="172" Foreground="Red" Height="30" HorizontalContentAlignment="Center"></Label>

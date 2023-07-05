@@ -6,7 +6,13 @@
         xmlns:local="clr-namespace:Mail_Man"
         mc:Ignorable="d"
         Title="ClientMenu" Height="600" Width="1100" ResizeMode="NoResize">
-    <Grid Background="#0C1A1A">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0,1" StartPoint="1,1">
+            <GradientStop Color="#0C1A1A" Offset="1"/>
+            <GradientStop Color="#0a1828" Offset="0"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid >
         <Border BorderBrush="#FF1B1818" BorderThickness="1" Background="#0C1A1A" Panel.ZIndex="-10" Margin="0,0,900,0">
             <Button x:Name="logout_btn" Click="logout_btn_Click" Content="Log out" Margin="0,471,-1,59" Background="#0C1A1A" BorderBrush="#0C1A1A" Foreground="#BFA181" FontSize="14" FontWeight="Bold" FontFamily="Arial Rounded MT Bold"/>
         </Border>

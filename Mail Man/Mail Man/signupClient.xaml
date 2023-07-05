@@ -5,9 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mail_Man"
         mc:Ignorable="d"
-        Title="signupClient"  Height="450" Width="800" Background="#0C1A1A" ResizeMode="NoResize" Icon="/PostLogo.png">
+        Title="signupClient"  Height="450" Width="800" ResizeMode="NoResize" Icon="/PostLogo.png">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#0C1A1A" Offset="1"/>
+            <GradientStop Color="#0a1828" Offset="0"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
-        <Grid Margin="232,10,232,10" Background="#0C1A1A">
+        
+        <Grid Margin="232,10,232,10">
             <TextBlock HorizontalAlignment="Center" Margin="0,375,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="MV Boli" Height="33"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/><Run/></TextBlock>
             <TextBox x:Name="tbName" HorizontalAlignment="Center" Margin="0,48,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="172" Background="#0C1A1A" BorderBrush="#BFA181" VerticalContentAlignment="Center" Foreground="White" Height="27" TextChanged="tbName_TextChanged" LostFocus="tbName_LostFocus"/>
             <TextBox x:Name="Name_Watermark" HorizontalAlignment="Center" Margin="0,48,0,0" TextWrapping="Wrap" Text="First And Last Name" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="172" Background="#0C1A1A" BorderBrush="#BFA181" Foreground="Gray" Height="27" GotFocus="Name_Watermark_GotFocus"/>
