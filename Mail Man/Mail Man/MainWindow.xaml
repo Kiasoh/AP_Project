@@ -22,9 +22,9 @@
         <TextBlock HorizontalAlignment="Center" Margin="0,535,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="MV Boli"><Run Text="Sobhan &amp; Kiarash"/><LineBreak/></TextBlock>
 
         <Grid x:Name="grid_checkuser" Grid.Column="1" Visibility="Collapsed">
-            <TextBox HorizontalAlignment="Center" Margin="0,166,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="320" Height="41" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White" Name ="tbUsername" LostFocus="tbUsername_LostFocus" TextChanged="tbUsername_TextChanged"/>
+            <TextBox VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,166,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="320" Height="41" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="White" Name ="tbUsername" LostFocus="tbUsername_LostFocus" TextChanged="tbUsername_TextChanged"/>
             <Label FontSize="15" Visibility="Visible" Foreground="Red" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="30" Margin="56,207,56,0" RenderTransformOrigin="0.499,0.553" Name="lblError" ></Label>
-            <TextBox x:Name="tbUsername_Watermark" HorizontalAlignment="Center" Margin="0,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="Gray" Height="41" GotFocus="tbUsername_Watermark_GotFocus" Text="SSN"/>
+            <TextBox VerticalContentAlignment="Center" x:Name="tbUsername_Watermark" HorizontalAlignment="Center" Margin="0,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Background="#FF1A1A1A" BorderBrush="#FFFF7B00" Foreground="Gray" Height="41" GotFocus="tbUsername_Watermark_GotFocus" Text="SSN"/>
             <Button Content="Search" Click="btnSearch_user" HorizontalAlignment="Center" Margin="0,257,0,0" VerticalAlignment="Top" Height="43" Width="200" FontWeight="Bold" FontSize="16">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -42,10 +42,10 @@
         </Grid>
 
         <Grid x:Name="grid_ordering" Grid.Column="1" Visibility="Collapsed">
-            <TextBox x:Name="recieveadress_txt" HorizontalAlignment="Left" Margin="587,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="32" BorderBrush="#FFFF7B00" Foreground="#FFFF7B00" Background="#FF181615"/>
-            <TextBox x:Name="sendaddress_txt" HorizontalAlignment="Left" Margin="41,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="31" BorderBrush="#FFFF7B00" Foreground="#FFFF7B00" Background="#FF181615"/>
+            <TextBox VerticalContentAlignment="Center" x:Name="recieveadress_txt" HorizontalAlignment="Left" Margin="587,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="32" BorderBrush="#FFFF7B00" Foreground="#FFFF7B00" Background="#FF181615"/>
+            <TextBox VerticalContentAlignment="Center" x:Name="sendaddress_txt" HorizontalAlignment="Left" Margin="41,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="31" BorderBrush="#FFFF7B00" Foreground="#FFFF7B00" Background="#FF181615"/>
             <CheckBox x:Name="expensive_checkbox" Content="Expensive" HorizontalAlignment="Left" Margin="587,298,0,0" VerticalAlignment="Top" Height="24" Width="218" Foreground="#FFFF7B00" FontSize="16" IsChecked="False" Cursor="" BorderBrush="#FFFF7B00"/>
-            <TextBox x:Name="weight_txt" HorizontalAlignment="Left" Margin="587,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="28" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" Background="#FF181615"/>
+            <TextBox VerticalContentAlignment="Center" x:Name="weight_txt" HorizontalAlignment="Left" Margin="587,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="28" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" Background="#FF181615"/>
             <TextBlock x:Name="showtotal_txtblock" HorizontalAlignment="Left" Margin="80,409,0,0" TextWrapping="Wrap" FontSize="22" VerticalAlignment="Top" Height="46" Width="179" Background="Black" Foreground="#FF0B821D" Text=""/>
             <TextBlock x:Name="total_txtblock" HorizontalAlignment="Left" Margin="10,416,0,0" TextWrapping="Wrap" Text="Total : " VerticalAlignment="Top" Height="29" Width="109" Foreground="#FF0B821D" FontSize="24"/>
             <Button x:Name="calculation_btn" Click="calculation_btn_Click" Content="Calculation" HorizontalAlignment="Left" Margin="41,507,0,0" VerticalAlignment="Top" Height="39" Width="218" Background="#FF181615" BorderBrush="#FFFF7B00" Foreground="#FFFF7B00"/>
@@ -141,9 +141,9 @@
             <CheckBox x:Name="breack_checkbox_as" Checked="breack_checkbox_Checked" Content="Breackable" HorizontalAlignment="Left" Margin="338,134,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="110"/>
             <CheckBox x:Name="doc_checkbox_as" Checked="doc_checkbox_Checked" Content="Document" HorizontalAlignment="Left" Margin="338,162,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="110" RenderTransformOrigin="0.477,-0.194"/>
             <CheckBox x:Name="object_checkbox_as" Checked="object_checkbox_Checked" Content="Object" HorizontalAlignment="Left" Margin="338,189,0,0" VerticalAlignment="Top" Foreground="#FFFF7B00" BorderBrush="#FFFF7B00" FontSize="18" Width="110"/>
-            <TextBox x:Name="personalID_txt_as" HorizontalAlignment="Center" Margin="0,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="36"/>
-            <TextBox x:Name="pricePaid_txt_as" HorizontalAlignment="Center" Margin="0,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="36"/>
-            <TextBox x:Name="weight_txt_as" HorizontalAlignment="Center" Margin="0,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="32"/>
+            <TextBox VerticalContentAlignment="Center" x:Name="personalID_txt_as" HorizontalAlignment="Center" Margin="0,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="36"/>
+            <TextBox VerticalContentAlignment="Center" x:Name="pricePaid_txt_as" HorizontalAlignment="Center" Margin="0,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="36"/>
+            <TextBox VerticalContentAlignment="Center" x:Name="weight_txt_as" HorizontalAlignment="Center" Margin="0,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="32"/>
             <Button Content="Search" Click="btnSearch_order" HorizontalAlignment="Left" Margin="593,466,0,0" VerticalAlignment="Top" Height="42" Width="266" Background="#FFFF7B00" BorderBrush="#FFFF7B00" FontWeight="Bold" FontSize="24"/>
         </Grid>
 
